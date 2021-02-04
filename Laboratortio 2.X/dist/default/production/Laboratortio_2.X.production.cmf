@@ -11,7 +11,7 @@
 # All addresses and the length are given in unqualified hexadecimal
 # in delta units.  Any other numeric values are decimal.
 %PSECTS
-$C:\Users\YEFRYS~1\AppData\Local\Temp\sdak.o
+$C:\Users\YEFRYS~1\AppData\Local\Temp\sdro.o
 end_init CODE 0 0 0 3 2
 config CONFIG 4 2007 2007 2 2
 $dist/default/production\Laboratortio_2.X.production.o
@@ -68,11 +68,11 @@ STRING 800-1FFF 2
 # All other numeric values are in decimal.
 %LINETAB
 $dist/default/production\Laboratortio_2.X.production.o
-7FC cinit CODE >452:C:\Users\YEFRYS~1\AppData\Local\Temp\sdak.s
-7FC cinit CODE >455:C:\Users\YEFRYS~1\AppData\Local\Temp\sdak.s
-7FC cinit CODE >461:C:\Users\YEFRYS~1\AppData\Local\Temp\sdak.s
-7FC cinit CODE >463:C:\Users\YEFRYS~1\AppData\Local\Temp\sdak.s
-7FD cinit CODE >464:C:\Users\YEFRYS~1\AppData\Local\Temp\sdak.s
+7FC cinit CODE >452:C:\Users\YEFRYS~1\AppData\Local\Temp\sdro.s
+7FC cinit CODE >455:C:\Users\YEFRYS~1\AppData\Local\Temp\sdro.s
+7FC cinit CODE >461:C:\Users\YEFRYS~1\AppData\Local\Temp\sdro.s
+7FC cinit CODE >463:C:\Users\YEFRYS~1\AppData\Local\Temp\sdro.s
+7FD cinit CODE >464:C:\Users\YEFRYS~1\AppData\Local\Temp\sdro.s
 78F text3 CODE >93:D:\UVG\Cuarto año\Primer Semestre\Electronica Digital 2\Labs MPLAB\Digital_2\Laboratortio 2.X\Laboratorio 2.c
 78F text3 CODE >94:D:\UVG\Cuarto año\Primer Semestre\Electronica Digital 2\Labs MPLAB\Digital_2\Laboratortio 2.X\Laboratorio 2.c
 79C text3 CODE >95:D:\UVG\Cuarto año\Primer Semestre\Electronica Digital 2\Labs MPLAB\Digital_2\Laboratortio 2.X\Laboratorio 2.c
@@ -121,30 +121,30 @@ __Hspace_3 0 0 ABS 0 - -
 __Hspace_4 4010 0 ABS 0 - -
 __Heeprom_data 0 0 EEDATA 3 eeprom_data -
 __Hstrings 0 0 ABS 0 strings -
-___sp 0 0 STACK 2 stack C:\Users\YEFRYS~1\AppData\Local\Temp\sdak.o
+___sp 0 0 STACK 2 stack C:\Users\YEFRYS~1\AppData\Local\Temp\sdro.o
 _main F72 0 CODE 0 maintext dist/default/production\Laboratortio_2.X.production.o
 btemp 7E 0 ABS 0 - dist/default/production\Laboratortio_2.X.production.o
-start 0 0 CODE 0 init C:\Users\YEFRYS~1\AppData\Local\Temp\sdak.o
+start 0 0 CODE 0 init C:\Users\YEFRYS~1\AppData\Local\Temp\sdro.o
 __size_of_main 0 0 ABS 0 - dist/default/production\Laboratortio_2.X.production.o
 __Hpowerup 0 0 CODE 0 powerup -
 __end_of_dec_cont_BI F46 0 CODE 0 text3 dist/default/production\Laboratortio_2.X.production.o
-intlevel0 0 0 ENTRY 0 functab C:\Users\YEFRYS~1\AppData\Local\Temp\sdak.o
-intlevel1 0 0 ENTRY 0 functab C:\Users\YEFRYS~1\AppData\Local\Temp\sdak.o
-intlevel2 0 0 ENTRY 0 functab C:\Users\YEFRYS~1\AppData\Local\Temp\sdak.o
-intlevel3 0 0 ENTRY 0 functab C:\Users\YEFRYS~1\AppData\Local\Temp\sdak.o
-intlevel4 0 0 ENTRY 0 functab C:\Users\YEFRYS~1\AppData\Local\Temp\sdak.o
-intlevel5 0 0 ENTRY 0 functab C:\Users\YEFRYS~1\AppData\Local\Temp\sdak.o
+intlevel0 0 0 ENTRY 0 functab C:\Users\YEFRYS~1\AppData\Local\Temp\sdro.o
+intlevel1 0 0 ENTRY 0 functab C:\Users\YEFRYS~1\AppData\Local\Temp\sdro.o
+intlevel2 0 0 ENTRY 0 functab C:\Users\YEFRYS~1\AppData\Local\Temp\sdro.o
+intlevel3 0 0 ENTRY 0 functab C:\Users\YEFRYS~1\AppData\Local\Temp\sdro.o
+intlevel4 0 0 ENTRY 0 functab C:\Users\YEFRYS~1\AppData\Local\Temp\sdro.o
+intlevel5 0 0 ENTRY 0 functab C:\Users\YEFRYS~1\AppData\Local\Temp\sdro.o
 wtemp0 7E 0 ABS 0 - dist/default/production\Laboratortio_2.X.production.o
 __size_of_inc_cont_BI 0 0 ABS 0 - dist/default/production\Laboratortio_2.X.production.o
 __Hfunctab 0 0 ENTRY 0 functab -
 __Hclrtext 0 0 ABS 0 clrtext -
 _ANSELH 189 0 ABS 0 - dist/default/production\Laboratortio_2.X.production.o
 __Lmaintext 0 0 ABS 0 maintext -
-___stackhi 0 0 ABS 0 - C:\Users\YEFRYS~1\AppData\Local\Temp\sdak.o
-___stacklo 0 0 ABS 0 - C:\Users\YEFRYS~1\AppData\Local\Temp\sdak.o
+___stackhi 0 0 ABS 0 - C:\Users\YEFRYS~1\AppData\Local\Temp\sdro.o
+___stacklo 0 0 ABS 0 - C:\Users\YEFRYS~1\AppData\Local\Temp\sdro.o
 __size_of_setup 0 0 ABS 0 - dist/default/production\Laboratortio_2.X.production.o
 start_initialization FF8 0 CODE 0 cinit dist/default/production\Laboratortio_2.X.production.o
-___int_sp 0 0 STACK 2 stack C:\Users\YEFRYS~1\AppData\Local\Temp\sdak.o
+___int_sp 0 0 STACK 2 stack C:\Users\YEFRYS~1\AppData\Local\Temp\sdro.o
 __size_of_dec_cont_BI 0 0 ABS 0 - dist/default/production\Laboratortio_2.X.production.o
 __Hbank0 0 0 ABS 0 bank0 -
 __Hbank1 0 0 ABS 0 bank1 -
@@ -185,7 +185,7 @@ __S1 73 0 ABS 0 - -
 __S2 0 0 ABS 0 - -
 __S3 0 0 ABS 0 - -
 __Lintentry 0 0 CODE 0 intentry -
-reset_vec 0 0 CODE 0 reset_vec C:\Users\YEFRYS~1\AppData\Local\Temp\sdak.o
+reset_vec 0 0 CODE 0 reset_vec C:\Users\YEFRYS~1\AppData\Local\Temp\sdro.o
 __pmaintext F72 0 CODE 0 maintext dist/default/production\Laboratortio_2.X.production.o
 __Lcommon 0 0 ABS 0 common -
 __Lconfig 0 0 CONFIG 4 config -
