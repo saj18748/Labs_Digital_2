@@ -1,4 +1,4 @@
-# 1 "Laboratorio 2.c"
+# 1 "Laboratorio 3.c"
 # 1 "<built-in>" 1
 # 1 "<built-in>" 3
 # 288 "<built-in>" 3
@@ -6,14 +6,8 @@
 # 1 "<built-in>" 2
 # 1 "C:/Users/Yefry Sajquiy/.mchp_packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\\pic\\include\\language_support.h" 1 3
 # 2 "<built-in>" 2
-# 1 "Laboratorio 2.c" 2
-
-
-
-
-
-
-
+# 1 "Laboratorio 3.c" 2
+# 10 "Laboratorio 3.c"
 #pragma config FOSC = INTRC_NOCLKOUT
 #pragma config WDTE = OFF
 #pragma config PWRTE = OFF
@@ -28,13 +22,7 @@
 
 #pragma config BOR4V = BOR40V
 #pragma config WRT = OFF
-
-
-
-
-
-
-
+# 36 "Laboratorio 3.c"
 # 1 "C:/Users/Yefry Sajquiy/.mchp_packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\\pic\\include\\xc.h" 1 3
 # 18 "C:/Users/Yefry Sajquiy/.mchp_packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\\pic\\include\\xc.h" 3
 extern const char __xc8_OPTIM_SPEED;
@@ -2515,15 +2503,39 @@ extern __bank0 unsigned char __resetbits;
 extern __bank0 __bit __powerdown;
 extern __bank0 __bit __timeout;
 # 28 "C:/Users/Yefry Sajquiy/.mchp_packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\\pic\\include\\xc.h" 2 3
-# 28 "Laboratorio 2.c" 2
+# 36 "Laboratorio 3.c" 2
+
+# 1 "./LCD.h" 1
+# 46 "./LCD.h"
+void Lcd_Port(char a);
+
+void Lcd_Cmd(char a);
+
+void Lcd_Clear(void);
+
+void Lcd_Set_Cursor(char a, char b);
+
+void Lcd_Init(void);
+
+void Lcd_Write_Char(char a);
+
+void Lcd_Write_String(char *a);
+
+void Lcd_Shift_Right(void);
+
+void Lcd_Shift_Left(void);
+# 37 "Laboratorio 3.c" 2
 
 
 
-void ADC_Init()
-{
-  ADCON0 = 0x81;
-  ADCON1 = 0x00;
-}
+
+
+
+
+void setup(void);
+void ADC_Init(void);
+char s[20];
+
 
 unsigned int ADC_Read(unsigned char channel)
 {
@@ -2535,22 +2547,92 @@ unsigned int ADC_Read(unsigned char channel)
   _delay((unsigned long)((2)*(8000000/4000.0)));
   GO_nDONE = 1;
   while(GO_nDONE);
-  return ((ADRESH<<8)+ADRESL);
+  return (ADRESH<<8);
 }
+
+
+
 
 void main()
 {
   unsigned int a;
-  TRISA = 0xFF;
-  TRISB = 0x00;
-  TRISC = 0x00;
+  unsigned int volt;
+  unsigned int voltaje;
+  setup ();
   ADC_Init();
+  Lcd_Init();
 
-  do
-  {
+  while(1){
+
     a = ADC_Read(0);
 
     PORTB = a>>8;
     _delay((unsigned long)((50)*(8000000/4000.0)));
-  }while(1);
+
+    Lcd_Clear();
+    Lcd_Set_Cursor(1,1);
+    Lcd_Write_String("Laboratorio #3");
+    Lcd_Set_Cursor(2,1);
+    Lcd_Write_String("Yefry Sajquiy");
+    _delay((unsigned long)((100)*(8000000/4000.0)));
+    Lcd_Clear();
+    Lcd_Set_Cursor(1,1);
+    Lcd_Write_String("18748");
+    Lcd_Set_Cursor(2,1);
+    Lcd_Write_String("Digital 2");
+    _delay((unsigned long)((100)*(8000000/4000.0)));
+
+    volt = ADC_Read(0);
+    voltaje = (volt*0.5)/1023;
+
+    Lcd_Clear();
+    Lcd_Set_Cursor(1,1);
+    Lcd_Write_String("Voltaje");
+    _delay((unsigned long)((100)*(8000000/4000.0)));
+    Lcd_Clear();
+    Lcd_Set_Cursor(2,1);
+    Lcd_Write_String("Voltaje",voltaje);
+
+    for(a=0;a<15;a++)
+    {
+        _delay((unsigned long)((300)*(8000000/4000.0)));
+        Lcd_Shift_Left();
+    }
+
+    for(a=0;a<15;a++)
+    {
+        _delay((unsigned long)((300)*(8000000/4000.0)));
+        Lcd_Shift_Right();
+    }
+
+    Lcd_Clear();
+    Lcd_Set_Cursor(2,1);
+    Lcd_Write_Char('e');
+    Lcd_Write_Char('S');
+    _delay((unsigned long)((200)*(8000000/4000.0)));
+  }
+  return;
+
+}
+
+
+
+
+
+void setup(void){
+  TRISA = 0xFF;
+  TRISB = 0x00;
+
+  TRISC = 0;
+  PORTC = 0;
+
+
+   TRISD= 0x00;
+
+}
+
+void ADC_Init(void)
+{
+  ADCON0 = 0x81;
+  ADCON1 = 0x00;
 }

@@ -5,8 +5,6 @@
  * Created on 29 de enero de 2021, 08:33 AM
  */
 
-//------------------------------------------------------------------------------
-// CONFIG1
 #pragma config FOSC = INTRC_NOCLKOUT// Oscillator Selection bits (INTOSCIO oscillator: I/O function on RA6/OSC2/CLKOUT pin, I/O function on RA7/OSC1/CLKIN)
 #pragma config WDTE = OFF       // Watchdog Timer Enable bit (WDT disabled and can be enabled by SWDTEN bit of the WDTCON register)
 #pragma config PWRTE = OFF      // Power-up Timer Enable bit (PWRT disabled)
@@ -29,68 +27,41 @@
 
 #include <xc.h>
 
-//----------------------------------------------------------------------------//
-//          Declaracion de variables                                          
-//----------------------------------------------------------------------------//
 
-void setup(void); 
-void inc_cont_BI(void);     // incrementa contador binario
-void dec_cont_BI(void);
-//----------------------------------------------------------------------------//
-//                              Codigo principal                              
-//----------------------------------------------------------------------------//
-
-void main(void) {
-    setup();
-    while (1) {
-        if(PORTAbits.RA1 == 1)
-        { inc_cont_BI();}
-        
-        if (PORTAbits.RA2 == 1)
-        {  dec_cont_BI();}
-    }
- }
-
-
-//------------------------------------------------------------------------------
-//  CONFIGURACION DE LOS PUERTOS  
-//------------------------------------------------------------------------------
-
-void setup(void) {
-    // Establecemos los puertos como digitales  
-    ANSEL = 0;
-    ANSELH = 0;
-
-    // PUERTO A - push buttons
-    TRISA = 0b00000011;
-    PORTA = 0;
-
-    // PUETO B - Salida el contador en los leds
-    TRISB = 0;
-    PORTB = 0;
-
-    // PUERTO C - salida para los transistores
-    TRISC = 0;
-    PORTC = 0;
-
-    // PUERTO D - salida para los display
-    TRISD = 0;
-    PORTD = 0;
-
-    // Puerto E como salida para el semaforo
-    TRISE = 0;
-    PORTE = 0;
-}
-//------------------------------------------------------------------------------
-//  CONFIGURACION DE LAS FUNCIONES
-//------------------------------------------------------------------------------
-
-void inc_cont_BI(void){
-    __delay_ms(100);
-    PORTB = PORTB++;
+void ADC_Init()
+{
+  ADCON0 = 0x81;               //Turn ON ADC and Clock Selection
+  ADCON1 = 0x00;               //All pins as Analog Input and setting Reference Voltages
 }
 
-void dec_cont_BI(void){
-    __delay_ms(100);
-    PORTB = PORTB--;
+unsigned int ADC_Read(unsigned char channel)
+{
+  if(channel > 7)              //Channel range is 0 ~ 7
+    return 0;
+
+  ADCON0 &= 0xC5;              //Clearing channel selection bits
+  ADCON0 |= channel<<3;        //Setting channel selection bits
+  __delay_ms(2);               //Acquisition time to charge hold capacitor
+  GO_nDONE = 1;                //Initializes A/D conversion
+  while(GO_nDONE);             //Waiting for conversion to complete
+  return ((ADRESH<<8)+ADRESL); //Return result
 }
+
+void main()
+{
+  unsigned int a;
+  TRISA = 0xFF;                 //Analog pins as Input
+  TRISB = 0x00;                 //Port B as Output
+  TRISC = 0x00;                 //Port C as Output
+  ADC_Init();                   //Initialize ADC
+
+  do
+  {
+    a = ADC_Read(0);            //Read Analog Channel 0
+                   //Write Lower bits to PORTB
+    PORTB = a>>8;               //Write Higher 2 bits to PORTC
+    __delay_ms(50);            //Delay
+  }while(1);                    //Infinite Loop
+}
+
+

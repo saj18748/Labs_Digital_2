@@ -11,16 +11,15 @@
 # All addresses and the length are given in unqualified hexadecimal
 # in delta units.  Any other numeric values are decimal.
 %PSECTS
-$C:\Users\YEFRYS~1\AppData\Local\Temp\sdro.o
+$C:\Users\YEFRYS~1\AppData\Local\Temp\scf8.o
 end_init CODE 0 0 0 3 2
 config CONFIG 4 2007 2007 2 2
 $dist/default/production\Laboratortio_2.X.production.o
 cinit CODE 0 7FC 7FC 4 2
-text1 CODE 0 7D8 7D8 24 2
-text2 CODE 0 7A3 7A3 16 2
-text3 CODE 0 78F 78F 14 2
-maintext CODE 0 7B9 7B9 1F 2
-cstackCOMMON COMMON 1 70 70 3 1
+text1 CODE 0 7C8 7C8 34 2
+text2 CODE 0 79A 79A 8 2
+maintext CODE 0 7A2 7A2 26 2
+cstackCOMMON COMMON 1 70 70 9 1
 config CONFIG 4 2007 2007 2 2
 # %UNUSED Section
 # This section enumerates the unused ranges of each CLASS. Each entry
@@ -36,23 +35,23 @@ BANK0 20-6F 1
 BANK1 A0-EF 1
 BANK2 110-16F 1
 BANK3 190-1EF 1
-CONST 3-78E 2
+CONST 3-799 2
 CONST 800-1FFF 2
-ENTRY 3-78E 2
+ENTRY 3-799 2
 ENTRY 800-1FFF 2
 IDLOC 2000-2003 2
 STACK 110-16F 1
-CODE 3-78E 2
+CODE 3-799 2
 CODE 800-1FFF 2
 SFR0 0-1F 1
 SFR1 80-9F 1
 SFR2 100-10F 1
 SFR3 180-18F 1
-COMMON 73-7D 1
+COMMON 79-7D 1
 EEDATA 2100-21FF 2
-STRCODE 3-78E 2
+STRCODE 3-799 2
 STRCODE 800-1FFF 2
-STRING 3-78E 2
+STRING 3-799 2
 STRING 800-1FFF 2
 # %LINETAB Section
 # This section enumerates the file/line to address mappings.
@@ -68,39 +67,34 @@ STRING 800-1FFF 2
 # All other numeric values are in decimal.
 %LINETAB
 $dist/default/production\Laboratortio_2.X.production.o
-7FC cinit CODE >452:C:\Users\YEFRYS~1\AppData\Local\Temp\sdro.s
-7FC cinit CODE >455:C:\Users\YEFRYS~1\AppData\Local\Temp\sdro.s
-7FC cinit CODE >461:C:\Users\YEFRYS~1\AppData\Local\Temp\sdro.s
-7FC cinit CODE >463:C:\Users\YEFRYS~1\AppData\Local\Temp\sdro.s
-7FD cinit CODE >464:C:\Users\YEFRYS~1\AppData\Local\Temp\sdro.s
-78F text3 CODE >93:D:\UVG\Cuarto año\Primer Semestre\Electronica Digital 2\Labs MPLAB\Digital_2\Laboratortio 2.X\Laboratorio 2.c
-78F text3 CODE >94:D:\UVG\Cuarto año\Primer Semestre\Electronica Digital 2\Labs MPLAB\Digital_2\Laboratortio 2.X\Laboratorio 2.c
-79C text3 CODE >95:D:\UVG\Cuarto año\Primer Semestre\Electronica Digital 2\Labs MPLAB\Digital_2\Laboratortio 2.X\Laboratorio 2.c
-7A2 text3 CODE >96:D:\UVG\Cuarto año\Primer Semestre\Electronica Digital 2\Labs MPLAB\Digital_2\Laboratortio 2.X\Laboratorio 2.c
-7A3 text2 CODE >88:D:\UVG\Cuarto año\Primer Semestre\Electronica Digital 2\Labs MPLAB\Digital_2\Laboratortio 2.X\Laboratorio 2.c
-7A3 text2 CODE >89:D:\UVG\Cuarto año\Primer Semestre\Electronica Digital 2\Labs MPLAB\Digital_2\Laboratortio 2.X\Laboratorio 2.c
-7B0 text2 CODE >90:D:\UVG\Cuarto año\Primer Semestre\Electronica Digital 2\Labs MPLAB\Digital_2\Laboratortio 2.X\Laboratorio 2.c
-7B8 text2 CODE >91:D:\UVG\Cuarto año\Primer Semestre\Electronica Digital 2\Labs MPLAB\Digital_2\Laboratortio 2.X\Laboratorio 2.c
-7D8 text1 CODE >59:D:\UVG\Cuarto año\Primer Semestre\Electronica Digital 2\Labs MPLAB\Digital_2\Laboratortio 2.X\Laboratorio 2.c
-7D8 text1 CODE >61:D:\UVG\Cuarto año\Primer Semestre\Electronica Digital 2\Labs MPLAB\Digital_2\Laboratortio 2.X\Laboratorio 2.c
-7DB text1 CODE >62:D:\UVG\Cuarto año\Primer Semestre\Electronica Digital 2\Labs MPLAB\Digital_2\Laboratortio 2.X\Laboratorio 2.c
-7DC text1 CODE >65:D:\UVG\Cuarto año\Primer Semestre\Electronica Digital 2\Labs MPLAB\Digital_2\Laboratortio 2.X\Laboratorio 2.c
-7E0 text1 CODE >66:D:\UVG\Cuarto año\Primer Semestre\Electronica Digital 2\Labs MPLAB\Digital_2\Laboratortio 2.X\Laboratorio 2.c
-7E3 text1 CODE >69:D:\UVG\Cuarto año\Primer Semestre\Electronica Digital 2\Labs MPLAB\Digital_2\Laboratortio 2.X\Laboratorio 2.c
-7E6 text1 CODE >70:D:\UVG\Cuarto año\Primer Semestre\Electronica Digital 2\Labs MPLAB\Digital_2\Laboratortio 2.X\Laboratorio 2.c
-7E9 text1 CODE >73:D:\UVG\Cuarto año\Primer Semestre\Electronica Digital 2\Labs MPLAB\Digital_2\Laboratortio 2.X\Laboratorio 2.c
-7EC text1 CODE >74:D:\UVG\Cuarto año\Primer Semestre\Electronica Digital 2\Labs MPLAB\Digital_2\Laboratortio 2.X\Laboratorio 2.c
-7EF text1 CODE >77:D:\UVG\Cuarto año\Primer Semestre\Electronica Digital 2\Labs MPLAB\Digital_2\Laboratortio 2.X\Laboratorio 2.c
-7F2 text1 CODE >78:D:\UVG\Cuarto año\Primer Semestre\Electronica Digital 2\Labs MPLAB\Digital_2\Laboratortio 2.X\Laboratorio 2.c
-7F5 text1 CODE >81:D:\UVG\Cuarto año\Primer Semestre\Electronica Digital 2\Labs MPLAB\Digital_2\Laboratortio 2.X\Laboratorio 2.c
-7F8 text1 CODE >82:D:\UVG\Cuarto año\Primer Semestre\Electronica Digital 2\Labs MPLAB\Digital_2\Laboratortio 2.X\Laboratorio 2.c
-7FB text1 CODE >83:D:\UVG\Cuarto año\Primer Semestre\Electronica Digital 2\Labs MPLAB\Digital_2\Laboratortio 2.X\Laboratorio 2.c
-7B9 maintext CODE >43:D:\UVG\Cuarto año\Primer Semestre\Electronica Digital 2\Labs MPLAB\Digital_2\Laboratortio 2.X\Laboratorio 2.c
-7B9 maintext CODE >44:D:\UVG\Cuarto año\Primer Semestre\Electronica Digital 2\Labs MPLAB\Digital_2\Laboratortio 2.X\Laboratorio 2.c
-7BE maintext CODE >46:D:\UVG\Cuarto año\Primer Semestre\Electronica Digital 2\Labs MPLAB\Digital_2\Laboratortio 2.X\Laboratorio 2.c
-7C4 maintext CODE >47:D:\UVG\Cuarto año\Primer Semestre\Electronica Digital 2\Labs MPLAB\Digital_2\Laboratortio 2.X\Laboratorio 2.c
-7C9 maintext CODE >49:D:\UVG\Cuarto año\Primer Semestre\Electronica Digital 2\Labs MPLAB\Digital_2\Laboratortio 2.X\Laboratorio 2.c
-7CF maintext CODE >50:D:\UVG\Cuarto año\Primer Semestre\Electronica Digital 2\Labs MPLAB\Digital_2\Laboratortio 2.X\Laboratorio 2.c
+7FC cinit CODE >443:C:\Users\YEFRYS~1\AppData\Local\Temp\scf8.s
+7FC cinit CODE >446:C:\Users\YEFRYS~1\AppData\Local\Temp\scf8.s
+7FC cinit CODE >452:C:\Users\YEFRYS~1\AppData\Local\Temp\scf8.s
+7FC cinit CODE >454:C:\Users\YEFRYS~1\AppData\Local\Temp\scf8.s
+7FD cinit CODE >455:C:\Users\YEFRYS~1\AppData\Local\Temp\scf8.s
+79A text2 CODE >31:D:\UVG\Cuarto año\Primer Semestre\Electronica Digital 2\Labs MPLAB\Digital_2\Laboratortio 2.X\Laboratorio 2.c
+79A text2 CODE >33:D:\UVG\Cuarto año\Primer Semestre\Electronica Digital 2\Labs MPLAB\Digital_2\Laboratortio 2.X\Laboratorio 2.c
+79E text2 CODE >34:D:\UVG\Cuarto año\Primer Semestre\Electronica Digital 2\Labs MPLAB\Digital_2\Laboratortio 2.X\Laboratorio 2.c
+7A1 text2 CODE >35:D:\UVG\Cuarto año\Primer Semestre\Electronica Digital 2\Labs MPLAB\Digital_2\Laboratortio 2.X\Laboratorio 2.c
+7C8 text1 CODE >37:D:\UVG\Cuarto año\Primer Semestre\Electronica Digital 2\Labs MPLAB\Digital_2\Laboratortio 2.X\Laboratorio 2.c
+7C9 text1 CODE >39:D:\UVG\Cuarto año\Primer Semestre\Electronica Digital 2\Labs MPLAB\Digital_2\Laboratortio 2.X\Laboratorio 2.c
+7CF text1 CODE >40:D:\UVG\Cuarto año\Primer Semestre\Electronica Digital 2\Labs MPLAB\Digital_2\Laboratortio 2.X\Laboratorio 2.c
+7D2 text1 CODE >42:D:\UVG\Cuarto año\Primer Semestre\Electronica Digital 2\Labs MPLAB\Digital_2\Laboratortio 2.X\Laboratorio 2.c
+7D8 text1 CODE >43:D:\UVG\Cuarto año\Primer Semestre\Electronica Digital 2\Labs MPLAB\Digital_2\Laboratortio 2.X\Laboratorio 2.c
+7E5 text1 CODE >44:D:\UVG\Cuarto año\Primer Semestre\Electronica Digital 2\Labs MPLAB\Digital_2\Laboratortio 2.X\Laboratorio 2.c
+7EE text1 CODE >45:D:\UVG\Cuarto año\Primer Semestre\Electronica Digital 2\Labs MPLAB\Digital_2\Laboratortio 2.X\Laboratorio 2.c
+7F1 text1 CODE >46:D:\UVG\Cuarto año\Primer Semestre\Electronica Digital 2\Labs MPLAB\Digital_2\Laboratortio 2.X\Laboratorio 2.c
+7F5 text1 CODE >47:D:\UVG\Cuarto año\Primer Semestre\Electronica Digital 2\Labs MPLAB\Digital_2\Laboratortio 2.X\Laboratorio 2.c
+7FB text1 CODE >48:D:\UVG\Cuarto año\Primer Semestre\Electronica Digital 2\Labs MPLAB\Digital_2\Laboratortio 2.X\Laboratorio 2.c
+7A2 maintext CODE >50:D:\UVG\Cuarto año\Primer Semestre\Electronica Digital 2\Labs MPLAB\Digital_2\Laboratortio 2.X\Laboratorio 2.c
+7A2 maintext CODE >53:D:\UVG\Cuarto año\Primer Semestre\Electronica Digital 2\Labs MPLAB\Digital_2\Laboratortio 2.X\Laboratorio 2.c
+7A6 maintext CODE >54:D:\UVG\Cuarto año\Primer Semestre\Electronica Digital 2\Labs MPLAB\Digital_2\Laboratortio 2.X\Laboratorio 2.c
+7A7 maintext CODE >55:D:\UVG\Cuarto año\Primer Semestre\Electronica Digital 2\Labs MPLAB\Digital_2\Laboratortio 2.X\Laboratorio 2.c
+7A8 maintext CODE >56:D:\UVG\Cuarto año\Primer Semestre\Electronica Digital 2\Labs MPLAB\Digital_2\Laboratortio 2.X\Laboratorio 2.c
+7AD maintext CODE >60:D:\UVG\Cuarto año\Primer Semestre\Electronica Digital 2\Labs MPLAB\Digital_2\Laboratortio 2.X\Laboratorio 2.c
+7B7 maintext CODE >62:D:\UVG\Cuarto año\Primer Semestre\Electronica Digital 2\Labs MPLAB\Digital_2\Laboratortio 2.X\Laboratorio 2.c
+7BB maintext CODE >63:D:\UVG\Cuarto año\Primer Semestre\Electronica Digital 2\Labs MPLAB\Digital_2\Laboratortio 2.X\Laboratorio 2.c
+7C4 maintext CODE >64:D:\UVG\Cuarto año\Primer Semestre\Electronica Digital 2\Labs MPLAB\Digital_2\Laboratortio 2.X\Laboratorio 2.c
 # %SYMTAB Section
 # An enumeration of all symbols in the program.
 # The beginning of the section is indicated by %SYMTAB.
@@ -115,37 +109,45 @@ $dist/default/production\Laboratortio_2.X.production.o
 %SYMTAB
 ___latbits 2 0 ABS 0 - dist/default/production\Laboratortio_2.X.production.o
 __Hspace_0 800 0 ABS 0 - -
-__Hspace_1 73 0 ABS 0 - -
+__Hspace_1 79 0 ABS 0 - -
 __Hspace_2 0 0 ABS 0 - -
 __Hspace_3 0 0 ABS 0 - -
 __Hspace_4 4010 0 ABS 0 - -
 __Heeprom_data 0 0 EEDATA 3 eeprom_data -
+main@a 77 0 COMMON 1 cstackCOMMON dist/default/production\Laboratortio_2.X.production.o
 __Hstrings 0 0 ABS 0 strings -
-___sp 0 0 STACK 2 stack C:\Users\YEFRYS~1\AppData\Local\Temp\sdro.o
-_main F72 0 CODE 0 maintext dist/default/production\Laboratortio_2.X.production.o
+___sp 0 0 STACK 2 stack C:\Users\YEFRYS~1\AppData\Local\Temp\scf8.o
+_main F44 0 CODE 0 maintext dist/default/production\Laboratortio_2.X.production.o
 btemp 7E 0 ABS 0 - dist/default/production\Laboratortio_2.X.production.o
-start 0 0 CODE 0 init C:\Users\YEFRYS~1\AppData\Local\Temp\sdro.o
+start 0 0 CODE 0 init C:\Users\YEFRYS~1\AppData\Local\Temp\scf8.o
 __size_of_main 0 0 ABS 0 - dist/default/production\Laboratortio_2.X.production.o
 __Hpowerup 0 0 CODE 0 powerup -
-__end_of_dec_cont_BI F46 0 CODE 0 text3 dist/default/production\Laboratortio_2.X.production.o
-intlevel0 0 0 ENTRY 0 functab C:\Users\YEFRYS~1\AppData\Local\Temp\sdro.o
-intlevel1 0 0 ENTRY 0 functab C:\Users\YEFRYS~1\AppData\Local\Temp\sdro.o
-intlevel2 0 0 ENTRY 0 functab C:\Users\YEFRYS~1\AppData\Local\Temp\sdro.o
-intlevel3 0 0 ENTRY 0 functab C:\Users\YEFRYS~1\AppData\Local\Temp\sdro.o
-intlevel4 0 0 ENTRY 0 functab C:\Users\YEFRYS~1\AppData\Local\Temp\sdro.o
-intlevel5 0 0 ENTRY 0 functab C:\Users\YEFRYS~1\AppData\Local\Temp\sdro.o
+__size_of_ADC_Init 0 0 ABS 0 - dist/default/production\Laboratortio_2.X.production.o
+__size_of_ADC_Read 0 0 ABS 0 - dist/default/production\Laboratortio_2.X.production.o
+intlevel0 0 0 ENTRY 0 functab C:\Users\YEFRYS~1\AppData\Local\Temp\scf8.o
+intlevel1 0 0 ENTRY 0 functab C:\Users\YEFRYS~1\AppData\Local\Temp\scf8.o
+intlevel2 0 0 ENTRY 0 functab C:\Users\YEFRYS~1\AppData\Local\Temp\scf8.o
+intlevel3 0 0 ENTRY 0 functab C:\Users\YEFRYS~1\AppData\Local\Temp\scf8.o
+intlevel4 0 0 ENTRY 0 functab C:\Users\YEFRYS~1\AppData\Local\Temp\scf8.o
+intlevel5 0 0 ENTRY 0 functab C:\Users\YEFRYS~1\AppData\Local\Temp\scf8.o
 wtemp0 7E 0 ABS 0 - dist/default/production\Laboratortio_2.X.production.o
-__size_of_inc_cont_BI 0 0 ABS 0 - dist/default/production\Laboratortio_2.X.production.o
 __Hfunctab 0 0 ENTRY 0 functab -
 __Hclrtext 0 0 ABS 0 clrtext -
-_ANSELH 189 0 ABS 0 - dist/default/production\Laboratortio_2.X.production.o
+_ADCON0 1F 0 ABS 0 - dist/default/production\Laboratortio_2.X.production.o
+_ADCON1 9F 0 ABS 0 - dist/default/production\Laboratortio_2.X.production.o
+_ADRESH 1E 0 ABS 0 - dist/default/production\Laboratortio_2.X.production.o
+_ADRESL 9E 0 ABS 0 - dist/default/production\Laboratortio_2.X.production.o
 __Lmaintext 0 0 ABS 0 maintext -
-___stackhi 0 0 ABS 0 - C:\Users\YEFRYS~1\AppData\Local\Temp\sdro.o
-___stacklo 0 0 ABS 0 - C:\Users\YEFRYS~1\AppData\Local\Temp\sdro.o
-__size_of_setup 0 0 ABS 0 - dist/default/production\Laboratortio_2.X.production.o
+_ADC_Init F34 0 CODE 0 text2 dist/default/production\Laboratortio_2.X.production.o
+_ADC_Read F90 0 CODE 0 text1 dist/default/production\Laboratortio_2.X.production.o
+__end_of_ADC_Init F44 0 CODE 0 text2 dist/default/production\Laboratortio_2.X.production.o
+__end_of_ADC_Read FF8 0 CODE 0 text1 dist/default/production\Laboratortio_2.X.production.o
+___stackhi 0 0 ABS 0 - C:\Users\YEFRYS~1\AppData\Local\Temp\scf8.o
+___stacklo 0 0 ABS 0 - C:\Users\YEFRYS~1\AppData\Local\Temp\scf8.o
+ADC_Read@channel 74 0 COMMON 1 cstackCOMMON dist/default/production\Laboratortio_2.X.production.o
 start_initialization FF8 0 CODE 0 cinit dist/default/production\Laboratortio_2.X.production.o
-___int_sp 0 0 STACK 2 stack C:\Users\YEFRYS~1\AppData\Local\Temp\sdro.o
-__size_of_dec_cont_BI 0 0 ABS 0 - dist/default/production\Laboratortio_2.X.production.o
+_GO_nDONE F9 0 ABS 0 - dist/default/production\Laboratortio_2.X.production.o
+___int_sp 0 0 STACK 2 stack C:\Users\YEFRYS~1\AppData\Local\Temp\scf8.o
 __Hbank0 0 0 ABS 0 bank0 -
 __Hbank1 0 0 ABS 0 bank1 -
 __Hbank2 0 0 ABS 0 bank2 -
@@ -161,7 +163,6 @@ __Lbank2 0 0 ABS 0 bank2 -
 __Lbank3 0 0 ABS 0 bank3 -
 __Lcinit FF8 0 CODE 0 cinit -
 __Lstack 0 0 STACK 2 stack -
-_PORTAbits 5 0 ABS 0 - dist/default/production\Laboratortio_2.X.production.o
 __Habs1 0 0 ABS 0 abs1 -
 __Hcode 0 0 ABS 0 code -
 __Hinit 0 0 CODE 0 init -
@@ -178,15 +179,15 @@ __Lsfr1 0 0 ABS 0 sfr1 -
 __Lsfr2 0 0 ABS 0 sfr2 -
 __Lsfr3 0 0 ABS 0 sfr3 -
 __Ltext 0 0 ABS 0 text -
-_inc_cont_BI F46 0 CODE 0 text2 dist/default/production\Laboratortio_2.X.production.o
 __HcstackCOMMON 0 0 ABS 0 cstackCOMMON -
 __S0 800 0 ABS 0 - -
-__S1 73 0 ABS 0 - -
+__S1 79 0 ABS 0 - -
 __S2 0 0 ABS 0 - -
 __S3 0 0 ABS 0 - -
+?_ADC_Read 70 0 COMMON 1 cstackCOMMON dist/default/production\Laboratortio_2.X.production.o
 __Lintentry 0 0 CODE 0 intentry -
-reset_vec 0 0 CODE 0 reset_vec C:\Users\YEFRYS~1\AppData\Local\Temp\sdro.o
-__pmaintext F72 0 CODE 0 maintext dist/default/production\Laboratortio_2.X.production.o
+reset_vec 0 0 CODE 0 reset_vec C:\Users\YEFRYS~1\AppData\Local\Temp\scf8.o
+__pmaintext F44 0 CODE 0 maintext dist/default/production\Laboratortio_2.X.production.o
 __Lcommon 0 0 ABS 0 common -
 __Lconfig 0 0 CONFIG 4 config -
 __Lspace_0 0 0 ABS 0 - -
@@ -197,38 +198,26 @@ __Lspace_4 0 0 ABS 0 - -
 __Lend_init 0 0 CODE 0 end_init -
 __LcstackCOMMON 0 0 ABS 0 cstackCOMMON -
 end_of_initialization FF8 0 CODE 0 cinit dist/default/production\Laboratortio_2.X.production.o
-_dec_cont_BI F1E 0 CODE 0 text3 dist/default/production\Laboratortio_2.X.production.o
 __Hintentry 0 0 CODE 0 intentry -
 __Lstrings 0 0 ABS 0 strings -
 __Hreset_vec 0 0 CODE 0 reset_vec -
-__ptext1 FB0 0 CODE 0 text1 dist/default/production\Laboratortio_2.X.production.o
-__ptext2 F46 0 CODE 0 text2 dist/default/production\Laboratortio_2.X.production.o
-__ptext3 F1E 0 CODE 0 text3 dist/default/production\Laboratortio_2.X.production.o
+__ptext1 F90 0 CODE 0 text1 dist/default/production\Laboratortio_2.X.production.o
+__ptext2 F34 0 CODE 0 text2 dist/default/production\Laboratortio_2.X.production.o
 __Lpowerup 0 0 CODE 0 powerup -
 __Leeprom_data 0 0 EEDATA 3 eeprom_data -
 __Lreset_vec 0 0 CODE 0 reset_vec -
 __end_of__initialization FF8 0 CODE 0 cinit dist/default/production\Laboratortio_2.X.production.o
 __Lfunctab 0 0 ENTRY 0 functab -
 __Lclrtext 0 0 ABS 0 clrtext -
-__end_of_inc_cont_BI F72 0 CODE 0 text2 dist/default/production\Laboratortio_2.X.production.o
 __pcstackCOMMON 70 0 COMMON 1 cstackCOMMON dist/default/production\Laboratortio_2.X.production.o
 __Hend_init 6 0 CODE 0 end_init -
-__end_of_main FB0 0 CODE 0 maintext dist/default/production\Laboratortio_2.X.production.o
-_ANSEL 188 0 ABS 0 - dist/default/production\Laboratortio_2.X.production.o
-_PORTA 5 0 ABS 0 - dist/default/production\Laboratortio_2.X.production.o
+__end_of_main F90 0 CODE 0 maintext dist/default/production\Laboratortio_2.X.production.o
 _PORTB 6 0 ABS 0 - dist/default/production\Laboratortio_2.X.production.o
-_PORTC 7 0 ABS 0 - dist/default/production\Laboratortio_2.X.production.o
-_PORTD 8 0 ABS 0 - dist/default/production\Laboratortio_2.X.production.o
-_PORTE 9 0 ABS 0 - dist/default/production\Laboratortio_2.X.production.o
 _TRISA 85 0 ABS 0 - dist/default/production\Laboratortio_2.X.production.o
 _TRISB 86 0 ABS 0 - dist/default/production\Laboratortio_2.X.production.o
 _TRISC 87 0 ABS 0 - dist/default/production\Laboratortio_2.X.production.o
-_TRISD 88 0 ABS 0 - dist/default/production\Laboratortio_2.X.production.o
-_TRISE 89 0 ABS 0 - dist/default/production\Laboratortio_2.X.production.o
-__end_of_setup FF8 0 CODE 0 text1 dist/default/production\Laboratortio_2.X.production.o
 __Hram 0 0 ABS 0 ram -
 __Lram 0 0 ABS 0 ram -
-_setup FB0 0 CODE 0 text1 dist/default/production\Laboratortio_2.X.production.o
 __initialization FF8 0 CODE 0 cinit dist/default/production\Laboratortio_2.X.production.o
 # %SPLITSTAB Section
 # This section enumerates all the psect splits performed by the assembler.
@@ -256,11 +245,10 @@ __initialization FF8 0 CODE 0 cinit dist/default/production\Laboratortio_2.X.pro
 # All other numeric quantities are in decimal.
 %SEGMENTS
 cinit 0 7FC FF8 4 2
-text1 0 7D8 FB0 24 2
-text2 0 7A3 F46 16 2
-text3 0 78F F1E 14 2
-maintext 0 7B9 F72 1F 2
-cstackCOMMON 1 70 70 3 1
+text1 0 7C8 F90 34 2
+text2 0 79A F34 8 2
+maintext 0 7A2 F44 26 2
+cstackCOMMON 1 70 70 9 1
 reset_vec 0 0 0 3 2
 # %NOTES Section
 # This section contains data of all the note-psects.  The beginning of the section
