@@ -34,7 +34,7 @@
 #define D7  RD7
 
 #include <xc.h>
-#include    "LCD.h"
+#include "LCD.h"
 
 //
 //----------------------------------------------------------------------------//
@@ -48,15 +48,15 @@ char s[20];
 
 unsigned int ADC_Read(unsigned char channel)
 {
-  if(channel > 7)              //Channel range is 0 ~ 7
+  if(channel > 7)              //el rango del canal es de 0 a 7
     return 0;
 
-  ADCON0 &= 0xC5;              //Clearing channel selection bits
-  ADCON0 |= channel<<3;        //Setting channel selection bits
-  __delay_ms(2);               //Acquisition time to charge hold capacitor
-  GO_nDONE = 1;                //Initializes A/D conversion
-  while(GO_nDONE);             //Waiting for conversion to complete
-  return (ADRESH<<8); //Return result
+  ADCON0 &= 0xC5;              //se limpia el canal
+  ADCON0 |= channel<<3;        //se seleciona el canal
+  __delay_ms(2);              
+  GO_nDONE = 1;                //se inicia la convercion ADC
+  while(GO_nDONE);             //se espera a que se haga la conversion
+  return (ADRESH<<8);           //se regresa para completar el conteo de 8 bits
 }
 //-----------------------------------------------------------------------------
 // Progra principal 
@@ -67,17 +67,21 @@ void main()
   unsigned int a;
   unsigned int volt;
   unsigned int voltaje;
+  
+  // se llaman a alas funciones ya definidas
   setup ();
-  ADC_Init();                   //Initialize ADC
+  ADC_Init();                   
   Lcd_Init();
 
   while(1){
       
-    a = ADC_Read(0);            //Read Analog Channel 0
-                   //Write Lower bits to PORTB
-    PORTB = a>>8;               //Write Higher 2 bits to PORTC
+  // se inicia llamando a la lectura del ADC
+    a = ADC_Read(0);            
+                   
+    PORTB = a>>8;   // el resultado del ADC se muestra en el Puerto B           
     __delay_ms(50); 
    
+  // se comineza la con le llamado de las funciones del LCD 
     Lcd_Clear();
     Lcd_Set_Cursor(1,1);
     Lcd_Write_String("Laboratorio #3");
@@ -91,6 +95,7 @@ void main()
     Lcd_Write_String("Digital 2");
     __delay_ms(100);
     
+    //calculo par mostrar el valor en decimales
     volt = ADC_Read(0);
     voltaje = (volt*0.5)/1023;
     
@@ -100,7 +105,8 @@ void main()
     __delay_ms(100);
     Lcd_Clear();
     Lcd_Set_Cursor(2,1);
-    Lcd_Write_String("Voltaje",voltaje);
+    Lcd_Write_String("Voltaje");
+
     
     for(a=0;a<15;a++)
     {
@@ -129,19 +135,18 @@ void main()
 //-----------------------------------------------------------------------------
 
 void setup(void){
-  TRISA = 0xFF;                 //Analog pins as Input
-  TRISB = 0x00;                 //Port B as Output
+  TRISA = 0xFF;                 //se configura para entrada analogoa
+  TRISB = 0x00;                 //Puerto B , salida del ADC
   
   TRISC = 0;        
   PORTC = 0;      
-    
-// Puerto del jugador 2
-   TRISD= 0x00;   
-    
+
+   TRISD= 0x00;                 //  Puerto Para la LCD
+
 }
 
 void ADC_Init(void)
 {
-  ADCON0 = 0x81;               //Turn ON ADC and Clock Selection
-  ADCON1 = 0x00;               //All pins as Analog Input and setting Reference Voltages
+  ADCON0 = 0x81;               //Se configura el A,como entrada analogoa
+  ADCON1 = 0x00;               //Pines como entrada analogica y configura el voltaje de regerencia
 }

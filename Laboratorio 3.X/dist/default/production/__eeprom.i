@@ -1,4 +1,4 @@
-# 1 "Laboratorio 3.c"
+# 1 "C:\\Program Files\\Microchip\\xc8\\v2.20\\pic\\sources\\c90\\pic\\__eeprom.c"
 # 1 "<built-in>" 1
 # 1 "<built-in>" 3
 # 288 "<built-in>" 3
@@ -6,23 +6,7 @@
 # 1 "<built-in>" 2
 # 1 "C:/Users/Yefry Sajquiy/.mchp_packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\\pic\\include\\language_support.h" 1 3
 # 2 "<built-in>" 2
-# 1 "Laboratorio 3.c" 2
-# 10 "Laboratorio 3.c"
-#pragma config FOSC = INTRC_NOCLKOUT
-#pragma config WDTE = OFF
-#pragma config PWRTE = OFF
-#pragma config MCLRE = OFF
-#pragma config CP = OFF
-#pragma config CPD = OFF
-#pragma config BOREN = OFF
-#pragma config IESO = OFF
-#pragma config FCMEN = OFF
-#pragma config LVP = OFF
-
-
-#pragma config BOR4V = BOR40V
-#pragma config WRT = OFF
-# 36 "Laboratorio 3.c"
+# 1 "C:\\Program Files\\Microchip\\xc8\\v2.20\\pic\\sources\\c90\\pic\\__eeprom.c" 2
 # 1 "C:/Users/Yefry Sajquiy/.mchp_packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\\pic\\include\\xc.h" 1 3
 # 18 "C:/Users/Yefry Sajquiy/.mchp_packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\\pic\\include\\xc.h" 3
 extern const char __xc8_OPTIM_SPEED;
@@ -2503,141 +2487,176 @@ extern __bank0 unsigned char __resetbits;
 extern __bank0 __bit __powerdown;
 extern __bank0 __bit __timeout;
 # 28 "C:/Users/Yefry Sajquiy/.mchp_packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\\pic\\include\\xc.h" 2 3
-# 36 "Laboratorio 3.c" 2
-
-# 1 "./LCD.h" 1
-# 46 "./LCD.h"
-void Lcd_Port(char a);
-
-void Lcd_Cmd(char a);
-
-void Lcd_Clear(void);
-
-void Lcd_Set_Cursor(char a, char b);
-
-void Lcd_Init(void);
-
-void Lcd_Write_Char(char a);
-
-void Lcd_Write_String(char *a);
-
-void Lcd_Shift_Right(void);
-
-void Lcd_Shift_Left(void);
-# 37 "Laboratorio 3.c" 2
+# 1 "C:\\Program Files\\Microchip\\xc8\\v2.20\\pic\\sources\\c90\\pic\\__eeprom.c" 2
 
 
 
 
-
-
-
-void setup(void);
-void ADC_Init(void);
-char s[20];
-
-
-unsigned int ADC_Read(unsigned char channel)
+void
+__eecpymem(volatile unsigned char *to, __eeprom unsigned char * from, unsigned char size)
 {
-  if(channel > 7)
-    return 0;
+ volatile unsigned char *cp = to;
 
-  ADCON0 &= 0xC5;
-  ADCON0 |= channel<<3;
-  _delay((unsigned long)((2)*(8000000/4000.0)));
-  GO_nDONE = 1;
-  while(GO_nDONE);
-  return (ADRESH<<8);
+ while (EECON1bits.WR) continue;
+ EEADR = (unsigned char)from;
+ while(size--) {
+  while (EECON1bits.WR) continue;
+
+  EECON1 &= 0x7F;
+
+  EECON1bits.RD = 1;
+  *cp++ = EEDATA;
+  ++EEADR;
+ }
+# 36 "C:\\Program Files\\Microchip\\xc8\\v2.20\\pic\\sources\\c90\\pic\\__eeprom.c"
 }
 
-
-
-
-void main()
+void
+__memcpyee(__eeprom unsigned char * to, const unsigned char *from, unsigned char size)
 {
-  unsigned int a;
-  unsigned int volt;
-  unsigned int voltaje;
+ const unsigned char *ptr =from;
 
+ while (EECON1bits.WR) continue;
+ EEADR = (unsigned char)to - 1U;
 
-  setup ();
-  ADC_Init();
-  Lcd_Init();
+ EECON1 &= 0x7F;
 
-  while(1){
-
-
-    a = ADC_Read(0);
-
-    PORTB = a>>8;
-    _delay((unsigned long)((50)*(8000000/4000.0)));
-
-
-    Lcd_Clear();
-    Lcd_Set_Cursor(1,1);
-    Lcd_Write_String("Laboratorio #3");
-    Lcd_Set_Cursor(2,1);
-    Lcd_Write_String("Yefry Sajquiy");
-    _delay((unsigned long)((100)*(8000000/4000.0)));
-    Lcd_Clear();
-    Lcd_Set_Cursor(1,1);
-    Lcd_Write_String("18748");
-    Lcd_Set_Cursor(2,1);
-    Lcd_Write_String("Digital 2");
-    _delay((unsigned long)((100)*(8000000/4000.0)));
-
-
-    volt = ADC_Read(0);
-    voltaje = (volt*0.5)/1023;
-
-    Lcd_Clear();
-    Lcd_Set_Cursor(1,1);
-    Lcd_Write_String("Voltaje");
-    _delay((unsigned long)((100)*(8000000/4000.0)));
-    Lcd_Clear();
-    Lcd_Set_Cursor(2,1);
-    Lcd_Write_String("Voltaje");
-
-
-    for(a=0;a<15;a++)
-    {
-        _delay((unsigned long)((300)*(8000000/4000.0)));
-        Lcd_Shift_Left();
-    }
-
-    for(a=0;a<15;a++)
-    {
-        _delay((unsigned long)((300)*(8000000/4000.0)));
-        Lcd_Shift_Right();
-    }
-
-    Lcd_Clear();
-    Lcd_Set_Cursor(2,1);
-    Lcd_Write_Char('e');
-    Lcd_Write_Char('S');
-    _delay((unsigned long)((200)*(8000000/4000.0)));
+ while(size--) {
+  while (EECON1bits.WR) {
+   continue;
   }
-  return;
-
+  EEDATA = *ptr++;
+  ++EEADR;
+  STATUSbits.CARRY = 0;
+  if (INTCONbits.GIE) {
+   STATUSbits.CARRY = 1;
+  }
+  INTCONbits.GIE = 0;
+  EECON1bits.WREN = 1;
+  EECON2 = 0x55;
+  EECON2 = 0xAA;
+  EECON1bits.WR = 1;
+  EECON1bits.WREN = 0;
+  if (STATUSbits.CARRY) {
+   INTCONbits.GIE = 1;
+  }
+ }
+# 101 "C:\\Program Files\\Microchip\\xc8\\v2.20\\pic\\sources\\c90\\pic\\__eeprom.c"
 }
 
-
-
-
-
-void setup(void){
-  TRISA = 0xFF;
-  TRISB = 0x00;
-
-  TRISC = 0;
-  PORTC = 0;
-
-   TRISD= 0x00;
-
-}
-
-void ADC_Init(void)
+unsigned char
+__eetoc(__eeprom void *addr)
 {
-  ADCON0 = 0x81;
-  ADCON1 = 0x00;
+ unsigned char data;
+ __eecpymem((unsigned char *) &data,addr,1);
+ return data;
+}
+
+unsigned int
+__eetoi(__eeprom void *addr)
+{
+ unsigned int data;
+ __eecpymem((unsigned char *) &data,addr,2);
+ return data;
+}
+
+#pragma warning push
+#pragma warning disable 2040
+__uint24
+__eetom(__eeprom void *addr)
+{
+ __uint24 data;
+ __eecpymem((unsigned char *) &data,addr,3);
+ return data;
+}
+#pragma warning pop
+
+unsigned long
+__eetol(__eeprom void *addr)
+{
+ unsigned long data;
+ __eecpymem((unsigned char *) &data,addr,4);
+ return data;
+}
+
+#pragma warning push
+#pragma warning disable 1516
+unsigned long long
+__eetoo(__eeprom void *addr)
+{
+ unsigned long long data;
+ __eecpymem((unsigned char *) &data,addr,8);
+ return data;
+}
+#pragma warning pop
+
+unsigned char
+__ctoee(__eeprom void *addr, unsigned char data)
+{
+ __memcpyee(addr,(unsigned char *) &data,1);
+ return data;
+}
+
+unsigned int
+__itoee(__eeprom void *addr, unsigned int data)
+{
+ __memcpyee(addr,(unsigned char *) &data,2);
+ return data;
+}
+
+#pragma warning push
+#pragma warning disable 2040
+__uint24
+__mtoee(__eeprom void *addr, __uint24 data)
+{
+ __memcpyee(addr,(unsigned char *) &data,3);
+ return data;
+}
+#pragma warning pop
+
+unsigned long
+__ltoee(__eeprom void *addr, unsigned long data)
+{
+ __memcpyee(addr,(unsigned char *) &data,4);
+ return data;
+}
+
+#pragma warning push
+#pragma warning disable 1516
+unsigned long long
+__otoee(__eeprom void *addr, unsigned long long data)
+{
+ __memcpyee(addr,(unsigned char *) &data,8);
+ return data;
+}
+#pragma warning pop
+
+float
+__eetoft(__eeprom void *addr)
+{
+ float data;
+ __eecpymem((unsigned char *) &data,addr,3);
+ return data;
+}
+
+double
+__eetofl(__eeprom void *addr)
+{
+ double data;
+ __eecpymem((unsigned char *) &data,addr,4);
+ return data;
+}
+
+float
+__fttoee(__eeprom void *addr, float data)
+{
+ __memcpyee(addr,(unsigned char *) &data,3);
+ return data;
+}
+
+double
+__fltoee(__eeprom void *addr, double data)
+{
+ __memcpyee(addr,(unsigned char *) &data,4);
+ return data;
 }
