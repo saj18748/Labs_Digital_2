@@ -11,7 +11,7 @@
 # All addresses and the length are given in unqualified hexadecimal
 # in delta units.  Any other numeric values are decimal.
 %PSECTS
-$C:\Users\YEFRYS~1\AppData\Local\Temp\sfv0.o
+$C:\Users\YEFRYS~1\AppData\Local\Temp\sbgk.o
 end_init CODE 0 0 0 3 2
 config CONFIG 4 2007 2007 2 2
 $dist/default/production\Laboratorio_3.X.production.o
@@ -90,16 +90,16 @@ STRING 1000-1FFF 2
 # All other numeric values are in decimal.
 %LINETAB
 $dist/default/production\Laboratorio_3.X.production.o
-7F3 cinit CODE >723:C:\Users\YEFRYS~1\AppData\Local\Temp\sfv0.s
-7F3 cinit CODE >726:C:\Users\YEFRYS~1\AppData\Local\Temp\sfv0.s
-7F3 cinit CODE >752:C:\Users\YEFRYS~1\AppData\Local\Temp\sfv0.s
-7F4 cinit CODE >753:C:\Users\YEFRYS~1\AppData\Local\Temp\sfv0.s
-7F5 cinit CODE >754:C:\Users\YEFRYS~1\AppData\Local\Temp\sfv0.s
-7F6 cinit CODE >755:C:\Users\YEFRYS~1\AppData\Local\Temp\sfv0.s
-7F7 cinit CODE >756:C:\Users\YEFRYS~1\AppData\Local\Temp\sfv0.s
-7FC cinit CODE >762:C:\Users\YEFRYS~1\AppData\Local\Temp\sfv0.s
-7FC cinit CODE >764:C:\Users\YEFRYS~1\AppData\Local\Temp\sfv0.s
-7FD cinit CODE >765:C:\Users\YEFRYS~1\AppData\Local\Temp\sfv0.s
+7F3 cinit CODE >723:C:\Users\YEFRYS~1\AppData\Local\Temp\sbgk.s
+7F3 cinit CODE >726:C:\Users\YEFRYS~1\AppData\Local\Temp\sbgk.s
+7F3 cinit CODE >752:C:\Users\YEFRYS~1\AppData\Local\Temp\sbgk.s
+7F4 cinit CODE >753:C:\Users\YEFRYS~1\AppData\Local\Temp\sbgk.s
+7F5 cinit CODE >754:C:\Users\YEFRYS~1\AppData\Local\Temp\sbgk.s
+7F6 cinit CODE >755:C:\Users\YEFRYS~1\AppData\Local\Temp\sbgk.s
+7F7 cinit CODE >756:C:\Users\YEFRYS~1\AppData\Local\Temp\sbgk.s
+7FC cinit CODE >762:C:\Users\YEFRYS~1\AppData\Local\Temp\sbgk.s
+7FC cinit CODE >764:C:\Users\YEFRYS~1\AppData\Local\Temp\sbgk.s
+7FD cinit CODE >765:C:\Users\YEFRYS~1\AppData\Local\Temp\sbgk.s
 E02 text17 CODE >148:D:\UVG\Cuarto año\Primer Semestre\Electronica Digital 2\Labs MPLAB\Digital_2\Laboratorio 3.X\Laboratorio 3.c
 E02 text17 CODE >150:D:\UVG\Cuarto año\Primer Semestre\Electronica Digital 2\Labs MPLAB\Digital_2\Laboratorio 3.X\Laboratorio 3.c
 E06 text17 CODE >151:D:\UVG\Cuarto año\Primer Semestre\Electronica Digital 2\Labs MPLAB\Digital_2\Laboratorio 3.X\Laboratorio 3.c
@@ -474,16 +474,16 @@ F text1 CODE >144:D:\UVG\Cuarto año\Primer Semestre\Electronica Digital 2\Labs M
 296 maintext CODE >125:D:\UVG\Cuarto año\Primer Semestre\Electronica Digital 2\Labs MPLAB\Digital_2\Laboratorio 3.X\Laboratorio 3.c
 29C maintext CODE >126:D:\UVG\Cuarto año\Primer Semestre\Electronica Digital 2\Labs MPLAB\Digital_2\Laboratorio 3.X\Laboratorio 3.c
 2A2 maintext CODE >127:D:\UVG\Cuarto año\Primer Semestre\Electronica Digital 2\Labs MPLAB\Digital_2\Laboratorio 3.X\Laboratorio 3.c
-E0A clrtext CODE >739:C:\Users\YEFRYS~1\AppData\Local\Temp\sfv0.s
-E0A clrtext CODE >740:C:\Users\YEFRYS~1\AppData\Local\Temp\sfv0.s
-E0B clrtext CODE >741:C:\Users\YEFRYS~1\AppData\Local\Temp\sfv0.s
-E0B clrtext CODE >742:C:\Users\YEFRYS~1\AppData\Local\Temp\sfv0.s
-E0C clrtext CODE >743:C:\Users\YEFRYS~1\AppData\Local\Temp\sfv0.s
-E0D clrtext CODE >744:C:\Users\YEFRYS~1\AppData\Local\Temp\sfv0.s
-E0E clrtext CODE >745:C:\Users\YEFRYS~1\AppData\Local\Temp\sfv0.s
-E0F clrtext CODE >746:C:\Users\YEFRYS~1\AppData\Local\Temp\sfv0.s
-E10 clrtext CODE >747:C:\Users\YEFRYS~1\AppData\Local\Temp\sfv0.s
-E11 clrtext CODE >748:C:\Users\YEFRYS~1\AppData\Local\Temp\sfv0.s
+E0A clrtext CODE >739:C:\Users\YEFRYS~1\AppData\Local\Temp\sbgk.s
+E0A clrtext CODE >740:C:\Users\YEFRYS~1\AppData\Local\Temp\sbgk.s
+E0B clrtext CODE >741:C:\Users\YEFRYS~1\AppData\Local\Temp\sbgk.s
+E0B clrtext CODE >742:C:\Users\YEFRYS~1\AppData\Local\Temp\sbgk.s
+E0C clrtext CODE >743:C:\Users\YEFRYS~1\AppData\Local\Temp\sbgk.s
+E0D clrtext CODE >744:C:\Users\YEFRYS~1\AppData\Local\Temp\sbgk.s
+E0E clrtext CODE >745:C:\Users\YEFRYS~1\AppData\Local\Temp\sbgk.s
+E0F clrtext CODE >746:C:\Users\YEFRYS~1\AppData\Local\Temp\sbgk.s
+E10 clrtext CODE >747:C:\Users\YEFRYS~1\AppData\Local\Temp\sbgk.s
+E11 clrtext CODE >748:C:\Users\YEFRYS~1\AppData\Local\Temp\sbgk.s
 # %SYMTAB Section
 # An enumeration of all symbols in the program.
 # The beginning of the section is indicated by %SYMTAB.
@@ -509,11 +509,11 @@ __end_of_Lcd_Init E0 0 CODE 0 text12 dist/default/production\Laboratorio_3.X.pro
 __end_of_Lcd_Port 1CEA 0 CODE 0 text15 dist/default/production\Laboratorio_3.X.production.o
 main@a 65 0 BANK0 1 cstackBANK0 dist/default/production\Laboratorio_3.X.production.o
 __Hstrings 0 0 ABS 0 strings -
-___sp 0 0 STACK 2 stack C:\Users\YEFRYS~1\AppData\Local\Temp\sfv0.o
+___sp 0 0 STACK 2 stack C:\Users\YEFRYS~1\AppData\Local\Temp\sbgk.o
 _main 254 0 CODE 0 maintext dist/default/production\Laboratorio_3.X.production.o
 btemp 7E 0 ABS 0 - dist/default/production\Laboratorio_3.X.production.o
 _Lcd_Write_Char 1DF2 0 CODE 0 text8 dist/default/production\Laboratorio_3.X.production.o
-start 0 0 CODE 0 init C:\Users\YEFRYS~1\AppData\Local\Temp\sfv0.o
+start 0 0 CODE 0 init C:\Users\YEFRYS~1\AppData\Local\Temp\sbgk.o
 ___flmul@aexp 32 0 BANK0 1 cstackBANK0 dist/default/production\Laboratorio_3.X.production.o
 ___flmul@bexp 33 0 BANK0 1 cstackBANK0 dist/default/production\Laboratorio_3.X.production.o
 ___flmul@prod 34 0 BANK0 1 cstackBANK0 dist/default/production\Laboratorio_3.X.production.o
@@ -528,12 +528,12 @@ Lcd_Write_Char@temp 72 0 COMMON 1 cstackCOMMON dist/default/production\Laborator
 __Hpowerup 0 0 CODE 0 powerup -
 __size_of_ADC_Init 0 0 ABS 0 - dist/default/production\Laboratorio_3.X.production.o
 __size_of_ADC_Read 0 0 ABS 0 - dist/default/production\Laboratorio_3.X.production.o
-intlevel0 0 0 ENTRY 0 functab C:\Users\YEFRYS~1\AppData\Local\Temp\sfv0.o
-intlevel1 0 0 ENTRY 0 functab C:\Users\YEFRYS~1\AppData\Local\Temp\sfv0.o
-intlevel2 0 0 ENTRY 0 functab C:\Users\YEFRYS~1\AppData\Local\Temp\sfv0.o
-intlevel3 0 0 ENTRY 0 functab C:\Users\YEFRYS~1\AppData\Local\Temp\sfv0.o
-intlevel4 0 0 ENTRY 0 functab C:\Users\YEFRYS~1\AppData\Local\Temp\sfv0.o
-intlevel5 0 0 ENTRY 0 functab C:\Users\YEFRYS~1\AppData\Local\Temp\sfv0.o
+intlevel0 0 0 ENTRY 0 functab C:\Users\YEFRYS~1\AppData\Local\Temp\sbgk.o
+intlevel1 0 0 ENTRY 0 functab C:\Users\YEFRYS~1\AppData\Local\Temp\sbgk.o
+intlevel2 0 0 ENTRY 0 functab C:\Users\YEFRYS~1\AppData\Local\Temp\sbgk.o
+intlevel3 0 0 ENTRY 0 functab C:\Users\YEFRYS~1\AppData\Local\Temp\sbgk.o
+intlevel4 0 0 ENTRY 0 functab C:\Users\YEFRYS~1\AppData\Local\Temp\sbgk.o
+intlevel5 0 0 ENTRY 0 functab C:\Users\YEFRYS~1\AppData\Local\Temp\sbgk.o
 wtemp0 7E 0 ABS 0 - dist/default/production\Laboratorio_3.X.production.o
 __Hfunctab 0 0 ENTRY 0 functab -
 __size_of_Lcd_Set_Cursor 0 0 ABS 0 - dist/default/production\Laboratorio_3.X.production.o
@@ -558,8 +558,8 @@ __Umul8_16@multiplicand 70 0 COMMON 1 cstackCOMMON dist/default/production\Labor
 __end_of_ADC_Init 1C14 0 CODE 0 text17 dist/default/production\Laboratorio_3.X.production.o
 __end_of_Lcd_Shift_Right 1C72 0 CODE 0 text9 dist/default/production\Laboratorio_3.X.production.o
 __end_of_ADC_Read 1DF2 0 CODE 0 text16 dist/default/production\Laboratorio_3.X.production.o
-___stackhi 0 0 ABS 0 - C:\Users\YEFRYS~1\AppData\Local\Temp\sfv0.o
-___stacklo 0 0 ABS 0 - C:\Users\YEFRYS~1\AppData\Local\Temp\sfv0.o
+___stackhi 0 0 ABS 0 - C:\Users\YEFRYS~1\AppData\Local\Temp\sbgk.o
+___stacklo 0 0 ABS 0 - C:\Users\YEFRYS~1\AppData\Local\Temp\sbgk.o
 ___fldiv@a 3A 0 BANK0 1 cstackBANK0 dist/default/production\Laboratorio_3.X.production.o
 ___fldiv@b 3E 0 BANK0 1 cstackBANK0 dist/default/production\Laboratorio_3.X.production.o
 __size_of_setup 0 0 ABS 0 - dist/default/production\Laboratorio_3.X.production.o
@@ -575,7 +575,7 @@ __pcstackBANK0 20 0 BANK0 1 cstackBANK0 dist/default/production\Laboratorio_3.X.
 _Lcd_Shift_Left 1C3E 0 CODE 0 text10 dist/default/production\Laboratorio_3.X.production.o
 _Lcd_Shift_Right 1C58 0 CODE 0 text9 dist/default/production\Laboratorio_3.X.production.o
 __size_of_Lcd_Cmd 0 0 ABS 0 - dist/default/production\Laboratorio_3.X.production.o
-___int_sp 0 0 STACK 2 stack C:\Users\YEFRYS~1\AppData\Local\Temp\sfv0.o
+___int_sp 0 0 STACK 2 stack C:\Users\YEFRYS~1\AppData\Local\Temp\sbgk.o
 __Hbank0 0 0 ABS 0 bank0 -
 __Hbank1 0 0 ABS 0 bank1 -
 __Hbank2 0 0 ABS 0 bank2 -
@@ -635,7 +635,7 @@ __size_of_Lcd_Write_String 0 0 ABS 0 - dist/default/production\Laboratorio_3.X.p
 __stringtab 1000 0 STRING 0 strings dist/default/production\Laboratorio_3.X.production.o
 Lcd_Write_String@a 77 0 COMMON 1 cstackCOMMON dist/default/production\Laboratorio_3.X.production.o
 Lcd_Write_String@i 75 0 COMMON 1 cstackCOMMON dist/default/production\Laboratorio_3.X.production.o
-reset_vec 0 0 CODE 0 reset_vec C:\Users\YEFRYS~1\AppData\Local\Temp\sfv0.o
+reset_vec 0 0 CODE 0 reset_vec C:\Users\YEFRYS~1\AppData\Local\Temp\sbgk.o
 __size_of_Lcd_Clear 0 0 ABS 0 - dist/default/production\Laboratorio_3.X.production.o
 __end_of___xxtofl 254 0 CODE 0 text2 dist/default/production\Laboratorio_3.X.production.o
 __size_of_Lcd_Shift_Right 0 0 ABS 0 - dist/default/production\Laboratorio_3.X.production.o
