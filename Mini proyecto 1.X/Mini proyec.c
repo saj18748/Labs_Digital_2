@@ -24,7 +24,7 @@
 #pragma config BOR4V = BOR40V   // Brown-out Reset Selection bit (Brown-out Reset set to 4.0V)
 #pragma config WRT = OFF        // Flash Program Memory Self Write Enable bits (Write protection off)
 
-#define _XTAL_FREQ  8000000
+#define _XTAL_FREQ  800000043
 // #pragma config statements should precede project file includes.
 // Use project enums instead of #define for ON and OFF.
 
