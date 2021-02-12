@@ -106,13 +106,13 @@ cinit FF8 FFF CODE FF8 0
 maintext FF2 FF7 CODE FF2 0
 %locals
 dist/default/production\Mini_proyecto_1.X.production.o
-C:\Users\YEFRYS~1\AppData\Local\Temp\setg.s
+C:\Users\YEFRYS~1\AppData\Local\Temp\sd7c.s
 443 7FC 0 CODE 0
 446 7FC 0 CODE 0
 452 7FC 0 CODE 0
 454 7FC 0 CODE 0
 455 7FD 0 CODE 0
 Mini proyec.c
-44 7F9 0 CODE 0
 46 7F9 0 CODE 0
-47 7F9 0 CODE 0
+48 7F9 0 CODE 0
+49 7F9 0 CODE 0

@@ -1,7 +1,7 @@
 
 
 Microchip MPLAB XC8 Assembler V2.20 build 20200408173844 
-                                                                                               Fri Feb 12 10:17:34 2021
+                                                                                               Fri Feb 12 10:27:13 2021
 
 Microchip MPLAB XC8 C Compiler v2.20 (Free license) build 20200408173844 Og1 
      1                           	processor	16F887
@@ -249,7 +249,7 @@ Microchip MPLAB XC8 C Compiler v2.20 (Free license) build 20200408173844 Og1
    235 ;;
    236 ;; *************** function _main *****************
    237 ;; Defined at:
-   238 ;;		line 44 in file "Mini proyec.c"
+   238 ;;		line 46 in file "Mini proyec.c"
    239 ;; Parameters:    Size  Location     Type
    240 ;;		None
    241 ;; Auto vars:     Size  Location     Type
@@ -278,12 +278,12 @@ Microchip MPLAB XC8 C Compiler v2.20 (Free license) build 20200408173844 Og1
    264                           
    265                           ;psect for function _main
    266  07F9                     _main:
-   267  07F9                     l620:	
+   267  07F9                     l626:	
    268                           ;incstack = 0
    269                           ; Regs used in _main: []
    270                           
    271  07F9                     l25:	
-   272                           ;Mini proyec.c: 46:     return;
+   272                           ;Mini proyec.c: 48:     return;
    273                           
    274  07F9  120A  118A  2800   	ljmp	start
    275  07FC                     __end_of_main:
@@ -410,9 +410,9 @@ DATA                 0      0       0      12        0.0%
 
 
 Microchip Technology PIC Macro Assembler V2.20 build 20200408173844 
-Symbol Table                                                                                   Fri Feb 12 10:17:34 2021
+Symbol Table                                                                                   Fri Feb 12 10:27:13 2021
 
-                     l25 07F9                      l620 07F9                     _main 07F9  
+                     l25 07F9                      l626 07F9                     _main 07F9  
                    btemp 007E                     start 0000                    ?_main 0000  
                   _ANSEL 0188                    _PORTB 0006                    _PORTC 0007  
                   _PORTD 0008                    _PORTE 0009                    _TRISB 0086  

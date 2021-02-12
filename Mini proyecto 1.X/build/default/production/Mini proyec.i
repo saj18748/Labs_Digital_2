@@ -7,7 +7,7 @@
 # 1 "C:/Users/Yefry Sajquiy/.mchp_packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\\pic\\include\\language_support.h" 1 3
 # 2 "<built-in>" 2
 # 1 "Mini proyec.c" 2
-# 10 "Mini proyec.c"
+# 12 "Mini proyec.c"
 #pragma config FOSC = INTRC_NOCLKOUT
 #pragma config WDTE = OFF
 #pragma config PWRTE = OFF
@@ -2508,7 +2508,7 @@ extern __bank0 unsigned char __resetbits;
 extern __bank0 __bit __powerdown;
 extern __bank0 __bit __timeout;
 # 28 "C:/Users/Yefry Sajquiy/.mchp_packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\\pic\\include\\xc.h" 2 3
-# 29 "Mini proyec.c" 2
+# 31 "Mini proyec.c" 2
 
 
 
@@ -2528,7 +2528,7 @@ void main(void) {
 
     return;
 }
-# 57 "Mini proyec.c"
+# 59 "Mini proyec.c"
 void setup(void){
 
     ANSEL = 0;
@@ -2548,4 +2548,14 @@ void setup(void){
 
     TRISB = 0B00000111;
     PORTB = 0;
+}
+
+
+
+void inc_cont(void){
+
+}
+
+void dec_cont(void){
+
 }

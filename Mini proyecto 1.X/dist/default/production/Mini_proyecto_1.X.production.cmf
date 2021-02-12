@@ -11,7 +11,7 @@
 # All addresses and the length are given in unqualified hexadecimal
 # in delta units.  Any other numeric values are decimal.
 %PSECTS
-$C:\Users\YEFRYS~1\AppData\Local\Temp\setg.o
+$C:\Users\YEFRYS~1\AppData\Local\Temp\sd7c.o
 end_init CODE 0 0 0 3 2
 config CONFIG 4 2007 2007 2 2
 $dist/default/production\Mini_proyecto_1.X.production.o
@@ -64,14 +64,14 @@ STRING 800-1FFF 2
 # All other numeric values are in decimal.
 %LINETAB
 $dist/default/production\Mini_proyecto_1.X.production.o
-7FC cinit CODE >443:C:\Users\YEFRYS~1\AppData\Local\Temp\setg.s
-7FC cinit CODE >446:C:\Users\YEFRYS~1\AppData\Local\Temp\setg.s
-7FC cinit CODE >452:C:\Users\YEFRYS~1\AppData\Local\Temp\setg.s
-7FC cinit CODE >454:C:\Users\YEFRYS~1\AppData\Local\Temp\setg.s
-7FD cinit CODE >455:C:\Users\YEFRYS~1\AppData\Local\Temp\setg.s
-7F9 maintext CODE >44:D:\UVG\Cuarto año\Primer Semestre\Electronica Digital 2\Labs MPLAB\Digital_2\Mini proyecto 1.X\Mini proyec.c
+7FC cinit CODE >443:C:\Users\YEFRYS~1\AppData\Local\Temp\sd7c.s
+7FC cinit CODE >446:C:\Users\YEFRYS~1\AppData\Local\Temp\sd7c.s
+7FC cinit CODE >452:C:\Users\YEFRYS~1\AppData\Local\Temp\sd7c.s
+7FC cinit CODE >454:C:\Users\YEFRYS~1\AppData\Local\Temp\sd7c.s
+7FD cinit CODE >455:C:\Users\YEFRYS~1\AppData\Local\Temp\sd7c.s
 7F9 maintext CODE >46:D:\UVG\Cuarto año\Primer Semestre\Electronica Digital 2\Labs MPLAB\Digital_2\Mini proyecto 1.X\Mini proyec.c
-7F9 maintext CODE >47:D:\UVG\Cuarto año\Primer Semestre\Electronica Digital 2\Labs MPLAB\Digital_2\Mini proyecto 1.X\Mini proyec.c
+7F9 maintext CODE >48:D:\UVG\Cuarto año\Primer Semestre\Electronica Digital 2\Labs MPLAB\Digital_2\Mini proyecto 1.X\Mini proyec.c
+7F9 maintext CODE >49:D:\UVG\Cuarto año\Primer Semestre\Electronica Digital 2\Labs MPLAB\Digital_2\Mini proyecto 1.X\Mini proyec.c
 # %SYMTAB Section
 # An enumeration of all symbols in the program.
 # The beginning of the section is indicated by %SYMTAB.
@@ -92,27 +92,27 @@ __Hspace_3 0 0 ABS 0 - -
 __Hspace_4 4010 0 ABS 0 - -
 __Heeprom_data 0 0 EEDATA 3 eeprom_data -
 __Hstrings 0 0 ABS 0 strings -
-___sp 0 0 STACK 2 stack C:\Users\YEFRYS~1\AppData\Local\Temp\setg.o
+___sp 0 0 STACK 2 stack C:\Users\YEFRYS~1\AppData\Local\Temp\sd7c.o
 _main FF2 0 CODE 0 maintext dist/default/production\Mini_proyecto_1.X.production.o
 btemp 7E 0 ABS 0 - dist/default/production\Mini_proyecto_1.X.production.o
-start 0 0 CODE 0 init C:\Users\YEFRYS~1\AppData\Local\Temp\setg.o
+start 0 0 CODE 0 init C:\Users\YEFRYS~1\AppData\Local\Temp\sd7c.o
 __size_of_main 0 0 ABS 0 - dist/default/production\Mini_proyecto_1.X.production.o
 __Hpowerup 0 0 CODE 0 powerup -
-intlevel0 0 0 ENTRY 0 functab C:\Users\YEFRYS~1\AppData\Local\Temp\setg.o
-intlevel1 0 0 ENTRY 0 functab C:\Users\YEFRYS~1\AppData\Local\Temp\setg.o
-intlevel2 0 0 ENTRY 0 functab C:\Users\YEFRYS~1\AppData\Local\Temp\setg.o
-intlevel3 0 0 ENTRY 0 functab C:\Users\YEFRYS~1\AppData\Local\Temp\setg.o
-intlevel4 0 0 ENTRY 0 functab C:\Users\YEFRYS~1\AppData\Local\Temp\setg.o
-intlevel5 0 0 ENTRY 0 functab C:\Users\YEFRYS~1\AppData\Local\Temp\setg.o
+intlevel0 0 0 ENTRY 0 functab C:\Users\YEFRYS~1\AppData\Local\Temp\sd7c.o
+intlevel1 0 0 ENTRY 0 functab C:\Users\YEFRYS~1\AppData\Local\Temp\sd7c.o
+intlevel2 0 0 ENTRY 0 functab C:\Users\YEFRYS~1\AppData\Local\Temp\sd7c.o
+intlevel3 0 0 ENTRY 0 functab C:\Users\YEFRYS~1\AppData\Local\Temp\sd7c.o
+intlevel4 0 0 ENTRY 0 functab C:\Users\YEFRYS~1\AppData\Local\Temp\sd7c.o
+intlevel5 0 0 ENTRY 0 functab C:\Users\YEFRYS~1\AppData\Local\Temp\sd7c.o
 wtemp0 7E 0 ABS 0 - dist/default/production\Mini_proyecto_1.X.production.o
 __Hfunctab 0 0 ENTRY 0 functab -
 __Hclrtext 0 0 ABS 0 clrtext -
 _ANSELH 189 0 ABS 0 - dist/default/production\Mini_proyecto_1.X.production.o
 __Lmaintext 0 0 ABS 0 maintext -
-___stackhi 0 0 ABS 0 - C:\Users\YEFRYS~1\AppData\Local\Temp\setg.o
-___stacklo 0 0 ABS 0 - C:\Users\YEFRYS~1\AppData\Local\Temp\setg.o
+___stackhi 0 0 ABS 0 - C:\Users\YEFRYS~1\AppData\Local\Temp\sd7c.o
+___stacklo 0 0 ABS 0 - C:\Users\YEFRYS~1\AppData\Local\Temp\sd7c.o
 start_initialization FF8 0 CODE 0 cinit dist/default/production\Mini_proyecto_1.X.production.o
-___int_sp 0 0 STACK 2 stack C:\Users\YEFRYS~1\AppData\Local\Temp\setg.o
+___int_sp 0 0 STACK 2 stack C:\Users\YEFRYS~1\AppData\Local\Temp\sd7c.o
 __Hbank0 0 0 ABS 0 bank0 -
 __Hbank1 0 0 ABS 0 bank1 -
 __Hbank2 0 0 ABS 0 bank2 -
@@ -150,7 +150,7 @@ __S1 0 0 ABS 0 - -
 __S2 0 0 ABS 0 - -
 __S3 0 0 ABS 0 - -
 __Lintentry 0 0 CODE 0 intentry -
-reset_vec 0 0 CODE 0 reset_vec C:\Users\YEFRYS~1\AppData\Local\Temp\setg.o
+reset_vec 0 0 CODE 0 reset_vec C:\Users\YEFRYS~1\AppData\Local\Temp\sd7c.o
 __pmaintext FF2 0 CODE 0 maintext dist/default/production\Mini_proyecto_1.X.production.o
 __Lcommon 0 0 ABS 0 common -
 __Lconfig 0 0 CONFIG 4 config -
