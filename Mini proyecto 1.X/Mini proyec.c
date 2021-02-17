@@ -45,6 +45,13 @@ void dec_cont (void);
 //----------------------------------------------------------------------------//
 void main(void) {
     
+    setup();
+    while(1){
+        
+        if (PORTBbits.RB0 == 1)
+            inc_cont();
+        
+    }
     return;
 }
 
@@ -81,6 +88,8 @@ void setup(void){
 
 void inc_cont(void){
     
+    PORTD = PORTD ++;
+    __delay_ms(50);
 }
 
 void dec_cont(void){

@@ -2526,9 +2526,16 @@ void dec_cont (void);
 
 void main(void) {
 
+    setup();
+    while(1){
+
+        if (PORTBbits.RB0 == 1)
+            inc_cont();
+
+    }
     return;
 }
-# 59 "Mini proyec.c"
+# 66 "Mini proyec.c"
 void setup(void){
 
     ANSEL = 0;
@@ -2554,6 +2561,8 @@ void setup(void){
 
 void inc_cont(void){
 
+    PORTD = PORTD ++;
+    _delay((unsigned long)((50)*(800000043/4000.0)));
 }
 
 void dec_cont(void){
