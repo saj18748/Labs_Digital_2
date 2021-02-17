@@ -24,77 +24,79 @@
 #pragma config BOR4V = BOR40V   // Brown-out Reset Selection bit (Brown-out Reset set to 4.0V)
 #pragma config WRT = OFF        // Flash Program Memory Self Write Enable bits (Write protection off)
 
-#define _XTAL_FREQ  800000043
+#define _XTAL_FREQ  8000000
 // #pragma config statements should precede project file includes.
 // Use project enums instead of #define for ON and OFF.
+
 
 #include <xc.h>
 
 //----------------------------------------------------------------------------//
-//          Declaracion de variables y funciones                              //
+//          Declaracion de variables                                          
 //----------------------------------------------------------------------------//
 
-void setup (void);
-void inc_cont (void);
-void dec_cont (void);
-
-
-
+void setup(void); 
+void inc_cont_BI(void);     // incrementa contador binario
+void dec_cont_BI(void);
 //----------------------------------------------------------------------------//
-//                              Codigo principal                              //
+//                              Codigo principal                              
 //----------------------------------------------------------------------------//
+
 void main(void) {
-    
     setup();
-    while(1){
-        
-        if (PORTBbits.RB0 == 1)
-            inc_cont();
-        
+    while (1) {
+        if(PORTAbits.RA1 == 1)
+        { inc_cont_BI();}
+
+        if (PORTAbits.RA2 == 1)
+        {  dec_cont_BI();}
     }
-    return;
-}
-
-
-
+    return; 
+ }
 
 
 //------------------------------------------------------------------------------
-//  CONFIGURACION DE LOS PUERTOS Y BLOQUES DE VARIABLES
+//  CONFIGURACION DE LOS PUERTOS  
 //------------------------------------------------------------------------------
 
-void setup(void){
+void setup(void) {
     // Establecemos los puertos como digitales  
-    ANSEL = 0;     
+    ANSEL = 0;
     ANSELH = 0;
-    
-// Puerto E como salida para el semaforo
-    TRISE = 0;    
-    PORTE = 0;     
-    
-    TRISC = 0;        
-    PORTC = 0;      
-    
-// Puerto del jugador 2
-    TRISD= 0;       
-    PORTD = 0;    
-  
-// Entradas de los push buttons
-    TRISB = 0B00000111;     
-    PORTB = 0;         
+
+    // PUERTO A - push buttons
+    TRISA = 0b00000011;
+    PORTA = 0;
+
+    // PUETO B - Salida el contador en los leds
+    TRISB = 0;
+    PORTB = 0;
+
+    // PUERTO C - salida para los transistores
+    TRISC = 0;
+    PORTC = 0;
+
+    // PUERTO D - salida para los display
+    TRISD = 0;
+    PORTD = 0;
+
+    // Puerto E como salida para el semaforo
+    TRISE = 0;
+    PORTE = 0;
 }
+//------------------------------------------------------------------------------
+//  CONFIGURACION DE LAS FUNCIONES
+//------------------------------------------------------------------------------
 
-//-----------------------------------------------------------------------------
-
-void inc_cont(void){
-    
-    PORTD = PORTD ++;
+void inc_cont_BI(void){
     __delay_ms(50);
+    PORTD = PORTD++;
 }
 
-void dec_cont(void){
-    
-}
+void dec_cont_BI(void){
+    __delay_ms(100);
+    PORTD = PORTD--;
+} 
 
 
 //-----------------------------------------------------------------------------

@@ -1,34 +1,43 @@
 Version 4.0 HI-TECH Software Intermediate Code
 [p mainexit ]
-"37 Mini proyec.c
-[; ;Mini proyec.c: 37: void setup (void);
-[v _setup `(v ~T0 @X0 0 ef ]
-"234 C:/Users/Yefry Sajquiy/.mchp_packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h
-[; ;C:/Users/Yefry Sajquiy/.mchp_packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h: 234:     struct {
-[s S8 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S8 . RB0 RB1 RB2 RB3 RB4 RB5 RB6 RB7 ]
-"233
-[; ;C:/Users/Yefry Sajquiy/.mchp_packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h: 233: typedef union {
-[u S7 `S8 1 ]
-[n S7 . . ]
-"245
-[; ;C:/Users/Yefry Sajquiy/.mchp_packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h: 245: extern volatile PORTBbits_t PORTBbits __attribute__((address(0x006)));
-[v _PORTBbits `VS7 ~T0 @X0 0 e@6 ]
 "38 Mini proyec.c
-[; ;Mini proyec.c: 38: void inc_cont (void);
-[v _inc_cont `(v ~T0 @X0 0 ef ]
+[; ;Mini proyec.c: 38: void setup(void);
+[v _setup `(v ~T0 @X0 0 ef ]
+"172 C:/Users/Yefry Sajquiy/.mchp_packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h
+[; ;C:/Users/Yefry Sajquiy/.mchp_packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h: 172:     struct {
+[s S6 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S6 . RA0 RA1 RA2 RA3 RA4 RA5 RA6 RA7 ]
+"171
+[; ;C:/Users/Yefry Sajquiy/.mchp_packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h: 171: typedef union {
+[u S5 `S6 1 ]
+[n S5 . . ]
+"183
+[; ;C:/Users/Yefry Sajquiy/.mchp_packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h: 183: extern volatile PORTAbits_t PORTAbits __attribute__((address(0x005)));
+[v _PORTAbits `VS5 ~T0 @X0 0 e@5 ]
+"39 Mini proyec.c
+[; ;Mini proyec.c: 39: void inc_cont_BI(void);
+[v _inc_cont_BI `(v ~T0 @X0 0 ef ]
+"40
+[; ;Mini proyec.c: 40: void dec_cont_BI(void);
+[v _dec_cont_BI `(v ~T0 @X0 0 ef ]
 "3387 C:/Users/Yefry Sajquiy/.mchp_packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h
 [; ;C:/Users/Yefry Sajquiy/.mchp_packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h: 3387: extern volatile unsigned char ANSEL __attribute__((address(0x188)));
 [v _ANSEL `Vuc ~T0 @X0 0 e@392 ]
 "3449
 [; ;C:/Users/Yefry Sajquiy/.mchp_packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h: 3449: extern volatile unsigned char ANSELH __attribute__((address(0x189)));
 [v _ANSELH `Vuc ~T0 @X0 0 e@393 ]
-"1664
-[; ;C:/Users/Yefry Sajquiy/.mchp_packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h: 1664: extern volatile unsigned char TRISE __attribute__((address(0x089)));
-[v _TRISE `Vuc ~T0 @X0 0 e@137 ]
-"414
-[; ;C:/Users/Yefry Sajquiy/.mchp_packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h: 414: extern volatile unsigned char PORTE __attribute__((address(0x009)));
-[v _PORTE `Vuc ~T0 @X0 0 e@9 ]
+"1416
+[; ;C:/Users/Yefry Sajquiy/.mchp_packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h: 1416: extern volatile unsigned char TRISA __attribute__((address(0x085)));
+[v _TRISA `Vuc ~T0 @X0 0 e@133 ]
+"166
+[; ;C:/Users/Yefry Sajquiy/.mchp_packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h: 166: extern volatile unsigned char PORTA __attribute__((address(0x005)));
+[v _PORTA `Vuc ~T0 @X0 0 e@5 ]
+"1478
+[; ;C:/Users/Yefry Sajquiy/.mchp_packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h: 1478: extern volatile unsigned char TRISB __attribute__((address(0x086)));
+[v _TRISB `Vuc ~T0 @X0 0 e@134 ]
+"228
+[; ;C:/Users/Yefry Sajquiy/.mchp_packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h: 228: extern volatile unsigned char PORTB __attribute__((address(0x006)));
+[v _PORTB `Vuc ~T0 @X0 0 e@6 ]
 "1540
 [; ;C:/Users/Yefry Sajquiy/.mchp_packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h: 1540: extern volatile unsigned char TRISC __attribute__((address(0x087)));
 [v _TRISC `Vuc ~T0 @X0 0 e@135 ]
@@ -41,12 +50,12 @@ Version 4.0 HI-TECH Software Intermediate Code
 "352
 [; ;C:/Users/Yefry Sajquiy/.mchp_packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h: 352: extern volatile unsigned char PORTD __attribute__((address(0x008)));
 [v _PORTD `Vuc ~T0 @X0 0 e@8 ]
-"1478
-[; ;C:/Users/Yefry Sajquiy/.mchp_packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h: 1478: extern volatile unsigned char TRISB __attribute__((address(0x086)));
-[v _TRISB `Vuc ~T0 @X0 0 e@134 ]
-"228
-[; ;C:/Users/Yefry Sajquiy/.mchp_packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h: 228: extern volatile unsigned char PORTB __attribute__((address(0x006)));
-[v _PORTB `Vuc ~T0 @X0 0 e@6 ]
+"1664
+[; ;C:/Users/Yefry Sajquiy/.mchp_packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h: 1664: extern volatile unsigned char TRISE __attribute__((address(0x089)));
+[v _TRISE `Vuc ~T0 @X0 0 e@137 ]
+"414
+[; ;C:/Users/Yefry Sajquiy/.mchp_packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h: 414: extern volatile unsigned char PORTE __attribute__((address(0x009)));
+[v _PORTE `Vuc ~T0 @X0 0 e@9 ]
 [v F1256 `(v ~T0 @X0 1 tf1`ul ]
 "92 C:/Users/Yefry Sajquiy/.mchp_packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\pic.h
 [v __delay `JF1256 ~T0 @X0 0 e ]
@@ -310,102 +319,125 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;C:/Users/Yefry Sajquiy/.mchp_packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h: 3546: __asm("EECON2 equ 018Dh");
 [; <" EECON2 equ 018Dh ;# ">
 [v $root$_main `(v ~T0 @X0 0 e ]
-"46 Mini proyec.c
-[; ;Mini proyec.c: 46: void main(void) {
+"45 Mini proyec.c
+[; ;Mini proyec.c: 45: void main(void) {
 [v _main `(v ~T0 @X0 1 ef ]
 {
 [e :U _main ]
 [f ]
-"48
-[; ;Mini proyec.c: 48:     setup();
+"46
+[; ;Mini proyec.c: 46:     setup();
 [e ( _setup ..  ]
-"49
-[; ;Mini proyec.c: 49:     while(1){
+"47
+[; ;Mini proyec.c: 47:     while (1) {
 [e :U 140 ]
 {
-"51
-[; ;Mini proyec.c: 51:         if (PORTBbits.RB0 == 1)
-[e $ ! == -> . . _PORTBbits 0 0 `i -> 1 `i 142  ]
-"52
-[; ;Mini proyec.c: 52:             inc_cont();
-[e ( _inc_cont ..  ]
+"48
+[; ;Mini proyec.c: 48:         if(PORTAbits.RA1 == 1)
+[e $ ! == -> . . _PORTAbits 0 1 `i -> 1 `i 142  ]
+"49
+[; ;Mini proyec.c: 49:         { inc_cont_BI();}
+{
+[e ( _inc_cont_BI ..  ]
+}
 [e :U 142 ]
-"54
-[; ;Mini proyec.c: 54:     }
+"51
+[; ;Mini proyec.c: 51:         if (PORTAbits.RA2 == 1)
+[e $ ! == -> . . _PORTAbits 0 2 `i -> 1 `i 143  ]
+"52
+[; ;Mini proyec.c: 52:         { dec_cont_BI();}
+{
+[e ( _dec_cont_BI ..  ]
+}
+[e :U 143 ]
+"53
+[; ;Mini proyec.c: 53:     }
 }
 [e :U 139 ]
 [e $U 140  ]
 [e :U 141 ]
-"55
-[; ;Mini proyec.c: 55:     return;
+"54
+[; ;Mini proyec.c: 54:     return;
 [e $UE 138  ]
-"56
-[; ;Mini proyec.c: 56: }
+"55
+[; ;Mini proyec.c: 55:  }
 [e :UE 138 ]
 }
-"66
-[; ;Mini proyec.c: 66: void setup(void){
+"62
+[; ;Mini proyec.c: 62: void setup(void) {
 [v _setup `(v ~T0 @X0 1 ef ]
 {
 [e :U _setup ]
 [f ]
-"68
-[; ;Mini proyec.c: 68:     ANSEL = 0;
+"64
+[; ;Mini proyec.c: 64:     ANSEL = 0;
 [e = _ANSEL -> -> 0 `i `uc ]
-"69
-[; ;Mini proyec.c: 69:     ANSELH = 0;
+"65
+[; ;Mini proyec.c: 65:     ANSELH = 0;
 [e = _ANSELH -> -> 0 `i `uc ]
+"68
+[; ;Mini proyec.c: 68:     TRISA = 0b00000011;
+[e = _TRISA -> -> 3 `i `uc ]
+"69
+[; ;Mini proyec.c: 69:     PORTA = 0;
+[e = _PORTA -> -> 0 `i `uc ]
 "72
-[; ;Mini proyec.c: 72:     TRISE = 0;
-[e = _TRISE -> -> 0 `i `uc ]
+[; ;Mini proyec.c: 72:     TRISB = 0;
+[e = _TRISB -> -> 0 `i `uc ]
 "73
-[; ;Mini proyec.c: 73:     PORTE = 0;
-[e = _PORTE -> -> 0 `i `uc ]
-"75
-[; ;Mini proyec.c: 75:     TRISC = 0;
-[e = _TRISC -> -> 0 `i `uc ]
-"76
-[; ;Mini proyec.c: 76:     PORTC = 0;
-[e = _PORTC -> -> 0 `i `uc ]
-"79
-[; ;Mini proyec.c: 79:     TRISD= 0;
-[e = _TRISD -> -> 0 `i `uc ]
-"80
-[; ;Mini proyec.c: 80:     PORTD = 0;
-[e = _PORTD -> -> 0 `i `uc ]
-"83
-[; ;Mini proyec.c: 83:     TRISB = 0B00000111;
-[e = _TRISB -> -> 7 `i `uc ]
-"84
-[; ;Mini proyec.c: 84:     PORTB = 0;
+[; ;Mini proyec.c: 73:     PORTB = 0;
 [e = _PORTB -> -> 0 `i `uc ]
+"76
+[; ;Mini proyec.c: 76:     TRISC = 0;
+[e = _TRISC -> -> 0 `i `uc ]
+"77
+[; ;Mini proyec.c: 77:     PORTC = 0;
+[e = _PORTC -> -> 0 `i `uc ]
+"80
+[; ;Mini proyec.c: 80:     TRISD = 0;
+[e = _TRISD -> -> 0 `i `uc ]
+"81
+[; ;Mini proyec.c: 81:     PORTD = 0;
+[e = _PORTD -> -> 0 `i `uc ]
+"84
+[; ;Mini proyec.c: 84:     TRISE = 0;
+[e = _TRISE -> -> 0 `i `uc ]
 "85
-[; ;Mini proyec.c: 85: }
-[e :UE 143 ]
-}
-"89
-[; ;Mini proyec.c: 89: void inc_cont(void){
-[v _inc_cont `(v ~T0 @X0 1 ef ]
-{
-[e :U _inc_cont ]
-[f ]
-"91
-[; ;Mini proyec.c: 91:     PORTD = PORTD ++;
-[e = _PORTD ++ _PORTD -> -> 1 `i `Vuc ]
-"92
-[; ;Mini proyec.c: 92:     _delay((unsigned long)((50)*(800000043/4000.0)));
-[e ( __delay (1 -> * -> -> 50 `i `d / -> -> 800000043 `l `d .4000.0 `ul ]
-"93
-[; ;Mini proyec.c: 93: }
+[; ;Mini proyec.c: 85:     PORTE = 0;
+[e = _PORTE -> -> 0 `i `uc ]
+"86
+[; ;Mini proyec.c: 86: }
 [e :UE 144 ]
 }
-"95
-[; ;Mini proyec.c: 95: void dec_cont(void){
-[v _dec_cont `(v ~T0 @X0 1 ef ]
+"91
+[; ;Mini proyec.c: 91: void inc_cont_BI(void){
+[v _inc_cont_BI `(v ~T0 @X0 1 ef ]
 {
-[e :U _dec_cont ]
+[e :U _inc_cont_BI ]
+[f ]
+"92
+[; ;Mini proyec.c: 92:     _delay((unsigned long)((50)*(8000000/4000.0)));
+[e ( __delay (1 -> * -> -> 50 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
+"93
+[; ;Mini proyec.c: 93:     PORTD = PORTD++;
+[e = _PORTD ++ _PORTD -> -> 1 `i `Vuc ]
+"94
+[; ;Mini proyec.c: 94: }
+[e :UE 145 ]
+}
+"96
+[; ;Mini proyec.c: 96: void dec_cont_BI(void){
+[v _dec_cont_BI `(v ~T0 @X0 1 ef ]
+{
+[e :U _dec_cont_BI ]
 [f ]
 "97
-[; ;Mini proyec.c: 97: }
-[e :UE 145 ]
+[; ;Mini proyec.c: 97:     _delay((unsigned long)((100)*(8000000/4000.0)));
+[e ( __delay (1 -> * -> -> 100 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
+"98
+[; ;Mini proyec.c: 98:     PORTD = PORTD--;
+[e = _PORTD -- _PORTD -> -> 1 `i `Vuc ]
+"99
+[; ;Mini proyec.c: 99: }
+[e :UE 146 ]
 }

@@ -28,6 +28,7 @@
 
 
 
+
 # 1 "C:/Users/Yefry Sajquiy/.mchp_packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\\pic\\include\\xc.h" 1 3
 # 18 "C:/Users/Yefry Sajquiy/.mchp_packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\\pic\\include\\xc.h" 3
 extern const char __xc8_OPTIM_SPEED;
@@ -2508,63 +2509,72 @@ extern __bank0 unsigned char __resetbits;
 extern __bank0 __bit __powerdown;
 extern __bank0 __bit __timeout;
 # 28 "C:/Users/Yefry Sajquiy/.mchp_packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\\pic\\include\\xc.h" 2 3
-# 31 "Mini proyec.c" 2
+# 32 "Mini proyec.c" 2
 
 
 
 
 
 
-void setup (void);
-void inc_cont (void);
-void dec_cont (void);
-
-
+void setup(void);
+void inc_cont_BI(void);
+void dec_cont_BI(void);
 
 
 
 
 void main(void) {
-
     setup();
-    while(1){
+    while (1) {
+        if(PORTAbits.RA1 == 1)
+        { inc_cont_BI();}
 
-        if (PORTBbits.RB0 == 1)
-            inc_cont();
-
+        if (PORTAbits.RA2 == 1)
+        { dec_cont_BI();}
     }
     return;
-}
-# 66 "Mini proyec.c"
-void setup(void){
+ }
+
+
+
+
+
+
+void setup(void) {
 
     ANSEL = 0;
     ANSELH = 0;
 
 
-    TRISE = 0;
-    PORTE = 0;
+    TRISA = 0b00000011;
+    PORTA = 0;
+
+
+    TRISB = 0;
+    PORTB = 0;
+
 
     TRISC = 0;
     PORTC = 0;
 
 
-    TRISD= 0;
+    TRISD = 0;
     PORTD = 0;
 
 
-    TRISB = 0B00000111;
-    PORTB = 0;
+    TRISE = 0;
+    PORTE = 0;
 }
 
 
 
-void inc_cont(void){
 
-    PORTD = PORTD ++;
-    _delay((unsigned long)((50)*(800000043/4000.0)));
+void inc_cont_BI(void){
+    _delay((unsigned long)((50)*(8000000/4000.0)));
+    PORTD = PORTD++;
 }
 
-void dec_cont(void){
-
+void dec_cont_BI(void){
+    _delay((unsigned long)((100)*(8000000/4000.0)));
+    PORTD = PORTD--;
 }
