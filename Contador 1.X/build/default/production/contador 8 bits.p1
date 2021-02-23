@@ -319,85 +319,85 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;C:/Users/Yefry Sajquiy/.mchp_packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h: 3546: __asm("EECON2 equ 018Dh");
 [; <" EECON2 equ 018Dh ;# ">
 [v $root$_main `(v ~T0 @X0 0 e ]
-"43 contador 8 bits.c
-[; ;contador 8 bits.c: 43: void main(void) {
+"44 contador 8 bits.c
+[; ;contador 8 bits.c: 44: void main(void) {
 [v _main `(v ~T0 @X0 1 ef ]
 {
 [e :U _main ]
 [f ]
-"44
-[; ;contador 8 bits.c: 44:     setup();
+"46
+[; ;contador 8 bits.c: 46:     setup();
 [e ( _setup ..  ]
-"45
-[; ;contador 8 bits.c: 45:     while (1) {
+"48
+[; ;contador 8 bits.c: 48:     while (1) {
 [e :U 140 ]
 {
-"46
-[; ;contador 8 bits.c: 46:         if(PORTAbits.RA1 == 1)
+"49
+[; ;contador 8 bits.c: 49:         if(PORTAbits.RA1 == 1)
 [e $ ! == -> . . _PORTAbits 0 1 `i -> 1 `i 142  ]
-"47
-[; ;contador 8 bits.c: 47:         { inc_cont_BI();}
+"50
+[; ;contador 8 bits.c: 50:         { inc_cont_BI();}
 {
 [e ( _inc_cont_BI ..  ]
 }
 [e :U 142 ]
-"49
-[; ;contador 8 bits.c: 49:         if (PORTAbits.RA2 == 1)
+"52
+[; ;contador 8 bits.c: 52:         if (PORTAbits.RA2 == 1)
 [e $ ! == -> . . _PORTAbits 0 2 `i -> 1 `i 143  ]
-"50
-[; ;contador 8 bits.c: 50:         { dec_cont_BI();}
+"53
+[; ;contador 8 bits.c: 53:         { dec_cont_BI();}
 {
 [e ( _dec_cont_BI ..  ]
 }
 [e :U 143 ]
-"51
-[; ;contador 8 bits.c: 51:     }
+"54
+[; ;contador 8 bits.c: 54:     }
 }
 [e :U 139 ]
 [e $U 140  ]
 [e :U 141 ]
-"52
-[; ;contador 8 bits.c: 52:     return;
+"55
+[; ;contador 8 bits.c: 55:     return;
 [e $UE 138  ]
-"53
-[; ;contador 8 bits.c: 53:  }
+"56
+[; ;contador 8 bits.c: 56:  }
 [e :UE 138 ]
 }
-"60
-[; ;contador 8 bits.c: 60: void setup(void) {
+"62
+[; ;contador 8 bits.c: 62: void setup(void) {
 [v _setup `(v ~T0 @X0 1 ef ]
 {
 [e :U _setup ]
 [f ]
-"62
-[; ;contador 8 bits.c: 62:     ANSEL = 0;
+"64
+[; ;contador 8 bits.c: 64:     ANSEL = 0;
 [e = _ANSEL -> -> 0 `i `uc ]
-"63
-[; ;contador 8 bits.c: 63:     ANSELH = 0;
+"65
+[; ;contador 8 bits.c: 65:     ANSELH = 0;
 [e = _ANSELH -> -> 0 `i `uc ]
-"66
-[; ;contador 8 bits.c: 66:     TRISA = 0b00000011;
+"68
+[; ;contador 8 bits.c: 68:     TRISA = 0b00000011;
 [e = _TRISA -> -> 3 `i `uc ]
-"67
-[; ;contador 8 bits.c: 67:     PORTA = 0;
+"69
+[; ;contador 8 bits.c: 69:     PORTA = 0;
 [e = _PORTA -> -> 0 `i `uc ]
-"70
-[; ;contador 8 bits.c: 70:     TRISB = 0;
+"72
+[; ;contador 8 bits.c: 72:     TRISB = 0;
 [e = _TRISB -> -> 0 `i `uc ]
-"71
-[; ;contador 8 bits.c: 71:     PORTB = 0;
+"73
+[; ;contador 8 bits.c: 73:     PORTB = 0;
 [e = _PORTB -> -> 0 `i `uc ]
-"74
-[; ;contador 8 bits.c: 74:     TRISC = 0;
+"76
+[; ;contador 8 bits.c: 76:     TRISC = 0;
 [e = _TRISC -> -> 0 `i `uc ]
-"75
-[; ;contador 8 bits.c: 75:     PORTC = 0;
+"77
+[; ;contador 8 bits.c: 77:     PORTC = 0;
 [e = _PORTC -> -> 0 `i `uc ]
-"78
-[; ;contador 8 bits.c: 78:     TRISD = 0;
-[e = _TRISD -> -> 0 `i `uc ]
 "79
-[; ;contador 8 bits.c: 79:     PORTD = 0;
+[; ;contador 8 bits.c: 79:     TRISD = 0;
+[e = _TRISD -> -> 0 `i `uc ]
+"80
+[; ;contador 8 bits.c: 80:     PORTD = 0;
 [e = _PORTD -> -> 0 `i `uc ]
 "82
 [; ;contador 8 bits.c: 82:     TRISE = 0;

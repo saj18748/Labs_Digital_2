@@ -2523,8 +2523,11 @@ void dec_cont_BI(void);
 
 
 
+
 void main(void) {
+
     setup();
+
     while (1) {
         if(PORTAbits.RA1 == 1)
         { inc_cont_BI();}
@@ -2534,7 +2537,6 @@ void main(void) {
     }
     return;
  }
-
 
 
 
@@ -2557,10 +2559,8 @@ void setup(void) {
     TRISC = 0;
     PORTC = 0;
 
-
     TRISD = 0;
     PORTD = 0;
-
 
     TRISE = 0;
     PORTE = 0;

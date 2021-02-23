@@ -11,7 +11,7 @@
 # All addresses and the length are given in unqualified hexadecimal
 # in delta units.  Any other numeric values are decimal.
 %PSECTS
-$C:\Users\YEFRYS~1\AppData\Local\Temp\s22c.o
+$C:\Users\YEFRYS~1\AppData\Local\Temp\sfvk.o
 end_init CODE 0 0 0 3 2
 config CONFIG 4 2007 2007 2 2
 $dist/default/production\Contador_1.X.production.o
@@ -68,11 +68,11 @@ STRING 800-1FFF 2
 # All other numeric values are in decimal.
 %LINETAB
 $dist/default/production\Contador_1.X.production.o
-7FC cinit CODE >452:C:\Users\YEFRYS~1\AppData\Local\Temp\s22c.s
-7FC cinit CODE >455:C:\Users\YEFRYS~1\AppData\Local\Temp\s22c.s
-7FC cinit CODE >461:C:\Users\YEFRYS~1\AppData\Local\Temp\s22c.s
-7FC cinit CODE >463:C:\Users\YEFRYS~1\AppData\Local\Temp\s22c.s
-7FD cinit CODE >464:C:\Users\YEFRYS~1\AppData\Local\Temp\s22c.s
+7FC cinit CODE >452:C:\Users\YEFRYS~1\AppData\Local\Temp\sfvk.s
+7FC cinit CODE >455:C:\Users\YEFRYS~1\AppData\Local\Temp\sfvk.s
+7FC cinit CODE >461:C:\Users\YEFRYS~1\AppData\Local\Temp\sfvk.s
+7FC cinit CODE >463:C:\Users\YEFRYS~1\AppData\Local\Temp\sfvk.s
+7FD cinit CODE >464:C:\Users\YEFRYS~1\AppData\Local\Temp\sfvk.s
 7A5 text3 CODE >94:D:\UVG\Cuarto año\Primer Semestre\Electronica Digital 2\Labs MPLAB\Digital_2\Contador 1.X\contador 8 bits.c
 7A5 text3 CODE >95:D:\UVG\Cuarto año\Primer Semestre\Electronica Digital 2\Labs MPLAB\Digital_2\Contador 1.X\contador 8 bits.c
 7B2 text3 CODE >96:D:\UVG\Cuarto año\Primer Semestre\Electronica Digital 2\Labs MPLAB\Digital_2\Contador 1.X\contador 8 bits.c
@@ -81,26 +81,26 @@ $dist/default/production\Contador_1.X.production.o
 793 text2 CODE >90:D:\UVG\Cuarto año\Primer Semestre\Electronica Digital 2\Labs MPLAB\Digital_2\Contador 1.X\contador 8 bits.c
 79C text2 CODE >91:D:\UVG\Cuarto año\Primer Semestre\Electronica Digital 2\Labs MPLAB\Digital_2\Contador 1.X\contador 8 bits.c
 7A4 text2 CODE >92:D:\UVG\Cuarto año\Primer Semestre\Electronica Digital 2\Labs MPLAB\Digital_2\Contador 1.X\contador 8 bits.c
-7D8 text1 CODE >60:D:\UVG\Cuarto año\Primer Semestre\Electronica Digital 2\Labs MPLAB\Digital_2\Contador 1.X\contador 8 bits.c
 7D8 text1 CODE >62:D:\UVG\Cuarto año\Primer Semestre\Electronica Digital 2\Labs MPLAB\Digital_2\Contador 1.X\contador 8 bits.c
-7DB text1 CODE >63:D:\UVG\Cuarto año\Primer Semestre\Electronica Digital 2\Labs MPLAB\Digital_2\Contador 1.X\contador 8 bits.c
-7DC text1 CODE >66:D:\UVG\Cuarto año\Primer Semestre\Electronica Digital 2\Labs MPLAB\Digital_2\Contador 1.X\contador 8 bits.c
-7E0 text1 CODE >67:D:\UVG\Cuarto año\Primer Semestre\Electronica Digital 2\Labs MPLAB\Digital_2\Contador 1.X\contador 8 bits.c
-7E3 text1 CODE >70:D:\UVG\Cuarto año\Primer Semestre\Electronica Digital 2\Labs MPLAB\Digital_2\Contador 1.X\contador 8 bits.c
-7E6 text1 CODE >71:D:\UVG\Cuarto año\Primer Semestre\Electronica Digital 2\Labs MPLAB\Digital_2\Contador 1.X\contador 8 bits.c
-7E9 text1 CODE >74:D:\UVG\Cuarto año\Primer Semestre\Electronica Digital 2\Labs MPLAB\Digital_2\Contador 1.X\contador 8 bits.c
-7EC text1 CODE >75:D:\UVG\Cuarto año\Primer Semestre\Electronica Digital 2\Labs MPLAB\Digital_2\Contador 1.X\contador 8 bits.c
-7EF text1 CODE >78:D:\UVG\Cuarto año\Primer Semestre\Electronica Digital 2\Labs MPLAB\Digital_2\Contador 1.X\contador 8 bits.c
-7F2 text1 CODE >79:D:\UVG\Cuarto año\Primer Semestre\Electronica Digital 2\Labs MPLAB\Digital_2\Contador 1.X\contador 8 bits.c
+7D8 text1 CODE >64:D:\UVG\Cuarto año\Primer Semestre\Electronica Digital 2\Labs MPLAB\Digital_2\Contador 1.X\contador 8 bits.c
+7DB text1 CODE >65:D:\UVG\Cuarto año\Primer Semestre\Electronica Digital 2\Labs MPLAB\Digital_2\Contador 1.X\contador 8 bits.c
+7DC text1 CODE >68:D:\UVG\Cuarto año\Primer Semestre\Electronica Digital 2\Labs MPLAB\Digital_2\Contador 1.X\contador 8 bits.c
+7E0 text1 CODE >69:D:\UVG\Cuarto año\Primer Semestre\Electronica Digital 2\Labs MPLAB\Digital_2\Contador 1.X\contador 8 bits.c
+7E3 text1 CODE >72:D:\UVG\Cuarto año\Primer Semestre\Electronica Digital 2\Labs MPLAB\Digital_2\Contador 1.X\contador 8 bits.c
+7E6 text1 CODE >73:D:\UVG\Cuarto año\Primer Semestre\Electronica Digital 2\Labs MPLAB\Digital_2\Contador 1.X\contador 8 bits.c
+7E9 text1 CODE >76:D:\UVG\Cuarto año\Primer Semestre\Electronica Digital 2\Labs MPLAB\Digital_2\Contador 1.X\contador 8 bits.c
+7EC text1 CODE >77:D:\UVG\Cuarto año\Primer Semestre\Electronica Digital 2\Labs MPLAB\Digital_2\Contador 1.X\contador 8 bits.c
+7EF text1 CODE >79:D:\UVG\Cuarto año\Primer Semestre\Electronica Digital 2\Labs MPLAB\Digital_2\Contador 1.X\contador 8 bits.c
+7F2 text1 CODE >80:D:\UVG\Cuarto año\Primer Semestre\Electronica Digital 2\Labs MPLAB\Digital_2\Contador 1.X\contador 8 bits.c
 7F5 text1 CODE >82:D:\UVG\Cuarto año\Primer Semestre\Electronica Digital 2\Labs MPLAB\Digital_2\Contador 1.X\contador 8 bits.c
 7F8 text1 CODE >83:D:\UVG\Cuarto año\Primer Semestre\Electronica Digital 2\Labs MPLAB\Digital_2\Contador 1.X\contador 8 bits.c
 7FB text1 CODE >84:D:\UVG\Cuarto año\Primer Semestre\Electronica Digital 2\Labs MPLAB\Digital_2\Contador 1.X\contador 8 bits.c
-7B9 maintext CODE >43:D:\UVG\Cuarto año\Primer Semestre\Electronica Digital 2\Labs MPLAB\Digital_2\Contador 1.X\contador 8 bits.c
 7B9 maintext CODE >44:D:\UVG\Cuarto año\Primer Semestre\Electronica Digital 2\Labs MPLAB\Digital_2\Contador 1.X\contador 8 bits.c
-7BE maintext CODE >46:D:\UVG\Cuarto año\Primer Semestre\Electronica Digital 2\Labs MPLAB\Digital_2\Contador 1.X\contador 8 bits.c
-7C4 maintext CODE >47:D:\UVG\Cuarto año\Primer Semestre\Electronica Digital 2\Labs MPLAB\Digital_2\Contador 1.X\contador 8 bits.c
-7C9 maintext CODE >49:D:\UVG\Cuarto año\Primer Semestre\Electronica Digital 2\Labs MPLAB\Digital_2\Contador 1.X\contador 8 bits.c
-7CF maintext CODE >50:D:\UVG\Cuarto año\Primer Semestre\Electronica Digital 2\Labs MPLAB\Digital_2\Contador 1.X\contador 8 bits.c
+7B9 maintext CODE >46:D:\UVG\Cuarto año\Primer Semestre\Electronica Digital 2\Labs MPLAB\Digital_2\Contador 1.X\contador 8 bits.c
+7BE maintext CODE >49:D:\UVG\Cuarto año\Primer Semestre\Electronica Digital 2\Labs MPLAB\Digital_2\Contador 1.X\contador 8 bits.c
+7C4 maintext CODE >50:D:\UVG\Cuarto año\Primer Semestre\Electronica Digital 2\Labs MPLAB\Digital_2\Contador 1.X\contador 8 bits.c
+7C9 maintext CODE >52:D:\UVG\Cuarto año\Primer Semestre\Electronica Digital 2\Labs MPLAB\Digital_2\Contador 1.X\contador 8 bits.c
+7CF maintext CODE >53:D:\UVG\Cuarto año\Primer Semestre\Electronica Digital 2\Labs MPLAB\Digital_2\Contador 1.X\contador 8 bits.c
 # %SYMTAB Section
 # An enumeration of all symbols in the program.
 # The beginning of the section is indicated by %SYMTAB.
@@ -121,30 +121,30 @@ __Hspace_3 0 0 ABS 0 - -
 __Hspace_4 4010 0 ABS 0 - -
 __Heeprom_data 0 0 EEDATA 3 eeprom_data -
 __Hstrings 0 0 ABS 0 strings -
-___sp 0 0 STACK 2 stack C:\Users\YEFRYS~1\AppData\Local\Temp\s22c.o
+___sp 0 0 STACK 2 stack C:\Users\YEFRYS~1\AppData\Local\Temp\sfvk.o
 _main F72 0 CODE 0 maintext dist/default/production\Contador_1.X.production.o
 btemp 7E 0 ABS 0 - dist/default/production\Contador_1.X.production.o
-start 0 0 CODE 0 init C:\Users\YEFRYS~1\AppData\Local\Temp\s22c.o
+start 0 0 CODE 0 init C:\Users\YEFRYS~1\AppData\Local\Temp\sfvk.o
 __size_of_main 0 0 ABS 0 - dist/default/production\Contador_1.X.production.o
 __Hpowerup 0 0 CODE 0 powerup -
 __end_of_dec_cont_BI F72 0 CODE 0 text3 dist/default/production\Contador_1.X.production.o
-intlevel0 0 0 ENTRY 0 functab C:\Users\YEFRYS~1\AppData\Local\Temp\s22c.o
-intlevel1 0 0 ENTRY 0 functab C:\Users\YEFRYS~1\AppData\Local\Temp\s22c.o
-intlevel2 0 0 ENTRY 0 functab C:\Users\YEFRYS~1\AppData\Local\Temp\s22c.o
-intlevel3 0 0 ENTRY 0 functab C:\Users\YEFRYS~1\AppData\Local\Temp\s22c.o
-intlevel4 0 0 ENTRY 0 functab C:\Users\YEFRYS~1\AppData\Local\Temp\s22c.o
-intlevel5 0 0 ENTRY 0 functab C:\Users\YEFRYS~1\AppData\Local\Temp\s22c.o
+intlevel0 0 0 ENTRY 0 functab C:\Users\YEFRYS~1\AppData\Local\Temp\sfvk.o
+intlevel1 0 0 ENTRY 0 functab C:\Users\YEFRYS~1\AppData\Local\Temp\sfvk.o
+intlevel2 0 0 ENTRY 0 functab C:\Users\YEFRYS~1\AppData\Local\Temp\sfvk.o
+intlevel3 0 0 ENTRY 0 functab C:\Users\YEFRYS~1\AppData\Local\Temp\sfvk.o
+intlevel4 0 0 ENTRY 0 functab C:\Users\YEFRYS~1\AppData\Local\Temp\sfvk.o
+intlevel5 0 0 ENTRY 0 functab C:\Users\YEFRYS~1\AppData\Local\Temp\sfvk.o
 wtemp0 7E 0 ABS 0 - dist/default/production\Contador_1.X.production.o
 __size_of_inc_cont_BI 0 0 ABS 0 - dist/default/production\Contador_1.X.production.o
 __Hfunctab 0 0 ENTRY 0 functab -
 __Hclrtext 0 0 ABS 0 clrtext -
 _ANSELH 189 0 ABS 0 - dist/default/production\Contador_1.X.production.o
 __Lmaintext 0 0 ABS 0 maintext -
-___stackhi 0 0 ABS 0 - C:\Users\YEFRYS~1\AppData\Local\Temp\s22c.o
-___stacklo 0 0 ABS 0 - C:\Users\YEFRYS~1\AppData\Local\Temp\s22c.o
+___stackhi 0 0 ABS 0 - C:\Users\YEFRYS~1\AppData\Local\Temp\sfvk.o
+___stacklo 0 0 ABS 0 - C:\Users\YEFRYS~1\AppData\Local\Temp\sfvk.o
 __size_of_setup 0 0 ABS 0 - dist/default/production\Contador_1.X.production.o
 start_initialization FF8 0 CODE 0 cinit dist/default/production\Contador_1.X.production.o
-___int_sp 0 0 STACK 2 stack C:\Users\YEFRYS~1\AppData\Local\Temp\s22c.o
+___int_sp 0 0 STACK 2 stack C:\Users\YEFRYS~1\AppData\Local\Temp\sfvk.o
 __size_of_dec_cont_BI 0 0 ABS 0 - dist/default/production\Contador_1.X.production.o
 __Hbank0 0 0 ABS 0 bank0 -
 __Hbank1 0 0 ABS 0 bank1 -
@@ -185,7 +185,7 @@ __S1 73 0 ABS 0 - -
 __S2 0 0 ABS 0 - -
 __S3 0 0 ABS 0 - -
 __Lintentry 0 0 CODE 0 intentry -
-reset_vec 0 0 CODE 0 reset_vec C:\Users\YEFRYS~1\AppData\Local\Temp\s22c.o
+reset_vec 0 0 CODE 0 reset_vec C:\Users\YEFRYS~1\AppData\Local\Temp\sfvk.o
 __pmaintext F72 0 CODE 0 maintext dist/default/production\Contador_1.X.production.o
 __Lcommon 0 0 ABS 0 common -
 __Lconfig 0 0 CONFIG 4 config -

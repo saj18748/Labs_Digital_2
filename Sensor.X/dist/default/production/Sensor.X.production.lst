@@ -1,7 +1,7 @@
 
 
 Microchip MPLAB XC8 Assembler V2.20 build 20200408173844 
-                                                                                               Mon Feb 22 23:42:39 2021
+                                                                                               Mon Feb 22 23:22:36 2021
 
 Microchip MPLAB XC8 C Compiler v2.20 (Free license) build 20200408173844 Og1 
      1                           	processor	16F887
@@ -274,7 +274,7 @@ Microchip MPLAB XC8 C Compiler v2.20 (Free license) build 20200408173844 Og1
    260 ;;
    261 ;; *************** function _main *****************
    262 ;; Defined at:
-   263 ;;		line 44 in file "contador 8 bits.c"
+   263 ;;		line 42 in file "sensor1.c"
    264 ;; Parameters:    Size  Location     Type
    265 ;;		None
    266 ;; Auto vars:     Size  Location     Type
@@ -311,11 +311,11 @@ Microchip MPLAB XC8 C Compiler v2.20 (Free license) build 20200408173844 Og1
    297                           ; Regs used in _main: [wreg+status,2+status,0+btemp+1+pclath+cstack]
    298                           
    299                           
-   300                           ;contador 8 bits.c: 46:     setup();
+   300                           ;sensor1.c: 43:     setup();
    301  07B9  120A  118A  27D8  120A  118A  	fcall	_setup
    302  07BE                     l677:
    303                           
-   304                           ;contador 8 bits.c: 49:         if(PORTAbits.RA1 == 1)
+   304                           ;sensor1.c: 45:         if(PORTAbits.RA1 == 1)
    305  07BE  1283               	bcf	3,5	;RP0=0, select bank0
    306  07BF  1303               	bcf	3,6	;RP1=0, select bank0
    307  07C0  1C85               	btfss	5,1	;volatile
@@ -326,11 +326,11 @@ Microchip MPLAB XC8 C Compiler v2.20 (Free license) build 20200408173844 Og1
    312  07C4                     u10:
    313  07C4                     l679:
    314                           
-   315                           ;contador 8 bits.c: 50:         { inc_cont_BI();}
+   315                           ;sensor1.c: 46:         { inc_cont_BI();}
    316  07C4  120A  118A  2793  120A  118A  	fcall	_inc_cont_BI
    317  07C9                     l681:
    318                           
-   319                           ;contador 8 bits.c: 52:         if (PORTAbits.RA2 == 1)
+   319                           ;sensor1.c: 48:         if (PORTAbits.RA2 == 1)
    320  07C9  1283               	bcf	3,5	;RP0=0, select bank0
    321  07CA  1303               	bcf	3,6	;RP1=0, select bank0
    322  07CB  1D05               	btfss	5,2	;volatile
@@ -341,7 +341,7 @@ Microchip MPLAB XC8 C Compiler v2.20 (Free license) build 20200408173844 Og1
    327  07CF                     u20:
    328  07CF                     l683:
    329                           
-   330                           ;contador 8 bits.c: 53:         { dec_cont_BI();}
+   330                           ;sensor1.c: 49:         { dec_cont_BI();}
    331  07CF  120A  118A  27A5  120A  118A  	fcall	_dec_cont_BI
    332  07D4  2FBE               	goto	l677
    333  07D5  120A  118A  2800   	ljmp	start
@@ -351,7 +351,7 @@ Microchip MPLAB XC8 C Compiler v2.20 (Free license) build 20200408173844 Og1
    337  07D8                     __ptext1:	
    338 ;; *************** function _setup *****************
    339 ;; Defined at:
-   340 ;;		line 62 in file "contador 8 bits.c"
+   340 ;;		line 59 in file "sensor1.c"
    341 ;; Parameters:    Size  Location     Type
    342 ;;		None
    343 ;; Auto vars:     Size  Location     Type
@@ -386,71 +386,71 @@ Microchip MPLAB XC8 C Compiler v2.20 (Free license) build 20200408173844 Og1
    372                           ; Regs used in _setup: [wreg+status,2]
    373                           
    374                           
-   375                           ;contador 8 bits.c: 64:     ANSEL = 0;
+   375                           ;sensor1.c: 61:     ANSEL = 0;
    376  07D8  1683               	bsf	3,5	;RP0=1, select bank3
    377  07D9  1703               	bsf	3,6	;RP1=1, select bank3
    378  07DA  0188               	clrf	8	;volatile
    379                           
-   380                           ;contador 8 bits.c: 65:     ANSELH = 0;
+   380                           ;sensor1.c: 62:     ANSELH = 0;
    381  07DB  0189               	clrf	9	;volatile
    382  07DC                     l647:
    383                           
-   384                           ;contador 8 bits.c: 68:     TRISA = 0b00000011;
+   384                           ;sensor1.c: 65:     TRISA = 0b00000011;
    385  07DC  3003               	movlw	3
    386  07DD  1683               	bsf	3,5	;RP0=1, select bank1
    387  07DE  1303               	bcf	3,6	;RP1=0, select bank1
    388  07DF  0085               	movwf	5	;volatile
    389  07E0                     l649:
    390                           
-   391                           ;contador 8 bits.c: 69:     PORTA = 0;
+   391                           ;sensor1.c: 66:     PORTA = 0;
    392  07E0  1283               	bcf	3,5	;RP0=0, select bank0
    393  07E1  1303               	bcf	3,6	;RP1=0, select bank0
    394  07E2  0185               	clrf	5	;volatile
    395  07E3                     l651:
    396                           
-   397                           ;contador 8 bits.c: 72:     TRISB = 0;
+   397                           ;sensor1.c: 69:     TRISB = 0;
    398  07E3  1683               	bsf	3,5	;RP0=1, select bank1
    399  07E4  1303               	bcf	3,6	;RP1=0, select bank1
    400  07E5  0186               	clrf	6	;volatile
    401  07E6                     l653:
    402                           
-   403                           ;contador 8 bits.c: 73:     PORTB = 0;
+   403                           ;sensor1.c: 70:     PORTB = 0;
    404  07E6  1283               	bcf	3,5	;RP0=0, select bank0
    405  07E7  1303               	bcf	3,6	;RP1=0, select bank0
    406  07E8  0186               	clrf	6	;volatile
    407  07E9                     l655:
    408                           
-   409                           ;contador 8 bits.c: 76:     TRISC = 0;
+   409                           ;sensor1.c: 73:     TRISC = 0;
    410  07E9  1683               	bsf	3,5	;RP0=1, select bank1
    411  07EA  1303               	bcf	3,6	;RP1=0, select bank1
    412  07EB  0187               	clrf	7	;volatile
    413  07EC                     l657:
    414                           
-   415                           ;contador 8 bits.c: 77:     PORTC = 0;
+   415                           ;sensor1.c: 74:     PORTC = 0;
    416  07EC  1283               	bcf	3,5	;RP0=0, select bank0
    417  07ED  1303               	bcf	3,6	;RP1=0, select bank0
    418  07EE  0187               	clrf	7	;volatile
    419  07EF                     l659:
    420                           
-   421                           ;contador 8 bits.c: 79:     TRISD = 0;
+   421                           ;sensor1.c: 77:     TRISD = 0;
    422  07EF  1683               	bsf	3,5	;RP0=1, select bank1
    423  07F0  1303               	bcf	3,6	;RP1=0, select bank1
    424  07F1  0188               	clrf	8	;volatile
    425  07F2                     l661:
    426                           
-   427                           ;contador 8 bits.c: 80:     PORTD = 0;
+   427                           ;sensor1.c: 78:     PORTD = 0;
    428  07F2  1283               	bcf	3,5	;RP0=0, select bank0
    429  07F3  1303               	bcf	3,6	;RP1=0, select bank0
    430  07F4  0188               	clrf	8	;volatile
    431  07F5                     l663:
    432                           
-   433                           ;contador 8 bits.c: 82:     TRISE = 0;
+   433                           ;sensor1.c: 81:     TRISE = 0;
    434  07F5  1683               	bsf	3,5	;RP0=1, select bank1
    435  07F6  1303               	bcf	3,6	;RP1=0, select bank1
    436  07F7  0189               	clrf	9	;volatile
    437  07F8                     l665:
    438                           
-   439                           ;contador 8 bits.c: 83:     PORTE = 0;
+   439                           ;sensor1.c: 82:     PORTE = 0;
    440  07F8  1283               	bcf	3,5	;RP0=0, select bank0
    441  07F9  1303               	bcf	3,6	;RP1=0, select bank0
    442  07FA  0189               	clrf	9	;volatile
@@ -462,7 +462,7 @@ Microchip MPLAB XC8 C Compiler v2.20 (Free license) build 20200408173844 Og1
    448  0793                     __ptext2:	
    449 ;; *************** function _inc_cont_BI *****************
    450 ;; Defined at:
-   451 ;;		line 89 in file "contador 8 bits.c"
+   451 ;;		line 88 in file "sensor1.c"
    452 ;; Parameters:    Size  Location     Type
    453 ;;		None
    454 ;; Auto vars:     Size  Location     Type
@@ -497,7 +497,7 @@ Microchip MPLAB XC8 C Compiler v2.20 (Free license) build 20200408173844 Og1
    483                           ; Regs used in _inc_cont_BI: [wreg+status,2+status,0+btemp+1]
    484                           
    485                           
-   486                           ;contador 8 bits.c: 90:     _delay((unsigned long)((50)*(8000000/4000.0)));
+   486                           ;sensor1.c: 89:     _delay((unsigned long)((50)*(8000000/4000.0)));
    487  0793  3082               	movlw	130
    488  0794  00F1               	movwf	??_inc_cont_BI+1
    489  0795  30DD               	movlw	221
@@ -509,7 +509,7 @@ Microchip MPLAB XC8 C Compiler v2.20 (Free license) build 20200408173844 Og1
    495  079A  2F97               	goto	u37
    496  079B  2F9C               	nop2
    497                           
-   498                           ;contador 8 bits.c: 91:     PORTD = PORTD++;
+   498                           ;sensor1.c: 90:     PORTD = PORTD++;
    499  079C  1283               	bcf	3,5	;RP0=0, select bank0
    500  079D  1303               	bcf	3,6	;RP1=0, select bank0
    501  079E  0808               	movf	8,w	;volatile
@@ -527,7 +527,7 @@ Microchip MPLAB XC8 C Compiler v2.20 (Free license) build 20200408173844 Og1
    513  07A5                     __ptext3:	
    514 ;; *************** function _dec_cont_BI *****************
    515 ;; Defined at:
-   516 ;;		line 94 in file "contador 8 bits.c"
+   516 ;;		line 93 in file "sensor1.c"
    517 ;; Parameters:    Size  Location     Type
    518 ;;		None
    519 ;; Auto vars:     Size  Location     Type
@@ -562,7 +562,7 @@ Microchip MPLAB XC8 C Compiler v2.20 (Free license) build 20200408173844 Og1
    548                           ; Regs used in _dec_cont_BI: [wreg+status,2+status,0]
    549                           
    550                           
-   551                           ;contador 8 bits.c: 95:     _delay((unsigned long)((100)*(8000000/4000.0)));
+   551                           ;sensor1.c: 94:     _delay((unsigned long)((100)*(8000000/4000.0)));
    552  07A5  3002               	movlw	2
    553  07A6  00F2               	movwf	??_dec_cont_BI+2
    554  07A7  3004               	movlw	4
@@ -578,7 +578,7 @@ Microchip MPLAB XC8 C Compiler v2.20 (Free license) build 20200408173844 Og1
    564  07B0  2FAB               	goto	u47
    565  07B1  0000               	nop
    566                           
-   567                           ;contador 8 bits.c: 96:     PORTD = PORTD--;
+   567                           ;sensor1.c: 95:     PORTD = PORTD--;
    568  07B2  1283               	bcf	3,5	;RP0=0, select bank0
    569  07B3  1303               	bcf	3,6	;RP1=0, select bank0
    570  07B4  0808               	movf	8,w	;volatile
@@ -726,7 +726,7 @@ DATA                 0      0       0      12        0.0%
 
 
 Microchip Technology PIC Macro Assembler V2.20 build 20200408173844 
-Symbol Table                                                                                   Mon Feb 22 23:42:39 2021
+Symbol Table                                                                                   Mon Feb 22 23:22:36 2021
 
                      l50 07A4                       l53 07B8                       l47 07FB  
                      u10 07C4                       u11 07C3                       u20 07CF  

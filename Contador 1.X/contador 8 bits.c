@@ -35,23 +35,25 @@
 
 void setup(void); 
 void inc_cont_BI(void);     // incrementa contador binario
-void dec_cont_BI(void);
+void dec_cont_BI(void);     // decremetna contador binario
+
 //----------------------------------------------------------------------------//
 //                              Codigo principal                              
 //----------------------------------------------------------------------------//
 
 void main(void) {
-    setup();
+    
+    setup();        // se llama ala configuracion de los pines
+    
     while (1) {
-        if(PORTAbits.RA1 == 1)
+        if(PORTAbits.RA1 == 1)      // cuando RA = 1 se incrementa el contador
         { inc_cont_BI();}
 
-        if (PORTAbits.RA2 == 1)
+        if (PORTAbits.RA2 == 1)     // cuando RA = 1 se decrementa el contador
         {  dec_cont_BI();}
     }
     return; 
  }
-
 
 //------------------------------------------------------------------------------
 //  CONFIGURACION DE LOS PUERTOS  
@@ -70,15 +72,13 @@ void setup(void) {
     TRISB = 0;
     PORTB = 0;
 
-    // PUERTO C - salida para los transistores
+    // para la comunicacion UART
     TRISC = 0;
     PORTC = 0;
 
-    // PUERTO D - salida para los display
     TRISD = 0;
     PORTD = 0;
 
-    // Puerto E como salida para el semaforo
     TRISE = 0;
     PORTE = 0;
 }
@@ -88,15 +88,14 @@ void setup(void) {
 
 void inc_cont_BI(void){
     __delay_ms(50);
-    PORTD = PORTD++;
+    PORTD = PORTD++;        // se suma una unidad al contador
 }
 
 void dec_cont_BI(void){
     __delay_ms(100);
-    PORTD = PORTD--;
+    PORTD = PORTD--;       // se le resta una unidad al contador
 } 
-
 
 //-----------------------------------------------------------------------------
 //              FIN   XD
-//------------------------------------------
+//-----------------------------------------------------------------------------

@@ -1,4 +1,4 @@
-# 1 "ADC MP.c"
+# 1 "sensor1.c"
 # 1 "<built-in>" 1
 # 1 "<built-in>" 3
 # 288 "<built-in>" 3
@@ -6,7 +6,7 @@
 # 1 "<built-in>" 2
 # 1 "C:/Users/Yefry Sajquiy/.mchp_packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\\pic\\include\\language_support.h" 1 3
 # 2 "<built-in>" 2
-# 1 "ADC MP.c" 2
+# 1 "sensor1.c" 2
 
 
 
@@ -2516,63 +2516,72 @@ extern __bank0 unsigned char __resetbits;
 extern __bank0 __bit __powerdown;
 extern __bank0 __bit __timeout;
 # 28 "C:/Users/Yefry Sajquiy/.mchp_packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\\pic\\include\\xc.h" 2 3
-# 29 "ADC MP.c" 2
+# 29 "sensor1.c" 2
 
 
 
-void setup();
-void ADC_Init(void);
 
-unsigned int ADC_Read(unsigned char channel)
-{
-  if(channel > 7)
-    return 0;
 
-  ADCON0 &= 0xC5;
-  ADCON0 |= channel<<3;
-  _delay((unsigned long)((2)*(8000000/4000.0)));
-  GO_nDONE = 1;
-  while(GO_nDONE);
-  return (ADRESH<<8);
+
+void setup(void);
+void inc_cont_BI(void);
+void dec_cont_BI(void);
+
+
+
+
+void main(void) {
+    setup();
+    while (1) {
+        if(PORTAbits.RA1 == 1)
+        { inc_cont_BI();}
+
+        if (PORTAbits.RA2 == 1)
+        { dec_cont_BI();}
+    }
+    return;
+ }
+
+
+
+
+
+
+void setup(void) {
+
+    ANSEL = 0;
+    ANSELH = 0;
+
+
+    TRISA = 0b00000011;
+    PORTA = 0;
+
+
+    TRISB = 0;
+    PORTB = 0;
+
+
+    TRISC = 0;
+    PORTC = 0;
+
+
+    TRISD = 0;
+    PORTD = 0;
+
+
+    TRISE = 0;
+    PORTE = 0;
 }
 
 
 
 
-
-void main()
-{
-  unsigned int a;
-
-
-
-  setup();
-  ADC_Init();
-
-   while(1){
-    a = ADC_Read(0);
-
-    PORTB = a>>8;
+void inc_cont_BI(void){
     _delay((unsigned long)((50)*(8000000/4000.0)));
-   }
+    PORTD = PORTD++;
 }
 
-
-
-
-
-void ADC_Init(void)
-{
-  ADCON0 = 0x81;
-  ADCON1 = 0x00;
-}
-
-void setup(void){
-
-  TRISA = 0xFF;
-
-  TRISB = 0x00;
-
-  TRISC = 0;
-  PORTC = 0;
+void dec_cont_BI(void){
+    _delay((unsigned long)((100)*(8000000/4000.0)));
+    PORTD = PORTD--;
 }
