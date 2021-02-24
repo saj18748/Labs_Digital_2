@@ -25,7 +25,9 @@
 // #pragma config statements should precede project file includes.
 // Use project enums instead of #define for ON and OFF.
 
-
+#define SCK_SLAVE TRISC3
+#define SDO_SLAVE TRISC5
+#define SS_SLAVE TRISA5
 #include <xc.h>
 
 
@@ -61,7 +63,7 @@ void main()
    while(1){               // se realiza la lectura del ADC
     a = ADC_Read(0);            
                    
-    PORTB = a>>8;              
+    PORTB = a>>8;           // se muestra en le puerto B       
     __delay_ms(50);            
    }   
 }

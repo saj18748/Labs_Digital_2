@@ -1,43 +1,39 @@
 Version 4.0 HI-TECH Software Intermediate Code
+"1245 C:/Users/Yefry Sajquiy/.mchp_packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h
+[; ;C:/Users/Yefry Sajquiy/.mchp_packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h: 1245: extern volatile unsigned char ADCON0 __attribute__((address(0x01F)));
+[v _ADCON0 `Vuc ~T0 @X0 0 e@31 ]
+[v F1284 `(v ~T0 @X0 1 tf1`ul ]
+"92 C:/Users/Yefry Sajquiy/.mchp_packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\pic.h
+[v __delay `JF1284 ~T0 @X0 0 e ]
+[p i __delay ]
+"3905 C:/Users/Yefry Sajquiy/.mchp_packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h
+[; ;C:/Users/Yefry Sajquiy/.mchp_packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h: 3905: extern volatile __bit GO_nDONE __attribute__((address(0xF9)));
+[v _GO_nDONE `Vb ~T0 @X0 0 e@249 ]
+"1238
+[; ;C:/Users/Yefry Sajquiy/.mchp_packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h: 1238: extern volatile unsigned char ADRESH __attribute__((address(0x01E)));
+[v _ADRESH `Vuc ~T0 @X0 0 e@30 ]
 [p mainexit ]
-"35 sensor1.c
-[; ;sensor1.c: 35: void setup(void);
-[v _setup `(v ~T0 @X0 0 ef ]
-"172 C:/Users/Yefry Sajquiy/.mchp_packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h
-[; ;C:/Users/Yefry Sajquiy/.mchp_packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h: 172:     struct {
-[s S6 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S6 . RA0 RA1 RA2 RA3 RA4 RA5 RA6 RA7 ]
-"171
-[; ;C:/Users/Yefry Sajquiy/.mchp_packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h: 171: typedef union {
-[u S5 `S6 1 ]
-[n S5 . . ]
-"183
-[; ;C:/Users/Yefry Sajquiy/.mchp_packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h: 183: extern volatile PORTAbits_t PORTAbits __attribute__((address(0x005)));
-[v _PORTAbits `VS5 ~T0 @X0 0 e@5 ]
 "36 sensor1.c
-[; ;sensor1.c: 36: void inc_cont_BI(void);
-[v _inc_cont_BI `(v ~T0 @X0 0 ef ]
+[; ;sensor1.c: 36: void setup();
+[v _setup `(v ~T0 @X0 0 e? ]
 "37
-[; ;sensor1.c: 37: void dec_cont_BI(void);
-[v _dec_cont_BI `(v ~T0 @X0 0 ef ]
-"3387 C:/Users/Yefry Sajquiy/.mchp_packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h
-[; ;C:/Users/Yefry Sajquiy/.mchp_packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h: 3387: extern volatile unsigned char ANSEL __attribute__((address(0x188)));
-[v _ANSEL `Vuc ~T0 @X0 0 e@392 ]
-"3449
-[; ;C:/Users/Yefry Sajquiy/.mchp_packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h: 3449: extern volatile unsigned char ANSELH __attribute__((address(0x189)));
-[v _ANSELH `Vuc ~T0 @X0 0 e@393 ]
+[; ;sensor1.c: 37: void ADC_Init(void);
+[v _ADC_Init `(v ~T0 @X0 0 ef ]
+"228 C:/Users/Yefry Sajquiy/.mchp_packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h
+[; ;C:/Users/Yefry Sajquiy/.mchp_packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h: 228: extern volatile unsigned char PORTB __attribute__((address(0x006)));
+[v _PORTB `Vuc ~T0 @X0 0 e@6 ]
+"352
+[; ;C:/Users/Yefry Sajquiy/.mchp_packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h: 352: extern volatile unsigned char PORTD __attribute__((address(0x008)));
+[v _PORTD `Vuc ~T0 @X0 0 e@8 ]
+"2977
+[; ;C:/Users/Yefry Sajquiy/.mchp_packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h: 2977: extern volatile unsigned char ADCON1 __attribute__((address(0x09F)));
+[v _ADCON1 `Vuc ~T0 @X0 0 e@159 ]
 "1416
 [; ;C:/Users/Yefry Sajquiy/.mchp_packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h: 1416: extern volatile unsigned char TRISA __attribute__((address(0x085)));
 [v _TRISA `Vuc ~T0 @X0 0 e@133 ]
-"166
-[; ;C:/Users/Yefry Sajquiy/.mchp_packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h: 166: extern volatile unsigned char PORTA __attribute__((address(0x005)));
-[v _PORTA `Vuc ~T0 @X0 0 e@5 ]
 "1478
 [; ;C:/Users/Yefry Sajquiy/.mchp_packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h: 1478: extern volatile unsigned char TRISB __attribute__((address(0x086)));
 [v _TRISB `Vuc ~T0 @X0 0 e@134 ]
-"228
-[; ;C:/Users/Yefry Sajquiy/.mchp_packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h: 228: extern volatile unsigned char PORTB __attribute__((address(0x006)));
-[v _PORTB `Vuc ~T0 @X0 0 e@6 ]
 "1540
 [; ;C:/Users/Yefry Sajquiy/.mchp_packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h: 1540: extern volatile unsigned char TRISC __attribute__((address(0x087)));
 [v _TRISC `Vuc ~T0 @X0 0 e@135 ]
@@ -47,42 +43,29 @@ Version 4.0 HI-TECH Software Intermediate Code
 "1602
 [; ;C:/Users/Yefry Sajquiy/.mchp_packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h: 1602: extern volatile unsigned char TRISD __attribute__((address(0x088)));
 [v _TRISD `Vuc ~T0 @X0 0 e@136 ]
-"352
-[; ;C:/Users/Yefry Sajquiy/.mchp_packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h: 352: extern volatile unsigned char PORTD __attribute__((address(0x008)));
-[v _PORTD `Vuc ~T0 @X0 0 e@8 ]
-"1664
-[; ;C:/Users/Yefry Sajquiy/.mchp_packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h: 1664: extern volatile unsigned char TRISE __attribute__((address(0x089)));
-[v _TRISE `Vuc ~T0 @X0 0 e@137 ]
-"414
-[; ;C:/Users/Yefry Sajquiy/.mchp_packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h: 414: extern volatile unsigned char PORTE __attribute__((address(0x009)));
-[v _PORTE `Vuc ~T0 @X0 0 e@9 ]
-[v F1256 `(v ~T0 @X0 1 tf1`ul ]
-"92 C:/Users/Yefry Sajquiy/.mchp_packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\pic.h
-[v __delay `JF1256 ~T0 @X0 0 e ]
-[p i __delay ]
-"9 sensor1.c
+"8 sensor1.c
 [p x FOSC = INTRC_NOCLKOUT ]
-"10
+"9
 [p x WDTE = OFF ]
-"11
+"10
 [p x PWRTE = OFF ]
-"12
+"11
 [p x MCLRE = OFF ]
-"13
+"12
 [p x CP = OFF ]
-"14
+"13
 [p x CPD = OFF ]
-"15
+"14
 [p x BOREN = OFF ]
-"16
+"15
 [p x IESO = OFF ]
-"17
+"16
 [p x FCMEN = OFF ]
-"18
+"17
 [p x LVP = OFF ]
-"21
+"20
 [p x BOR4V = BOR40V ]
-"22
+"21
 [p x WRT = OFF ]
 "54 C:/Users/Yefry Sajquiy/.mchp_packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h
 [; ;C:/Users/Yefry Sajquiy/.mchp_packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h: 54: __asm("INDF equ 00h");
@@ -318,126 +301,179 @@ Version 4.0 HI-TECH Software Intermediate Code
 "3546
 [; ;C:/Users/Yefry Sajquiy/.mchp_packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h: 3546: __asm("EECON2 equ 018Dh");
 [; <" EECON2 equ 018Dh ;# ">
+"39 sensor1.c
+[; ;sensor1.c: 39: unsigned int ADC_Read(unsigned char channel)
+[v _ADC_Read `(ui ~T0 @X0 1 ef1`uc ]
+"40
+[; ;sensor1.c: 40: {
+{
+[e :U _ADC_Read ]
+"39
+[; ;sensor1.c: 39: unsigned int ADC_Read(unsigned char channel)
+[v _channel `uc ~T0 @X0 1 r1 ]
+"40
+[; ;sensor1.c: 40: {
+[f ]
+"41
+[; ;sensor1.c: 41:   if(channel > 7)
+[e $ ! > -> _channel `i -> 7 `i 139  ]
+"42
+[; ;sensor1.c: 42:     return 0;
+[e ) -> -> 0 `i `ui ]
+[e $UE 138  ]
+[e :U 139 ]
+"44
+[; ;sensor1.c: 44:   ADCON0 &= 0xC5;
+[e =& _ADCON0 -> -> 197 `i `Vuc ]
+"45
+[; ;sensor1.c: 45:   ADCON0 |= channel<<3;
+[e =| _ADCON0 -> << -> _channel `i -> 3 `i `Vuc ]
+"46
+[; ;sensor1.c: 46:   _delay((unsigned long)((2)*(8000000/4000.0)));
+[e ( __delay (1 -> * -> -> 2 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
+"47
+[; ;sensor1.c: 47:   GO_nDONE = 1;
+[e = _GO_nDONE -> -> 1 `i `b ]
+"48
+[; ;sensor1.c: 48:   while(GO_nDONE);
+[e $U 140  ]
+[e :U 141 ]
+[e :U 140 ]
+[e $ _GO_nDONE 141  ]
+[e :U 142 ]
+"49
+[; ;sensor1.c: 49:   return (ADRESH<<8);
+[e ) -> << -> _ADRESH `i -> 8 `i `ui ]
+[e $UE 138  ]
+"50
+[; ;sensor1.c: 50: }
+[e :UE 138 ]
+}
 [v $root$_main `(v ~T0 @X0 0 e ]
-"42 sensor1.c
-[; ;sensor1.c: 42: void main(void) {
+"56
+[; ;sensor1.c: 56: void main()
 [v _main `(v ~T0 @X0 1 ef ]
+"57
+[; ;sensor1.c: 57: {
 {
 [e :U _main ]
 [f ]
-"43
-[; ;sensor1.c: 43:     setup();
-[e ( _setup ..  ]
-"44
-[; ;sensor1.c: 44:     while (1) {
-[e :U 140 ]
-{
-"45
-[; ;sensor1.c: 45:         if(PORTAbits.RA1 == 1)
-[e $ ! == -> . . _PORTAbits 0 1 `i -> 1 `i 142  ]
-"46
-[; ;sensor1.c: 46:         { inc_cont_BI();}
-{
-[e ( _inc_cont_BI ..  ]
-}
-[e :U 142 ]
-"48
-[; ;sensor1.c: 48:         if (PORTAbits.RA2 == 1)
-[e $ ! == -> . . _PORTAbits 0 2 `i -> 1 `i 143  ]
-"49
-[; ;sensor1.c: 49:         { dec_cont_BI();}
-{
-[e ( _dec_cont_BI ..  ]
-}
-[e :U 143 ]
-"50
-[; ;sensor1.c: 50:     }
-}
-[e :U 139 ]
-[e $U 140  ]
-[e :U 141 ]
-"51
-[; ;sensor1.c: 51:     return;
-[e $UE 138  ]
-"52
-[; ;sensor1.c: 52:  }
-[e :UE 138 ]
-}
+"58
+[; ;sensor1.c: 58:   unsigned int VT=0;
+[v _VT `ui ~T0 @X0 1 a ]
+[e = _VT -> -> 0 `i `ui ]
 "59
-[; ;sensor1.c: 59: void setup(void) {
+[; ;sensor1.c: 59:   unsigned int ADCV;
+[v _ADCV `ui ~T0 @X0 1 a ]
+"63
+[; ;sensor1.c: 63:   setup();
+[e ( _setup ..  ]
+"64
+[; ;sensor1.c: 64:   ADC_Init();
+[e ( _ADC_Init ..  ]
+"66
+[; ;sensor1.c: 66:    while(1){
+[e :U 145 ]
+{
+"67
+[; ;sensor1.c: 67:     VT = ADC_Read(0);
+[e = _VT ( _ADC_Read (1 -> -> 0 `i `uc ]
+"70
+[; ;sensor1.c: 70:     PORTB = VT>>8;
+[e = _PORTB -> >> _VT -> 8 `i `uc ]
+"71
+[; ;sensor1.c: 71:     _delay((unsigned long)((3)*(8000000/4000.0)));
+[e ( __delay (1 -> * -> -> 3 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
+"73
+[; ;sensor1.c: 73:     ADCV = (VT*5)/1024;
+[e = _ADCV / * _VT -> -> 5 `i `ui -> -> 1024 `i `ui ]
+"75
+[; ;sensor1.c: 75:     if ( ADCV<= 16)
+[e $ ! <= _ADCV -> -> 16 `i `ui 147  ]
+"76
+[; ;sensor1.c: 76:     {PORTD = 0b00000001;}
+{
+[e = _PORTD -> -> 1 `i `uc ]
+}
+[e $U 148  ]
+"78
+[; ;sensor1.c: 78:     else if ( ADCV >= 17 && ADCV <=22 )
+[e :U 147 ]
+[e $ ! && >= _ADCV -> -> 17 `i `ui <= _ADCV -> -> 22 `i `ui 149  ]
+"79
+[; ;sensor1.c: 79:     {PORTD = 0b00000011;}
+{
+[e = _PORTD -> -> 3 `i `uc ]
+}
+[e $U 150  ]
+"81
+[; ;sensor1.c: 81:     else if ( ADCV >= 23)
+[e :U 149 ]
+[e $ ! >= _ADCV -> -> 23 `i `ui 151  ]
+"82
+[; ;sensor1.c: 82:     {PORTD = 0b00000111;}
+{
+[e = _PORTD -> -> 7 `i `uc ]
+}
+[e :U 151 ]
+[e :U 150 ]
+[e :U 148 ]
+"83
+[; ;sensor1.c: 83:    }
+}
+[e :U 144 ]
+[e $U 145  ]
+[e :U 146 ]
+"84
+[; ;sensor1.c: 84:   return;
+[e $UE 143  ]
+"85
+[; ;sensor1.c: 85: }
+[e :UE 143 ]
+}
+"91
+[; ;sensor1.c: 91: void ADC_Init(void)
+[v _ADC_Init `(v ~T0 @X0 1 ef ]
+"92
+[; ;sensor1.c: 92: {
+{
+[e :U _ADC_Init ]
+[f ]
+"93
+[; ;sensor1.c: 93:   ADCON0 = 0x81;
+[e = _ADCON0 -> -> 129 `i `uc ]
+"94
+[; ;sensor1.c: 94:   ADCON1 = 0x00;
+[e = _ADCON1 -> -> 0 `i `uc ]
+"95
+[; ;sensor1.c: 95: }
+[e :UE 152 ]
+}
+"97
+[; ;sensor1.c: 97: void setup(void){
 [v _setup `(v ~T0 @X0 1 ef ]
 {
 [e :U _setup ]
 [f ]
-"61
-[; ;sensor1.c: 61:     ANSEL = 0;
-[e = _ANSEL -> -> 0 `i `uc ]
-"62
-[; ;sensor1.c: 62:     ANSELH = 0;
-[e = _ANSELH -> -> 0 `i `uc ]
-"65
-[; ;sensor1.c: 65:     TRISA = 0b00000011;
-[e = _TRISA -> -> 3 `i `uc ]
-"66
-[; ;sensor1.c: 66:     PORTA = 0;
-[e = _PORTA -> -> 0 `i `uc ]
-"69
-[; ;sensor1.c: 69:     TRISB = 0;
+"99
+[; ;sensor1.c: 99:   TRISA = 0xFF;
+[e = _TRISA -> -> 255 `i `uc ]
+"101
+[; ;sensor1.c: 101:   TRISB = 0x00;
 [e = _TRISB -> -> 0 `i `uc ]
-"70
-[; ;sensor1.c: 70:     PORTB = 0;
-[e = _PORTB -> -> 0 `i `uc ]
-"73
-[; ;sensor1.c: 73:     TRISC = 0;
+"103
+[; ;sensor1.c: 103:   TRISC = 0;
 [e = _TRISC -> -> 0 `i `uc ]
-"74
-[; ;sensor1.c: 74:     PORTC = 0;
+"104
+[; ;sensor1.c: 104:   PORTC = 0;
 [e = _PORTC -> -> 0 `i `uc ]
-"77
-[; ;sensor1.c: 77:     TRISD = 0;
+"106
+[; ;sensor1.c: 106:   TRISD = 0;
 [e = _TRISD -> -> 0 `i `uc ]
-"78
-[; ;sensor1.c: 78:     PORTD = 0;
+"107
+[; ;sensor1.c: 107:   PORTD = 0;
 [e = _PORTD -> -> 0 `i `uc ]
-"81
-[; ;sensor1.c: 81:     TRISE = 0;
-[e = _TRISE -> -> 0 `i `uc ]
-"82
-[; ;sensor1.c: 82:     PORTE = 0;
-[e = _PORTE -> -> 0 `i `uc ]
-"83
-[; ;sensor1.c: 83: }
-[e :UE 144 ]
-}
-"88
-[; ;sensor1.c: 88: void inc_cont_BI(void){
-[v _inc_cont_BI `(v ~T0 @X0 1 ef ]
-{
-[e :U _inc_cont_BI ]
-[f ]
-"89
-[; ;sensor1.c: 89:     _delay((unsigned long)((50)*(8000000/4000.0)));
-[e ( __delay (1 -> * -> -> 50 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
-"90
-[; ;sensor1.c: 90:     PORTD = PORTD++;
-[e = _PORTD ++ _PORTD -> -> 1 `i `Vuc ]
-"91
-[; ;sensor1.c: 91: }
-[e :UE 145 ]
-}
-"93
-[; ;sensor1.c: 93: void dec_cont_BI(void){
-[v _dec_cont_BI `(v ~T0 @X0 1 ef ]
-{
-[e :U _dec_cont_BI ]
-[f ]
-"94
-[; ;sensor1.c: 94:     _delay((unsigned long)((100)*(8000000/4000.0)));
-[e ( __delay (1 -> * -> -> 100 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
-"95
-[; ;sensor1.c: 95:     PORTD = PORTD--;
-[e = _PORTD -- _PORTD -> -> 1 `i `Vuc ]
-"96
-[; ;sensor1.c: 96: }
-[e :UE 146 ]
+"108
+[; ;sensor1.c: 108: }
+[e :UE 153 ]
 }

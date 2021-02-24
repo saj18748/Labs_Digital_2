@@ -5,7 +5,7 @@ Linker command line:
 -W-3 --edf=C:\Program Files\Microchip\xc8\v2.20\pic\dat\en_msgs.txt -cn \
   -h+dist/default/production\ADC_MP.X.production.sym \
   --cmf=dist/default/production\ADC_MP.X.production.cmf -z -Q16F887 \
-  -oC:\Users\YEFRYS~1\AppData\Local\Temp\ser8.2 --defsym=__MPLAB_BUILD=1 \
+  -oC:\Users\YEFRYS~1\AppData\Local\Temp\se5o.2 --defsym=__MPLAB_BUILD=1 \
   -Mdist/default/production/ADC_MP.X.production.map -E1 -ver=XC8 Compiler \
   --acfsm=1493 -ASTACK=0110h-016Fh -pstack=STACK -ACODE=00h-07FFhx4 \
   -ASTRCODE=00h-01FFFh -ASTRING=00h-0FFhx32 -ACONST=00h-0FFhx32 \
@@ -18,7 +18,7 @@ Linker command line:
   -preset_vec=00h,intentry,init,end_init -ppowerup=CODE -pcinit=CODE \
   -pfunctab=ENTRY -AEEDATA=00h-0FFh/02100h -peeprom_data=EEDATA -DEEDATA=2 \
   -DCODE=2 -DSTRCODE=2 -DSTRING=2 -DCONST=2 -DENTRY=2 -k \
-  C:\Users\YEFRYS~1\AppData\Local\Temp\ser8.o \
+  C:\Users\YEFRYS~1\AppData\Local\Temp\se5o.o \
   dist/default/production\ADC_MP.X.production.o 
 
 Object code version is 3.11
@@ -28,7 +28,7 @@ Machine type is 16F887
 
 
                 Name                               Link     Load   Length Selector   Space Scale
-C:\Users\YEFRYS~1\AppData\Local\Temp\ser8.o
+C:\Users\YEFRYS~1\AppData\Local\Temp\se5o.o
                 end_init                              0        0        3        0       0
                 config                             2007     2007        2        0       4
 dist/default/production\ADC_MP.X.production.o
@@ -257,7 +257,7 @@ FUNCTION INFORMATION:
 
  *************** function _main *****************
  Defined at:
-		line 52 in file "ADC MP.c"
+		line 54 in file "ADC MP.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -288,7 +288,7 @@ Total ram usage:        4 bytes
 
  *************** function _setup *****************
  Defined at:
-		line 79 in file "ADC MP.c"
+		line 81 in file "ADC MP.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -317,7 +317,7 @@ Total ram usage:        0 bytes
 
  *************** function _ADC_Read *****************
  Defined at:
-		line 35 in file "ADC MP.c"
+		line 37 in file "ADC MP.c"
  Parameters:    Size  Location     Type
   channel         1    wreg     unsigned char 
  Auto vars:     Size  Location     Type
@@ -346,7 +346,7 @@ Total ram usage:        5 bytes
 
  *************** function _ADC_Init *****************
  Defined at:
-		line 73 in file "ADC MP.c"
+		line 75 in file "ADC MP.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type

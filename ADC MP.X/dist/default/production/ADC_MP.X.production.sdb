@@ -3,13 +3,13 @@
 [d edition pro ]
 [d chip 16F887 ]
 [d frameptr 0 ]
-"35 D:\UVG\Cuarto año\Primer Semestre\Electronica Digital 2\Labs MPLAB\Digital_2\ADC MP.X\ADC MP.c
+"37 D:\UVG\Cuarto año\Primer Semestre\Electronica Digital 2\Labs MPLAB\Digital_2\ADC MP.X\ADC MP.c
 [v _ADC_Read ADC_Read `(ui  1 e 2 0 ]
-"52
+"54
 [v _main main `(v  1 e 1 0 ]
-"73
+"75
 [v _ADC_Init ADC_Init `(v  1 e 1 0 ]
-"79
+"81
 [v _setup setup `(v  1 e 1 0 ]
 "10 C:\Program Files\Microchip\xc8\v2.20\pic\sources\c90\common\sprcadd.c
 [v ___fladd __fladd `(d  1 e 4 0 ]
@@ -37,29 +37,29 @@
 [v _ADCON1 ADCON1 `VEuc  1 e 1 @159 ]
 "3905
 [v _GO_nDONE GO_nDONE `VEb  1 e 0 @249 ]
-"52 D:\UVG\Cuarto año\Primer Semestre\Electronica Digital 2\Labs MPLAB\Digital_2\ADC MP.X\ADC MP.c
+"54 D:\UVG\Cuarto año\Primer Semestre\Electronica Digital 2\Labs MPLAB\Digital_2\ADC MP.X\ADC MP.c
 [v _main main `(v  1 e 1 0 ]
 {
-"54
+"56
 [v main@a a `ui  1 a 2 7 ]
-"67
+"69
 } 0
-"79
+"81
 [v _setup setup `(v  1 e 1 0 ]
 {
-"87
+"89
 } 0
-"35
+"37
 [v _ADC_Read ADC_Read `(ui  1 e 2 0 ]
 {
 [v ADC_Read@channel channel `uc  1 a 1 wreg ]
 [v ADC_Read@channel channel `uc  1 a 1 wreg ]
-"37
+"39
 [v ADC_Read@channel channel `uc  1 a 1 4 ]
-"46
+"48
 } 0
-"73
+"75
 [v _ADC_Init ADC_Init `(v  1 e 1 0 ]
 {
-"77
+"79
 } 0

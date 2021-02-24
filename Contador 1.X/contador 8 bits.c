@@ -25,7 +25,9 @@
 #define _XTAL_FREQ  8000000
 // #pragma config statements should precede project file includes.
 // Use project enums instead of #define for ON and OFF.
-
+#define SCK_SLAVE TRISC3
+#define SDO_SLAVE TRISC5
+#define SS_SLAVE TRISA5
 
 #include <xc.h>
 

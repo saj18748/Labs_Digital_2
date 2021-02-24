@@ -1,7 +1,7 @@
 
 
 Microchip MPLAB XC8 Assembler V2.20 build 20200408173844 
-                                                                                               Mon Feb 22 23:46:03 2021
+                                                                                               Tue Feb 23 22:01:34 2021
 
 Microchip MPLAB XC8 C Compiler v2.20 (Free license) build 20200408173844 Og1 
      1                           	processor	16F887
@@ -281,7 +281,7 @@ Microchip MPLAB XC8 C Compiler v2.20 (Free license) build 20200408173844 Og1
    267 ;;
    268 ;; *************** function _main *****************
    269 ;; Defined at:
-   270 ;;		line 52 in file "ADC MP.c"
+   270 ;;		line 54 in file "ADC MP.c"
    271 ;; Parameters:    Size  Location     Type
    272 ;;		None
    273 ;; Auto vars:     Size  Location     Type
@@ -318,14 +318,14 @@ Microchip MPLAB XC8 C Compiler v2.20 (Free license) build 20200408173844 Og1
    304                           ; Regs used in _main: [wreg+status,2+status,0+btemp+1+pclath+cstack]
    305                           
    306                           
-   307                           ;ADC MP.c: 54:   unsigned int a;;ADC MP.c: 58:   setup();
+   307                           ;ADC MP.c: 56:   unsigned int a;;ADC MP.c: 60:   setup();
    308  079F  120A  118A  2795  120A  118A  	fcall	_setup
    309                           
-   310                           ;ADC MP.c: 59:   ADC_Init();
+   310                           ;ADC MP.c: 61:   ADC_Init();
    311  07A4  120A  118A  278D  120A  118A  	fcall	_ADC_Init
    312  07A9                     l691:
    313                           
-   314                           ;ADC MP.c: 62:     a = ADC_Read(0);
+   314                           ;ADC MP.c: 64:     a = ADC_Read(0);
    315  07A9  3000               	movlw	0
    316  07AA  120A  118A  27C4  120A  118A  	fcall	_ADC_Read
    317  07AF  0871               	movf	?_ADC_Read+1,w
@@ -334,14 +334,14 @@ Microchip MPLAB XC8 C Compiler v2.20 (Free license) build 20200408173844 Og1
    320  07B2  00F7               	movwf	main@a
    321  07B3                     l693:
    322                           
-   323                           ;ADC MP.c: 64:     PORTB = a>>8;
+   323                           ;ADC MP.c: 66:     PORTB = a>>8;
    324  07B3  0878               	movf	main@a+1,w
    325  07B4  1283               	bcf	3,5	;RP0=0, select bank0
    326  07B5  1303               	bcf	3,6	;RP1=0, select bank0
    327  07B6  0086               	movwf	6	;volatile
    328  07B7                     l695:
    329                           
-   330                           ;ADC MP.c: 65:     _delay((unsigned long)((50)*(8000000/4000.0)));
+   330                           ;ADC MP.c: 67:     _delay((unsigned long)((50)*(8000000/4000.0)));
    331  07B7  3082               	movlw	130
    332  07B8  00F6               	movwf	??_main+1
    333  07B9  30DD               	movlw	221
@@ -360,7 +360,7 @@ Microchip MPLAB XC8 C Compiler v2.20 (Free license) build 20200408173844 Og1
    346  0795                     __ptext1:	
    347 ;; *************** function _setup *****************
    348 ;; Defined at:
-   349 ;;		line 79 in file "ADC MP.c"
+   349 ;;		line 81 in file "ADC MP.c"
    350 ;; Parameters:    Size  Location     Type
    351 ;;		None
    352 ;; Auto vars:     Size  Location     Type
@@ -395,22 +395,22 @@ Microchip MPLAB XC8 C Compiler v2.20 (Free license) build 20200408173844 Og1
    381                           ; Regs used in _setup: [wreg+status,2]
    382                           
    383                           
-   384                           ;ADC MP.c: 81:   TRISA = 0xFF;
+   384                           ;ADC MP.c: 83:   TRISA = 0xFF;
    385  0795  30FF               	movlw	255
    386  0796  1683               	bsf	3,5	;RP0=1, select bank1
    387  0797  1303               	bcf	3,6	;RP1=0, select bank1
    388  0798  0085               	movwf	5	;volatile
    389  0799                     l655:
    390                           
-   391                           ;ADC MP.c: 83:   TRISB = 0x00;
+   391                           ;ADC MP.c: 85:   TRISB = 0x00;
    392  0799  0186               	clrf	6	;volatile
    393  079A                     l657:
    394                           
-   395                           ;ADC MP.c: 85:   TRISC = 0;
+   395                           ;ADC MP.c: 87:   TRISC = 0;
    396  079A  0187               	clrf	7	;volatile
    397  079B                     l659:
    398                           
-   399                           ;ADC MP.c: 86:   PORTC = 0;
+   399                           ;ADC MP.c: 88:   PORTC = 0;
    400  079B  1283               	bcf	3,5	;RP0=0, select bank0
    401  079C  1303               	bcf	3,6	;RP1=0, select bank0
    402  079D  0187               	clrf	7	;volatile
@@ -422,7 +422,7 @@ Microchip MPLAB XC8 C Compiler v2.20 (Free license) build 20200408173844 Og1
    408  07C4                     __ptext2:	
    409 ;; *************** function _ADC_Read *****************
    410 ;; Defined at:
-   411 ;;		line 35 in file "ADC MP.c"
+   411 ;;		line 37 in file "ADC MP.c"
    412 ;; Parameters:    Size  Location     Type
    413 ;;  channel         1    wreg     unsigned char 
    414 ;; Auto vars:     Size  Location     Type
@@ -459,7 +459,7 @@ Microchip MPLAB XC8 C Compiler v2.20 (Free license) build 20200408173844 Og1
    445  07C4  00F4               	movwf	ADC_Read@channel
    446  07C5                     l673:
    447                           
-   448                           ;ADC MP.c: 35: unsigned int ADC_Read(unsigned char channel);ADC MP.c: 36: {;ADC MP.c: 37
+   448                           ;ADC MP.c: 37: unsigned int ADC_Read(unsigned char channel);ADC MP.c: 38: {;ADC MP.c: 39
       +                          :   if(channel > 7)
    449  07C5  3008               	movlw	8
    450  07C6  0274               	subwf	ADC_Read@channel,w
@@ -471,13 +471,13 @@ Microchip MPLAB XC8 C Compiler v2.20 (Free license) build 20200408173844 Og1
    456  07CB                     u40:
    457  07CB                     l675:
    458                           
-   459                           ;ADC MP.c: 38:     return 0;
+   459                           ;ADC MP.c: 40:     return 0;
    460  07CB  01F0               	clrf	?_ADC_Read
    461  07CC  01F1               	clrf	?_ADC_Read+1
    462  07CD  2FFB               	goto	l28
    463  07CE                     l679:
    464                           
-   465                           ;ADC MP.c: 40:   ADCON0 &= 0xC5;
+   465                           ;ADC MP.c: 42:   ADCON0 &= 0xC5;
    466  07CE  30C5               	movlw	197
    467  07CF  00FF               	movwf	btemp+1
    468  07D0  087F               	movf	btemp+1,w
@@ -485,7 +485,7 @@ Microchip MPLAB XC8 C Compiler v2.20 (Free license) build 20200408173844 Og1
    470  07D2  1303               	bcf	3,6	;RP1=0, select bank0
    471  07D3  059F               	andwf	31,f	;volatile
    472                           
-   473                           ;ADC MP.c: 41:   ADCON0 |= channel<<3;
+   473                           ;ADC MP.c: 43:   ADCON0 |= channel<<3;
    474  07D4  0874               	movf	ADC_Read@channel,w	;volatile
    475  07D5  00F2               	movwf	??_ADC_Read
    476  07D6  3002               	movlw	2
@@ -502,7 +502,7 @@ Microchip MPLAB XC8 C Compiler v2.20 (Free license) build 20200408173844 Og1
    487  07E0  049F               	iorwf	31,f	;volatile
    488  07E1                     l681:
    489                           
-   490                           ;ADC MP.c: 42:   _delay((unsigned long)((2)*(8000000/4000.0)));
+   490                           ;ADC MP.c: 44:   _delay((unsigned long)((2)*(8000000/4000.0)));
    491  07E1  3006               	movlw	6
    492  07E2  00F3               	movwf	??_ADC_Read+1
    493  07E3  3030               	movlw	48
@@ -515,12 +515,12 @@ Microchip MPLAB XC8 C Compiler v2.20 (Free license) build 20200408173844 Og1
    500  07E9  0000               	nop
    501  07EA                     l683:
    502                           
-   503                           ;ADC MP.c: 43:   GO_nDONE = 1;
+   503                           ;ADC MP.c: 45:   GO_nDONE = 1;
    504  07EA  1283               	bcf	3,5	;RP0=0, select bank0
    505  07EB  1303               	bcf	3,6	;RP1=0, select bank0
    506  07EC  149F               	bsf	31,1	;volatile
    507  07ED                     l29:	
-   508                           ;ADC MP.c: 44:   while(GO_nDONE);
+   508                           ;ADC MP.c: 46:   while(GO_nDONE);
    509                           
    510  07ED  189F               	btfsc	31,1	;volatile
    511  07EE  2FF0               	goto	u61
@@ -530,7 +530,7 @@ Microchip MPLAB XC8 C Compiler v2.20 (Free license) build 20200408173844 Og1
    515  07F1                     u60:
    516  07F1                     l685:
    517                           
-   518                           ;ADC MP.c: 45:   return (ADRESH<<8);
+   518                           ;ADC MP.c: 47:   return (ADRESH<<8);
    519  07F1  081E               	movf	30,w	;volatile
    520  07F2  00F2               	movwf	??_ADC_Read
    521  07F3  01F3               	clrf	??_ADC_Read+1
@@ -549,7 +549,7 @@ Microchip MPLAB XC8 C Compiler v2.20 (Free license) build 20200408173844 Og1
    534  078D                     __ptext3:	
    535 ;; *************** function _ADC_Init *****************
    536 ;; Defined at:
-   537 ;;		line 73 in file "ADC MP.c"
+   537 ;;		line 75 in file "ADC MP.c"
    538 ;; Parameters:    Size  Location     Type
    539 ;;		None
    540 ;; Auto vars:     Size  Location     Type
@@ -584,14 +584,14 @@ Microchip MPLAB XC8 C Compiler v2.20 (Free license) build 20200408173844 Og1
    569                           ; Regs used in _ADC_Init: [wreg+status,2]
    570                           
    571                           
-   572                           ;ADC MP.c: 75:   ADCON0 = 0x81;
+   572                           ;ADC MP.c: 77:   ADCON0 = 0x81;
    573  078D  3081               	movlw	129
    574  078E  1283               	bcf	3,5	;RP0=0, select bank0
    575  078F  1303               	bcf	3,6	;RP1=0, select bank0
    576  0790  009F               	movwf	31	;volatile
    577  0791                     l663:
    578                           
-   579                           ;ADC MP.c: 76:   ADCON1 = 0x00;
+   579                           ;ADC MP.c: 78:   ADCON1 = 0x00;
    580  0791  1683               	bsf	3,5	;RP0=1, select bank1
    581  0792  1303               	bcf	3,6	;RP1=0, select bank1
    582  0793  019F               	clrf	31	;volatile
@@ -735,7 +735,7 @@ DATA                 0      0       0      12        0.0%
 
 
 Microchip Technology PIC Macro Assembler V2.20 build 20200408173844 
-Symbol Table                                                                                   Mon Feb 22 23:46:03 2021
+Symbol Table                                                                                   Tue Feb 23 22:01:34 2021
 
                      l42 0794                       l28 07FB                       l29 07ED  
                      l45 079E                       u40 07CB                       u41 07CA  

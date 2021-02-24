@@ -14,7 +14,6 @@
 
 
 
-
 #pragma config FOSC = INTRC_NOCLKOUT
 #pragma config WDTE = OFF
 #pragma config PWRTE = OFF
@@ -35,6 +34,140 @@
 
 
 
+# 1 "C:\\Program Files\\Microchip\\xc8\\v2.20\\pic\\include\\c90\\stdint.h" 1 3
+# 13 "C:\\Program Files\\Microchip\\xc8\\v2.20\\pic\\include\\c90\\stdint.h" 3
+typedef signed char int8_t;
+
+
+
+
+
+
+typedef signed int int16_t;
+
+
+
+
+
+
+
+typedef __int24 int24_t;
+
+
+
+
+
+
+
+typedef signed long int int32_t;
+# 52 "C:\\Program Files\\Microchip\\xc8\\v2.20\\pic\\include\\c90\\stdint.h" 3
+typedef unsigned char uint8_t;
+
+
+
+
+
+typedef unsigned int uint16_t;
+
+
+
+
+
+
+typedef __uint24 uint24_t;
+
+
+
+
+
+
+typedef unsigned long int uint32_t;
+# 88 "C:\\Program Files\\Microchip\\xc8\\v2.20\\pic\\include\\c90\\stdint.h" 3
+typedef signed char int_least8_t;
+
+
+
+
+
+
+
+typedef signed int int_least16_t;
+# 109 "C:\\Program Files\\Microchip\\xc8\\v2.20\\pic\\include\\c90\\stdint.h" 3
+typedef __int24 int_least24_t;
+# 118 "C:\\Program Files\\Microchip\\xc8\\v2.20\\pic\\include\\c90\\stdint.h" 3
+typedef signed long int int_least32_t;
+# 136 "C:\\Program Files\\Microchip\\xc8\\v2.20\\pic\\include\\c90\\stdint.h" 3
+typedef unsigned char uint_least8_t;
+
+
+
+
+
+
+typedef unsigned int uint_least16_t;
+# 154 "C:\\Program Files\\Microchip\\xc8\\v2.20\\pic\\include\\c90\\stdint.h" 3
+typedef __uint24 uint_least24_t;
+
+
+
+
+
+
+
+typedef unsigned long int uint_least32_t;
+# 181 "C:\\Program Files\\Microchip\\xc8\\v2.20\\pic\\include\\c90\\stdint.h" 3
+typedef signed char int_fast8_t;
+
+
+
+
+
+
+typedef signed int int_fast16_t;
+# 200 "C:\\Program Files\\Microchip\\xc8\\v2.20\\pic\\include\\c90\\stdint.h" 3
+typedef __int24 int_fast24_t;
+
+
+
+
+
+
+
+typedef signed long int int_fast32_t;
+# 224 "C:\\Program Files\\Microchip\\xc8\\v2.20\\pic\\include\\c90\\stdint.h" 3
+typedef unsigned char uint_fast8_t;
+
+
+
+
+
+typedef unsigned int uint_fast16_t;
+# 240 "C:\\Program Files\\Microchip\\xc8\\v2.20\\pic\\include\\c90\\stdint.h" 3
+typedef __uint24 uint_fast24_t;
+
+
+
+
+
+
+typedef unsigned long int uint_fast32_t;
+# 268 "C:\\Program Files\\Microchip\\xc8\\v2.20\\pic\\include\\c90\\stdint.h" 3
+typedef int32_t intmax_t;
+# 282 "C:\\Program Files\\Microchip\\xc8\\v2.20\\pic\\include\\c90\\stdint.h" 3
+typedef uint32_t uintmax_t;
+
+
+
+
+
+
+typedef int16_t intptr_t;
+
+
+
+
+typedef uint16_t uintptr_t;
+# 27 "sensor1.c" 2
 
 # 1 "C:/Users/Yefry Sajquiy/.mchp_packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\\pic\\include\\xc.h" 1 3
 # 18 "C:/Users/Yefry Sajquiy/.mchp_packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\\pic\\include\\xc.h" 3
@@ -2516,72 +2649,85 @@ extern __bank0 unsigned char __resetbits;
 extern __bank0 __bit __powerdown;
 extern __bank0 __bit __timeout;
 # 28 "C:/Users/Yefry Sajquiy/.mchp_packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\\pic\\include\\xc.h" 2 3
-# 29 "sensor1.c" 2
+# 28 "sensor1.c" 2
 
 
 
 
 
 
-void setup(void);
-void inc_cont_BI(void);
-void dec_cont_BI(void);
 
 
+void setup();
+void ADC_Init(void);
 
+unsigned int ADC_Read(unsigned char channel)
+{
+  if(channel > 7)
+    return 0;
 
-void main(void) {
-    setup();
-    while (1) {
-        if(PORTAbits.RA1 == 1)
-        { inc_cont_BI();}
-
-        if (PORTAbits.RA2 == 1)
-        { dec_cont_BI();}
-    }
-    return;
- }
-
-
-
-
-
-
-void setup(void) {
-
-    ANSEL = 0;
-    ANSELH = 0;
-
-
-    TRISA = 0b00000011;
-    PORTA = 0;
-
-
-    TRISB = 0;
-    PORTB = 0;
-
-
-    TRISC = 0;
-    PORTC = 0;
-
-
-    TRISD = 0;
-    PORTD = 0;
-
-
-    TRISE = 0;
-    PORTE = 0;
+  ADCON0 &= 0xC5;
+  ADCON0 |= channel<<3;
+  _delay((unsigned long)((2)*(8000000/4000.0)));
+  GO_nDONE = 1;
+  while(GO_nDONE);
+  return (ADRESH<<8);
 }
 
 
 
 
-void inc_cont_BI(void){
-    _delay((unsigned long)((50)*(8000000/4000.0)));
-    PORTD = PORTD++;
+
+void main()
+{
+  unsigned int VT=0;
+  unsigned int ADCV;
+
+
+
+  setup();
+  ADC_Init();
+
+   while(1){
+    VT = ADC_Read(0);
+
+
+    PORTB = VT>>8;
+    _delay((unsigned long)((3)*(8000000/4000.0)));
+
+    ADCV = (VT*5)/1024;
+
+    if ( ADCV<= 16)
+    {PORTD = 0b00000001;}
+
+    else if ( ADCV >= 17 && ADCV <=22 )
+    {PORTD = 0b00000011;}
+
+    else if ( ADCV >= 23)
+    {PORTD = 0b00000111;}
+   }
+  return;
 }
 
-void dec_cont_BI(void){
-    _delay((unsigned long)((100)*(8000000/4000.0)));
-    PORTD = PORTD--;
+
+
+
+
+void ADC_Init(void)
+{
+  ADCON0 = 0x81;
+  ADCON1 = 0x00;
+}
+
+void setup(void){
+
+  TRISA = 0xFF;
+
+  TRISB = 0x00;
+
+  TRISC = 0;
+  PORTC = 0;
+
+  TRISD = 0;
+  PORTD = 0;
 }

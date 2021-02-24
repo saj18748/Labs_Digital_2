@@ -1,4 +1,4 @@
-# 1 "Mini proyec.c"
+# 1 "LCD.c"
 # 1 "<built-in>" 1
 # 1 "<built-in>" 3
 # 288 "<built-in>" 3
@@ -6,23 +6,10 @@
 # 1 "<built-in>" 2
 # 1 "C:/Users/Yefry Sajquiy/.mchp_packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\\pic\\include\\language_support.h" 1 3
 # 2 "<built-in>" 2
-# 1 "Mini proyec.c" 2
-# 11 "Mini proyec.c"
-#pragma config FOSC = INTRC_NOCLKOUT
-#pragma config WDTE = OFF
-#pragma config PWRTE = OFF
-#pragma config MCLRE = OFF
-#pragma config CP = OFF
-#pragma config CPD = OFF
-#pragma config BOREN = OFF
-#pragma config IESO = OFF
-#pragma config FCMEN = OFF
-#pragma config LVP = OFF
-
-
-#pragma config BOR4V = BOR40V
-#pragma config WRT = OFF
-# 37 "Mini proyec.c"
+# 1 "LCD.c" 2
+# 12 "LCD.c"
+# 1 "./LCD.h" 1
+# 41 "./LCD.h"
 # 1 "C:/Users/Yefry Sajquiy/.mchp_packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\\pic\\include\\xc.h" 1 3
 # 18 "C:/Users/Yefry Sajquiy/.mchp_packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\\pic\\include\\xc.h" 3
 extern const char __xc8_OPTIM_SPEED;
@@ -2503,10 +2490,12 @@ extern __bank0 unsigned char __resetbits;
 extern __bank0 __bit __powerdown;
 extern __bank0 __bit __timeout;
 # 28 "C:/Users/Yefry Sajquiy/.mchp_packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\\pic\\include\\xc.h" 2 3
-# 37 "Mini proyec.c" 2
+# 41 "./LCD.h" 2
 
-# 1 "./LCD.h" 1
-# 46 "./LCD.h"
+
+
+
+
 void Lcd_Port(char a);
 
 void Lcd_Cmd(char a);
@@ -2524,120 +2513,117 @@ void Lcd_Write_String(char *a);
 void Lcd_Shift_Right(void);
 
 void Lcd_Shift_Left(void);
-# 38 "Mini proyec.c" 2
+# 12 "LCD.c" 2
 
 
-
-
-
-
-
-void setup(void);
-void ADC_Init(void);
-char s[20];
-
-
-unsigned int ADC_Read(unsigned char channel)
+void Lcd_Port(char a)
 {
-  if(channel > 7)
-    return 0;
+ if(a & 1)
+  RD4 = 1;
+ else
+  RD4 = 0;
 
-  ADCON0 &= 0xC5;
-  ADCON0 |= channel<<3;
-  _delay((unsigned long)((2)*(8000000/4000.0)));
-  GO_nDONE = 1;
-  while(GO_nDONE);
-  return (ADRESH<<8);
+ if(a & 2)
+  RD5 = 1;
+ else
+  RD5 = 0;
+
+ if(a & 4)
+  RD6 = 1;
+ else
+  RD6 = 0;
+
+ if(a & 8)
+  RD7 = 1;
+ else
+  RD7 = 0;
+}
+void Lcd_Cmd(char a)
+{
+ RD2 = 0;
+ Lcd_Port(a);
+ RD3 = 1;
+        _delay((unsigned long)((4)*(8000000/4000.0)));
+        RD3 = 0;
 }
 
-
-
-
-void main()
+void Lcd_Clear(void)
 {
-  unsigned int a;
-  unsigned int volt;
-  unsigned int voltaje;
-
-
-  setup ();
-  ADC_Init();
-  Lcd_Init();
-
-  while(1){
-
-
-    a = ADC_Read(0);
-
-    PORTB = a>>8;
-    _delay((unsigned long)((50)*(8000000/4000.0)));
-
-
-    Lcd_Clear();
-    Lcd_Set_Cursor(1,1);
-    Lcd_Write_String("Laboratorio #3");
-    Lcd_Set_Cursor(2,1);
-    Lcd_Write_String("Yefry Sajquiy");
-    _delay((unsigned long)((100)*(8000000/4000.0)));
-    Lcd_Clear();
-    Lcd_Set_Cursor(1,1);
-    Lcd_Write_String("18748");
-    Lcd_Set_Cursor(2,1);
-    Lcd_Write_String("Digital 2");
-    _delay((unsigned long)((100)*(8000000/4000.0)));
-
-
-    volt = ADC_Read(0);
-    voltaje = (volt*0.5)/1023;
-
-    Lcd_Clear();
-    Lcd_Set_Cursor(1,1);
-    Lcd_Write_String("Voltaje");
-    _delay((unsigned long)((100)*(8000000/4000.0)));
-    Lcd_Clear();
-    Lcd_Set_Cursor(2,1);
-    Lcd_Write_String("Voltaje");
-
-
-    for(a=0;a<15;a++)
-    {
-        _delay((unsigned long)((300)*(8000000/4000.0)));
-        Lcd_Shift_Left();
-    }
-
-    for(a=0;a<15;a++)
-    {
-        _delay((unsigned long)((300)*(8000000/4000.0)));
-        Lcd_Shift_Right();
-    }
-
-    Lcd_Clear();
-    Lcd_Set_Cursor(2,1);
-    Lcd_Write_Char('e');
-    Lcd_Write_Char('S');
-    _delay((unsigned long)((200)*(8000000/4000.0)));
-  }
-  return;
-
+ Lcd_Cmd(0);
+ Lcd_Cmd(1);
 }
 
-
-
-
-
-void setup(void){
-  TRISA = 0xFF;
-  TRISB = 0x00;
-
-  TRISC = 0;
-  PORTC = 0;
-
-   TRISD= 0x00;
-
+void Lcd_Set_Cursor(char a, char b)
+{
+ char temp,z,y;
+ if(a == 1)
+ {
+   temp = 0x80 + b - 1;
+  z = temp>>4;
+  y = temp & 0x0F;
+  Lcd_Cmd(z);
+  Lcd_Cmd(y);
+ }
+ else if(a == 2)
+ {
+  temp = 0xC0 + b - 1;
+  z = temp>>4;
+  y = temp & 0x0F;
+  Lcd_Cmd(z);
+  Lcd_Cmd(y);
+ }
 }
 
-void ADC_Init(void)
+void Lcd_Init(void)
 {
-  ADCON0 = 0x81;
-  ADCON1 = 0x00;
+  Lcd_Port(0x00);
+   _delay((unsigned long)((20)*(8000000/4000.0)));
+  Lcd_Cmd(0x03);
+ _delay((unsigned long)((5)*(8000000/4000.0)));
+  Lcd_Cmd(0x03);
+ _delay((unsigned long)((11)*(8000000/4000.0)));
+  Lcd_Cmd(0x03);
+
+  Lcd_Cmd(0x02);
+  Lcd_Cmd(0x02);
+  Lcd_Cmd(0x08);
+  Lcd_Cmd(0x00);
+  Lcd_Cmd(0x0C);
+  Lcd_Cmd(0x00);
+  Lcd_Cmd(0x06);
+}
+
+void Lcd_Write_Char(char a)
+{
+   char temp,y;
+   temp = a&0x0F;
+   y = a&0xF0;
+   RD2 = 1;
+   Lcd_Port(y>>4);
+   RD3 = 1;
+   _delay((unsigned long)((40)*(8000000/4000000.0)));
+   RD3 = 0;
+   Lcd_Port(temp);
+   RD3 = 1;
+   _delay((unsigned long)((40)*(8000000/4000000.0)));
+   RD3 = 0;
+}
+
+void Lcd_Write_String(char *a)
+{
+ int i;
+ for(i=0;a[i]!='\0';i++)
+    Lcd_Write_Char(a[i]);
+}
+
+void Lcd_Shift_Right(void)
+{
+ Lcd_Cmd(0x01);
+ Lcd_Cmd(0x0C);
+}
+
+void Lcd_Shift_Left(void)
+{
+ Lcd_Cmd(0x01);
+ Lcd_Cmd(0x08);
 }
