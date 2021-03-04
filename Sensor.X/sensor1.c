@@ -56,7 +56,7 @@ unsigned int ADC_Read(unsigned char channel)  // configuracion de la lectura dle
 void main()
 {
   unsigned int VT=0;  // valor de temperatura
-  unsigned int ADCV;
+  unsigned int ADCV;   // valor para el rango
   
   // se llaman a las  funcines definidas
   
@@ -72,13 +72,13 @@ void main()
     
     ADCV = (VT*5)/1024;
     
-    if ( ADCV<= 16)
+    if ( ADCV<= 16)             //  rango para menor de 25 grados
     {PORTD = 0b00000001;}
     
-    else if ( ADCV >= 17 && ADCV <=22 )
+    else if ( ADCV >= 17 && ADCV <=22 ) // rango de 25 a 36
     {PORTD = 0b00000011;}
     
-    else if ( ADCV >= 23)
+    else if ( ADCV >= 23)                   /// rango mayor a  36
     {PORTD = 0b00000111;}
    } 
   return;
