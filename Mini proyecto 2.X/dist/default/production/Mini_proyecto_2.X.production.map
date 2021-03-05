@@ -5,7 +5,7 @@ Linker command line:
 -W-3 --edf=C:\Program Files\Microchip\xc8\v2.20\pic\dat\en_msgs.txt -cn \
   -h+dist/default/production\Mini_proyecto_2.X.production.sym \
   --cmf=dist/default/production\Mini_proyecto_2.X.production.cmf -z \
-  -Q16F887 -oC:\Users\YEFRYS~1\AppData\Local\Temp\siu0.2 \
+  -Q16F887 -oC:\Users\YEFRYS~1\AppData\Local\Temp\siu8.2 \
   --defsym=__MPLAB_BUILD=1 \
   -Mdist/default/production/Mini_proyecto_2.X.production.map -E1 \
   -ver=XC8 Compiler --acfsm=1493 -ASTACK=0110h-016Fh -pstack=STACK \
@@ -19,7 +19,7 @@ Linker command line:
   -preset_vec=00h,intentry,init,end_init -ppowerup=CODE -pcinit=CODE \
   -pfunctab=ENTRY -AEEDATA=00h-0FFh/02100h -peeprom_data=EEDATA -DEEDATA=2 \
   -DCODE=2 -DSTRCODE=2 -DSTRING=2 -DCONST=2 -DENTRY=2 -k \
-  C:\Users\YEFRYS~1\AppData\Local\Temp\siu0.o \
+  C:\Users\YEFRYS~1\AppData\Local\Temp\siu8.o \
   dist/default/production\Mini_proyecto_2.X.production.o 
 
 Object code version is 3.11
@@ -29,7 +29,7 @@ Machine type is 16F887
 
 
                 Name                               Link     Load   Length Selector   Space Scale
-C:\Users\YEFRYS~1\AppData\Local\Temp\siu0.o
+C:\Users\YEFRYS~1\AppData\Local\Temp\siu8.o
                 end_init                              0        0        3        0       0
                 config                             2007     2007        2        0       4
 dist/default/production\Mini_proyecto_2.X.production.o
@@ -307,7 +307,7 @@ FUNCTION INFORMATION:
 
  *************** function _main *****************
  Defined at:
-		line 86 in file "Mini proyecto 2.c"
+		line 93 in file "Mini proyecto 2.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -340,7 +340,7 @@ Total ram usage:        3 bytes
 
  *************** function _I2C_Master_Write *****************
  Defined at:
-		line 67 in file "Mini proyecto 2.c"
+		line 70 in file "Mini proyecto 2.c"
  Parameters:    Size  Location     Type
   d               2    0[COMMON] unsigned int 
  Auto vars:     Size  Location     Type
@@ -370,7 +370,7 @@ Total ram usage:        2 bytes
 
  *************** function _I2C_Master_Stop *****************
  Defined at:
-		line 61 in file "Mini proyecto 2.c"
+		line 64 in file "Mini proyecto 2.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -400,7 +400,7 @@ Total ram usage:        0 bytes
 
  *************** function _I2C_Master_Start *****************
  Defined at:
-		line 49 in file "Mini proyecto 2.c"
+		line 52 in file "Mini proyecto 2.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -430,7 +430,7 @@ Total ram usage:        0 bytes
 
  *************** function _I2C_Master_Read *****************
  Defined at:
-		line 73 in file "Mini proyecto 2.c"
+		line 76 in file "Mini proyecto 2.c"
  Parameters:    Size  Location     Type
   a               2    0[COMMON] unsigned short 
  Auto vars:     Size  Location     Type
@@ -460,7 +460,7 @@ Total ram usage:        6 bytes
 
  *************** function _I2C_Master_Wait *****************
  Defined at:
-		line 44 in file "Mini proyecto 2.c"
+		line 47 in file "Mini proyecto 2.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -493,7 +493,7 @@ Total ram usage:        0 bytes
 
  *************** function _I2C_Master_Init *****************
  Defined at:
-		line 34 in file "Mini proyecto 2.c"
+		line 37 in file "Mini proyecto 2.c"
  Parameters:    Size  Location     Type
   c               4    0[BANK0 ] const unsigned long 
  Auto vars:     Size  Location     Type

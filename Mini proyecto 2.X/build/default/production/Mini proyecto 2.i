@@ -2512,6 +2512,9 @@ extern __bank0 __bit __timeout;
 
 
 
+
+
+
 void I2C_Master_Init(const unsigned long c)
 {
   SSPCON = 0b00101000;
@@ -2563,6 +2566,10 @@ unsigned short I2C_Master_Read(unsigned short a)
   ACKEN = 1;
   return temp;
 }
+
+
+
+
 
 void main()
 {

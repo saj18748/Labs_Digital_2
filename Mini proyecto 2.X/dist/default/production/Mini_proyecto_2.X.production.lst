@@ -1,7 +1,7 @@
 
 
 Microchip MPLAB XC8 Assembler V2.20 build 20200408173844 
-                                                                                               Wed Mar 03 22:43:06 2021
+                                                                                               Thu Mar 04 21:48:33 2021
 
 Microchip MPLAB XC8 C Compiler v2.20 (Free license) build 20200408173844 Og1 
      1                           	processor	16F887
@@ -344,7 +344,7 @@ Microchip MPLAB XC8 C Compiler v2.20 (Free license) build 20200408173844 Og1
    330 ;;
    331 ;; *************** function _main *****************
    332 ;; Defined at:
-   333 ;;		line 86 in file "Mini proyecto 2.c"
+   333 ;;		line 93 in file "Mini proyecto 2.c"
    334 ;; Parameters:    Size  Location     Type
    335 ;;		None
    336 ;; Auto vars:     Size  Location     Type
@@ -383,28 +383,28 @@ Microchip MPLAB XC8 C Compiler v2.20 (Free license) build 20200408173844 Og1
    369                           ; Regs used in _main: [wreg+status,2+status,0+btemp+1+pclath+cstack]
    370                           
    371                           
-   372                           ;Mini proyecto 2.c: 88:   nRBPU = 0;
+   372                           ;Mini proyecto 2.c: 95:   nRBPU = 0;
    373  0784  1683               	bsf	3,5	;RP0=1, select bank1
    374  0785  1303               	bcf	3,6	;RP1=0, select bank1
    375  0786  1381               	bcf	1,7	;volatile
    376  0787                     l826:
    377                           
-   378                           ;Mini proyecto 2.c: 89:   TRISB = 0xFF;
+   378                           ;Mini proyecto 2.c: 96:   TRISB = 0xFF;
    379  0787  30FF               	movlw	255
    380  0788  0086               	movwf	6	;volatile
    381  0789                     l828:
    382                           
-   383                           ;Mini proyecto 2.c: 90:   TRISD = 0x00;
+   383                           ;Mini proyecto 2.c: 97:   TRISD = 0x00;
    384  0789  0188               	clrf	8	;volatile
    385  078A                     l830:
    386                           
-   387                           ;Mini proyecto 2.c: 91:   PORTD = 0x00;
+   387                           ;Mini proyecto 2.c: 98:   PORTD = 0x00;
    388  078A  1283               	bcf	3,5	;RP0=0, select bank0
    389  078B  1303               	bcf	3,6	;RP1=0, select bank0
    390  078C  0188               	clrf	8	;volatile
    391  078D                     l832:
    392                           
-   393                           ;Mini proyecto 2.c: 92:   I2C_Master_Init(100000);
+   393                           ;Mini proyecto 2.c: 99:   I2C_Master_Init(100000);
    394  078D  3000               	movlw	0
    395  078E  00A3               	movwf	I2C_Master_Init@c+3
    396  078F  3001               	movlw	1
@@ -416,11 +416,11 @@ Microchip MPLAB XC8 C Compiler v2.20 (Free license) build 20200408173844 Og1
    402  0795  120A  118A  26E6  120A  118A  	fcall	_I2C_Master_Init
    403  079A                     l834:
    404                           
-   405                           ;Mini proyecto 2.c: 94:   {;Mini proyecto 2.c: 95:     I2C_Master_Start();
+   405                           ;Mini proyecto 2.c: 101:   {;Mini proyecto 2.c: 102:     I2C_Master_Start();
    406  079A  120A  118A  2690  120A  118A  	fcall	_I2C_Master_Start
    407  079F                     l836:
    408                           
-   409                           ;Mini proyecto 2.c: 96:     I2C_Master_Write(0x30);
+   409                           ;Mini proyecto 2.c: 103:     I2C_Master_Write(0x30);
    410  079F  3030               	movlw	48
    411  07A0  00F0               	movwf	I2C_Master_Write@d
    412  07A1  3000               	movlw	0
@@ -428,7 +428,7 @@ Microchip MPLAB XC8 C Compiler v2.20 (Free license) build 20200408173844 Og1
    414  07A3  120A  118A  26A2  120A  118A  	fcall	_I2C_Master_Write
    415  07A8                     l838:
    416                           
-   417                           ;Mini proyecto 2.c: 97:     I2C_Master_Write(PORTB);
+   417                           ;Mini proyecto 2.c: 104:     I2C_Master_Write(PORTB);
    418  07A8  1283               	bcf	3,5	;RP0=0, select bank0
    419  07A9  1303               	bcf	3,6	;RP1=0, select bank0
    420  07AA  0806               	movf	6,w	;volatile
@@ -441,11 +441,11 @@ Microchip MPLAB XC8 C Compiler v2.20 (Free license) build 20200408173844 Og1
    427  07B1  120A  118A  26A2  120A  118A  	fcall	_I2C_Master_Write
    428  07B6                     l840:
    429                           
-   430                           ;Mini proyecto 2.c: 98:     I2C_Master_Stop();
+   430                           ;Mini proyecto 2.c: 105:     I2C_Master_Stop();
    431  07B6  120A  118A  2699  120A  118A  	fcall	_I2C_Master_Stop
    432  07BB                     l842:
    433                           
-   434                           ;Mini proyecto 2.c: 99:     _delay((unsigned long)((200)*(8000000/4000.0)));
+   434                           ;Mini proyecto 2.c: 106:     _delay((unsigned long)((200)*(8000000/4000.0)));
    435  07BB  3003               	movlw	3
    436  07BC  1283               	bcf	3,5	;RP0=0, select bank0
    437  07BD  1303               	bcf	3,6	;RP1=0, select bank0
@@ -464,11 +464,11 @@ Microchip MPLAB XC8 C Compiler v2.20 (Free license) build 20200408173844 Og1
    450  07C9  0000               	nop
    451  07CA                     l844:
    452                           
-   453                           ;Mini proyecto 2.c: 100:     I2C_Master_Start();
+   453                           ;Mini proyecto 2.c: 107:     I2C_Master_Start();
    454  07CA  120A  118A  2690  120A  118A  	fcall	_I2C_Master_Start
    455  07CF                     l846:
    456                           
-   457                           ;Mini proyecto 2.c: 101:     I2C_Master_Write(0x31);
+   457                           ;Mini proyecto 2.c: 108:     I2C_Master_Write(0x31);
    458  07CF  3031               	movlw	49
    459  07D0  00F0               	movwf	I2C_Master_Write@d
    460  07D1  3000               	movlw	0
@@ -476,7 +476,7 @@ Microchip MPLAB XC8 C Compiler v2.20 (Free license) build 20200408173844 Og1
    462  07D3  120A  118A  26A2  120A  118A  	fcall	_I2C_Master_Write
    463  07D8                     l848:
    464                           
-   465                           ;Mini proyecto 2.c: 102:     PORTD = I2C_Master_Read(0);
+   465                           ;Mini proyecto 2.c: 109:     PORTD = I2C_Master_Read(0);
    466  07D8  3000               	movlw	0
    467  07D9  00F0               	movwf	I2C_Master_Read@a
    468  07DA  00F1               	movwf	I2C_Master_Read@a+1
@@ -487,11 +487,11 @@ Microchip MPLAB XC8 C Compiler v2.20 (Free license) build 20200408173844 Og1
    473  07E3  0088               	movwf	8	;volatile
    474  07E4                     l850:
    475                           
-   476                           ;Mini proyecto 2.c: 103:     I2C_Master_Stop();
+   476                           ;Mini proyecto 2.c: 110:     I2C_Master_Stop();
    477  07E4  120A  118A  2699  120A  118A  	fcall	_I2C_Master_Stop
    478  07E9                     l852:
    479                           
-   480                           ;Mini proyecto 2.c: 104:     _delay((unsigned long)((200)*(8000000/4000.0)));
+   480                           ;Mini proyecto 2.c: 111:     _delay((unsigned long)((200)*(8000000/4000.0)));
    481  07E9  3003               	movlw	3
    482  07EA  1283               	bcf	3,5	;RP0=0, select bank0
    483  07EB  1303               	bcf	3,6	;RP1=0, select bank0
@@ -516,7 +516,7 @@ Microchip MPLAB XC8 C Compiler v2.20 (Free license) build 20200408173844 Og1
    502  06A2                     __ptext1:	
    503 ;; *************** function _I2C_Master_Write *****************
    504 ;; Defined at:
-   505 ;;		line 67 in file "Mini proyecto 2.c"
+   505 ;;		line 70 in file "Mini proyecto 2.c"
    506 ;; Parameters:    Size  Location     Type
    507 ;;  d               2    0[COMMON] unsigned int 
    508 ;; Auto vars:     Size  Location     Type
@@ -552,12 +552,12 @@ Microchip MPLAB XC8 C Compiler v2.20 (Free license) build 20200408173844 Og1
    538                           ; Regs used in _I2C_Master_Write: [wreg+status,2+status,0+pclath+cstack]
    539                           
    540                           
-   541                           ;Mini proyecto 2.c: 67: void I2C_Master_Write(unsigned d);Mini proyecto 2.c: 68: {;Mini 
-      +                          proyecto 2.c: 69:   I2C_Master_Wait();
+   541                           ;Mini proyecto 2.c: 70: void I2C_Master_Write(unsigned d);Mini proyecto 2.c: 71: {;Mini 
+      +                          proyecto 2.c: 72:   I2C_Master_Wait();
    542  06A2  120A  118A  26AC  120A  118A  	fcall	_I2C_Master_Wait
    543  06A7                     l806:
    544                           
-   545                           ;Mini proyecto 2.c: 70:   SSPBUF = d;
+   545                           ;Mini proyecto 2.c: 73:   SSPBUF = d;
    546  06A7  0870               	movf	I2C_Master_Write@d,w
    547  06A8  1283               	bcf	3,5	;RP0=0, select bank0
    548  06A9  1303               	bcf	3,6	;RP1=0, select bank0
@@ -570,7 +570,7 @@ Microchip MPLAB XC8 C Compiler v2.20 (Free license) build 20200408173844 Og1
    555  0699                     __ptext2:	
    556 ;; *************** function _I2C_Master_Stop *****************
    557 ;; Defined at:
-   558 ;;		line 61 in file "Mini proyecto 2.c"
+   558 ;;		line 64 in file "Mini proyecto 2.c"
    559 ;; Parameters:    Size  Location     Type
    560 ;;		None
    561 ;; Auto vars:     Size  Location     Type
@@ -606,11 +606,11 @@ Microchip MPLAB XC8 C Compiler v2.20 (Free license) build 20200408173844 Og1
    591                           ; Regs used in _I2C_Master_Stop: [wreg+status,2+status,0+pclath+cstack]
    592                           
    593                           
-   594                           ;Mini proyecto 2.c: 63:   I2C_Master_Wait();
+   594                           ;Mini proyecto 2.c: 66:   I2C_Master_Wait();
    595  0699  120A  118A  26AC  120A  118A  	fcall	_I2C_Master_Wait
    596  069E                     l710:
    597                           
-   598                           ;Mini proyecto 2.c: 64:   PEN = 1;
+   598                           ;Mini proyecto 2.c: 67:   PEN = 1;
    599  069E  1683               	bsf	3,5	;RP0=1, select bank1
    600  069F  1303               	bcf	3,6	;RP1=0, select bank1
    601  06A0  1511               	bsf	17,2	;volatile
@@ -622,7 +622,7 @@ Microchip MPLAB XC8 C Compiler v2.20 (Free license) build 20200408173844 Og1
    607  0690                     __ptext3:	
    608 ;; *************** function _I2C_Master_Start *****************
    609 ;; Defined at:
-   610 ;;		line 49 in file "Mini proyecto 2.c"
+   610 ;;		line 52 in file "Mini proyecto 2.c"
    611 ;; Parameters:    Size  Location     Type
    612 ;;		None
    613 ;; Auto vars:     Size  Location     Type
@@ -658,11 +658,11 @@ Microchip MPLAB XC8 C Compiler v2.20 (Free license) build 20200408173844 Og1
    643                           ; Regs used in _I2C_Master_Start: [wreg+status,2+status,0+pclath+cstack]
    644                           
    645                           
-   646                           ;Mini proyecto 2.c: 51:   I2C_Master_Wait();
+   646                           ;Mini proyecto 2.c: 54:   I2C_Master_Wait();
    647  0690  120A  118A  26AC  120A  118A  	fcall	_I2C_Master_Wait
    648  0695                     l706:
    649                           
-   650                           ;Mini proyecto 2.c: 52:   SEN = 1;
+   650                           ;Mini proyecto 2.c: 55:   SEN = 1;
    651  0695  1683               	bsf	3,5	;RP0=1, select bank1
    652  0696  1303               	bcf	3,6	;RP1=0, select bank1
    653  0697  1411               	bsf	17,0	;volatile
@@ -674,7 +674,7 @@ Microchip MPLAB XC8 C Compiler v2.20 (Free license) build 20200408173844 Og1
    659  06B9                     __ptext4:	
    660 ;; *************** function _I2C_Master_Read *****************
    661 ;; Defined at:
-   662 ;;		line 73 in file "Mini proyecto 2.c"
+   662 ;;		line 76 in file "Mini proyecto 2.c"
    663 ;; Parameters:    Size  Location     Type
    664 ;;  a               2    0[COMMON] unsigned short 
    665 ;; Auto vars:     Size  Location     Type
@@ -710,22 +710,22 @@ Microchip MPLAB XC8 C Compiler v2.20 (Free license) build 20200408173844 Og1
    695                           ; Regs used in _I2C_Master_Read: [wreg+status,2+status,0+pclath+cstack]
    696                           
    697                           
-   698                           ;Mini proyecto 2.c: 73: unsigned short I2C_Master_Read(unsigned short a);Mini proyecto 2
-      +                          .c: 74: {;Mini proyecto 2.c: 75:   unsigned short temp;;Mini proyecto 2.c: 76:   I2C_Mas
+   698                           ;Mini proyecto 2.c: 76: unsigned short I2C_Master_Read(unsigned short a);Mini proyecto 2
+      +                          .c: 77: {;Mini proyecto 2.c: 78:   unsigned short temp;;Mini proyecto 2.c: 79:   I2C_Mas
       +                          ter_Wait();
    699  06B9  120A  118A  26AC  120A  118A  	fcall	_I2C_Master_Wait
    700  06BE                     l810:
    701                           
-   702                           ;Mini proyecto 2.c: 77:   RCEN = 1;
+   702                           ;Mini proyecto 2.c: 80:   RCEN = 1;
    703  06BE  1683               	bsf	3,5	;RP0=1, select bank1
    704  06BF  1303               	bcf	3,6	;RP1=0, select bank1
    705  06C0  1591               	bsf	17,3	;volatile
    706                           
-   707                           ;Mini proyecto 2.c: 78:   I2C_Master_Wait();
+   707                           ;Mini proyecto 2.c: 81:   I2C_Master_Wait();
    708  06C1  120A  118A  26AC  120A  118A  	fcall	_I2C_Master_Wait
    709  06C6                     l812:
    710                           
-   711                           ;Mini proyecto 2.c: 79:   temp = SSPBUF;
+   711                           ;Mini proyecto 2.c: 82:   temp = SSPBUF;
    712  06C6  1283               	bcf	3,5	;RP0=0, select bank0
    713  06C7  1303               	bcf	3,6	;RP1=0, select bank0
    714  06C8  0813               	movf	19,w	;volatile
@@ -737,11 +737,11 @@ Microchip MPLAB XC8 C Compiler v2.20 (Free license) build 20200408173844 Og1
    720  06CE  00F5               	movwf	I2C_Master_Read@temp+1
    721  06CF                     l814:
    722                           
-   723                           ;Mini proyecto 2.c: 80:   I2C_Master_Wait();
+   723                           ;Mini proyecto 2.c: 83:   I2C_Master_Wait();
    724  06CF  120A  118A  26AC  120A  118A  	fcall	_I2C_Master_Wait
    725  06D4                     l816:
    726                           
-   727                           ;Mini proyecto 2.c: 81:   ACKDT = (a)?0:1;
+   727                           ;Mini proyecto 2.c: 84:   ACKDT = (a)?0:1;
    728  06D4  0870               	movf	I2C_Master_Read@a,w
    729  06D5  0471               	iorwf	I2C_Master_Read@a+1,w
    730  06D6  1903               	btfsc	3,2
@@ -759,11 +759,11 @@ Microchip MPLAB XC8 C Compiler v2.20 (Free license) build 20200408173844 Og1
    742  06E0                     u224:
    743  06E0                     l818:
    744                           
-   745                           ;Mini proyecto 2.c: 82:   ACKEN = 1;
+   745                           ;Mini proyecto 2.c: 85:   ACKEN = 1;
    746  06E0  1611               	bsf	17,4	;volatile
    747  06E1                     l820:
    748                           
-   749                           ;Mini proyecto 2.c: 83:   return temp;
+   749                           ;Mini proyecto 2.c: 86:   return temp;
    750  06E1  0875               	movf	I2C_Master_Read@temp+1,w
    751  06E2  00F1               	movwf	?_I2C_Master_Read+1
    752  06E3  0874               	movf	I2C_Master_Read@temp,w
@@ -776,7 +776,7 @@ Microchip MPLAB XC8 C Compiler v2.20 (Free license) build 20200408173844 Og1
    759  06AC                     __ptext5:	
    760 ;; *************** function _I2C_Master_Wait *****************
    761 ;; Defined at:
-   762 ;;		line 44 in file "Mini proyecto 2.c"
+   762 ;;		line 47 in file "Mini proyecto 2.c"
    763 ;; Parameters:    Size  Location     Type
    764 ;;		None
    765 ;; Auto vars:     Size  Location     Type
@@ -815,7 +815,7 @@ Microchip MPLAB XC8 C Compiler v2.20 (Free license) build 20200408173844 Og1
    798                           ; Regs used in _I2C_Master_Wait: [wreg+status,2]
    799                           
    800  06AC                     l44:	
-   801                           ;Mini proyecto 2.c: 46:   while ((SSPSTAT & 0x04) || (SSPCON2 & 0x1F));
+   801                           ;Mini proyecto 2.c: 49:   while ((SSPSTAT & 0x04) || (SSPCON2 & 0x1F));
    802                           
    803  06AC  1683               	bsf	3,5	;RP0=1, select bank1
    804  06AD  1303               	bcf	3,6	;RP1=0, select bank1
@@ -842,7 +842,7 @@ Microchip MPLAB XC8 C Compiler v2.20 (Free license) build 20200408173844 Og1
    825  06E6                     __ptext6:	
    826 ;; *************** function _I2C_Master_Init *****************
    827 ;; Defined at:
-   828 ;;		line 34 in file "Mini proyecto 2.c"
+   828 ;;		line 37 in file "Mini proyecto 2.c"
    829 ;; Parameters:    Size  Location     Type
    830 ;;  c               4    0[BANK0 ] const unsigned long 
    831 ;; Auto vars:     Size  Location     Type
@@ -878,21 +878,21 @@ Microchip MPLAB XC8 C Compiler v2.20 (Free license) build 20200408173844 Og1
    861                           ; Regs used in _I2C_Master_Init: [wreg+status,2+status,0+btemp+1+pclath+cstack]
    862                           
    863                           
-   864                           ;Mini proyecto 2.c: 34: void I2C_Master_Init(const unsigned long c);Mini proyecto 2.c: 3
-      +                          5: {;Mini proyecto 2.c: 36:   SSPCON = 0b00101000;
+   864                           ;Mini proyecto 2.c: 37: void I2C_Master_Init(const unsigned long c);Mini proyecto 2.c: 3
+      +                          8: {;Mini proyecto 2.c: 39:   SSPCON = 0b00101000;
    865  06E6  3028               	movlw	40
    866  06E7  1283               	bcf	3,5	;RP0=0, select bank0
    867  06E8  1303               	bcf	3,6	;RP1=0, select bank0
    868  06E9  0094               	movwf	20	;volatile
    869  06EA                     l794:
    870                           
-   871                           ;Mini proyecto 2.c: 37:   SSPCON2 = 0;
+   871                           ;Mini proyecto 2.c: 40:   SSPCON2 = 0;
    872  06EA  1683               	bsf	3,5	;RP0=1, select bank1
    873  06EB  1303               	bcf	3,6	;RP1=0, select bank1
    874  06EC  0191               	clrf	17	;volatile
    875  06ED                     l796:
    876                           
-   877                           ;Mini proyecto 2.c: 38:   SSPADD = (8000000/(4*c))-1;
+   877                           ;Mini proyecto 2.c: 41:   SSPADD = (8000000/(4*c))-1;
    878  06ED  1283               	bcf	3,5	;RP0=0, select bank0
    879  06EE  1303               	bcf	3,6	;RP1=0, select bank0
    880  06EF  0820               	movf	I2C_Master_Init@c,w
@@ -938,15 +938,15 @@ Microchip MPLAB XC8 C Compiler v2.20 (Free license) build 20200408173844 Og1
    920  0719  0093               	movwf	19	;volatile
    921  071A                     l798:
    922                           
-   923                           ;Mini proyecto 2.c: 39:   SSPSTAT = 0;
+   923                           ;Mini proyecto 2.c: 42:   SSPSTAT = 0;
    924  071A  0194               	clrf	20	;volatile
    925  071B                     l800:
    926                           
-   927                           ;Mini proyecto 2.c: 40:   TRISC3 = 1;
+   927                           ;Mini proyecto 2.c: 43:   TRISC3 = 1;
    928  071B  1587               	bsf	7,3	;volatile
    929  071C                     l802:
    930                           
-   931                           ;Mini proyecto 2.c: 41:   TRISC4 = 1;
+   931                           ;Mini proyecto 2.c: 44:   TRISC4 = 1;
    932  071C  1607               	bsf	7,4	;volatile
    933  071D                     l41:
    934  071D  0008               	return
@@ -1281,7 +1281,7 @@ DATA                 0      0       0      12        0.0%
 
 
 Microchip Technology PIC Macro Assembler V2.20 build 20200408173844 
-Symbol Table                                                                                   Wed Mar 03 22:43:06 2021
+Symbol Table                                                                                   Thu Mar 04 21:48:33 2021
 
                        l41 071D                         l50 0698                         l44 06AC  
                        l62 06E5                         l47 06B8                         l56 06A1  
