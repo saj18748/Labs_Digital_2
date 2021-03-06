@@ -11,7 +11,7 @@
 # All addresses and the length are given in unqualified hexadecimal
 # in delta units.  Any other numeric values are decimal.
 %PSECTS
-$C:\Users\YEFRYS~1\AppData\Local\Temp\siu8.o
+$C:\Users\YEFRYS~1\AppData\Local\Temp\sflk.o
 end_init CODE 0 0 0 3 2
 config CONFIG 4 2007 2007 2 2
 $dist/default/production\Mini_proyecto_2.X.production.o
@@ -72,11 +72,11 @@ STRING 800-1FFF 2
 # All other numeric values are in decimal.
 %LINETAB
 $dist/default/production\Mini_proyecto_2.X.production.o
-7FC cinit CODE >469:C:\Users\YEFRYS~1\AppData\Local\Temp\siu8.s
-7FC cinit CODE >472:C:\Users\YEFRYS~1\AppData\Local\Temp\siu8.s
-7FC cinit CODE >478:C:\Users\YEFRYS~1\AppData\Local\Temp\siu8.s
-7FC cinit CODE >480:C:\Users\YEFRYS~1\AppData\Local\Temp\siu8.s
-7FD cinit CODE >481:C:\Users\YEFRYS~1\AppData\Local\Temp\siu8.s
+7FC cinit CODE >469:C:\Users\YEFRYS~1\AppData\Local\Temp\sflk.s
+7FC cinit CODE >472:C:\Users\YEFRYS~1\AppData\Local\Temp\sflk.s
+7FC cinit CODE >478:C:\Users\YEFRYS~1\AppData\Local\Temp\sflk.s
+7FC cinit CODE >480:C:\Users\YEFRYS~1\AppData\Local\Temp\sflk.s
+7FD cinit CODE >481:C:\Users\YEFRYS~1\AppData\Local\Temp\sflk.s
 71E text7 CODE >5:C:\Program Files\Microchip\xc8\v2.20\pic\sources\c90\common\__lldiv.c
 71E text7 CODE >13:C:\Program Files\Microchip\xc8\v2.20\pic\sources\c90\common\__lldiv.c
 726 text7 CODE >14:C:\Program Files\Microchip\xc8\v2.20\pic\sources\c90\common\__lldiv.c
@@ -165,28 +165,28 @@ __Heeprom_data 0 0 EEDATA 3 eeprom_data -
 __Hstrings 0 0 ABS 0 strings -
 _RCEN 48B 0 ABS 0 - dist/default/production\Mini_proyecto_2.X.production.o
 _RSEN 489 0 ABS 0 - dist/default/production\Mini_proyecto_2.X.production.o
-___sp 0 0 STACK 2 stack C:\Users\YEFRYS~1\AppData\Local\Temp\siu8.o
+___sp 0 0 STACK 2 stack C:\Users\YEFRYS~1\AppData\Local\Temp\sflk.o
 _main F08 0 CODE 0 maintext dist/default/production\Mini_proyecto_2.X.production.o
 btemp 7E 0 ABS 0 - dist/default/production\Mini_proyecto_2.X.production.o
-start 0 0 CODE 0 init C:\Users\YEFRYS~1\AppData\Local\Temp\siu8.o
+start 0 0 CODE 0 init C:\Users\YEFRYS~1\AppData\Local\Temp\sflk.o
 __size_of_main 0 0 ABS 0 - dist/default/production\Mini_proyecto_2.X.production.o
 __size_of___lldiv 0 0 ABS 0 - dist/default/production\Mini_proyecto_2.X.production.o
 __Hpowerup 0 0 CODE 0 powerup -
 I2C_Master_Read@a 70 0 COMMON 1 cstackCOMMON dist/default/production\Mini_proyecto_2.X.production.o
-intlevel0 0 0 ENTRY 0 functab C:\Users\YEFRYS~1\AppData\Local\Temp\siu8.o
-intlevel1 0 0 ENTRY 0 functab C:\Users\YEFRYS~1\AppData\Local\Temp\siu8.o
-intlevel2 0 0 ENTRY 0 functab C:\Users\YEFRYS~1\AppData\Local\Temp\siu8.o
-intlevel3 0 0 ENTRY 0 functab C:\Users\YEFRYS~1\AppData\Local\Temp\siu8.o
-intlevel4 0 0 ENTRY 0 functab C:\Users\YEFRYS~1\AppData\Local\Temp\siu8.o
-intlevel5 0 0 ENTRY 0 functab C:\Users\YEFRYS~1\AppData\Local\Temp\siu8.o
+intlevel0 0 0 ENTRY 0 functab C:\Users\YEFRYS~1\AppData\Local\Temp\sflk.o
+intlevel1 0 0 ENTRY 0 functab C:\Users\YEFRYS~1\AppData\Local\Temp\sflk.o
+intlevel2 0 0 ENTRY 0 functab C:\Users\YEFRYS~1\AppData\Local\Temp\sflk.o
+intlevel3 0 0 ENTRY 0 functab C:\Users\YEFRYS~1\AppData\Local\Temp\sflk.o
+intlevel4 0 0 ENTRY 0 functab C:\Users\YEFRYS~1\AppData\Local\Temp\sflk.o
+intlevel5 0 0 ENTRY 0 functab C:\Users\YEFRYS~1\AppData\Local\Temp\sflk.o
 wtemp0 7E 0 ABS 0 - dist/default/production\Mini_proyecto_2.X.production.o
 __Hfunctab 0 0 ENTRY 0 functab -
 I2C_Master_Read@temp 74 0 COMMON 1 cstackCOMMON dist/default/production\Mini_proyecto_2.X.production.o
 __Hclrtext 0 0 ABS 0 clrtext -
 __Lmaintext 0 0 ABS 0 maintext -
 __end_of___lldiv F08 0 CODE 0 text7 dist/default/production\Mini_proyecto_2.X.production.o
-___stackhi 0 0 ABS 0 - C:\Users\YEFRYS~1\AppData\Local\Temp\siu8.o
-___stacklo 0 0 ABS 0 - C:\Users\YEFRYS~1\AppData\Local\Temp\siu8.o
+___stackhi 0 0 ABS 0 - C:\Users\YEFRYS~1\AppData\Local\Temp\sflk.o
+___stacklo 0 0 ABS 0 - C:\Users\YEFRYS~1\AppData\Local\Temp\sflk.o
 ___lldiv@counter 7D 0 COMMON 1 cstackCOMMON dist/default/production\Mini_proyecto_2.X.production.o
 start_initialization FF8 0 CODE 0 cinit dist/default/production\Mini_proyecto_2.X.production.o
 ___lldiv@dividend 74 0 COMMON 1 cstackCOMMON dist/default/production\Mini_proyecto_2.X.production.o
@@ -196,7 +196,7 @@ _SSPBUF 13 0 ABS 0 - dist/default/production\Mini_proyecto_2.X.production.o
 _SSPCON 14 0 ABS 0 - dist/default/production\Mini_proyecto_2.X.production.o
 _TRISC3 43B 0 ABS 0 - dist/default/production\Mini_proyecto_2.X.production.o
 _TRISC4 43C 0 ABS 0 - dist/default/production\Mini_proyecto_2.X.production.o
-___int_sp 0 0 STACK 2 stack C:\Users\YEFRYS~1\AppData\Local\Temp\siu8.o
+___int_sp 0 0 STACK 2 stack C:\Users\YEFRYS~1\AppData\Local\Temp\sflk.o
 __Hbank0 0 0 ABS 0 bank0 -
 __Hbank1 0 0 ABS 0 bank1 -
 __Hbank2 0 0 ABS 0 bank2 -
@@ -241,7 +241,7 @@ _I2C_Master_Start D20 0 CODE 0 text3 dist/default/production\Mini_proyecto_2.X.p
 _I2C_Master_Write D44 0 CODE 0 text1 dist/default/production\Mini_proyecto_2.X.production.o
 __Lintentry 0 0 CODE 0 intentry -
 ___lldiv@divisor 70 0 COMMON 1 cstackCOMMON dist/default/production\Mini_proyecto_2.X.production.o
-reset_vec 0 0 CODE 0 reset_vec C:\Users\YEFRYS~1\AppData\Local\Temp\siu8.o
+reset_vec 0 0 CODE 0 reset_vec C:\Users\YEFRYS~1\AppData\Local\Temp\sflk.o
 ___lldiv E3C 0 CODE 0 text7 dist/default/production\Mini_proyecto_2.X.production.o
 __pmaintext F08 0 CODE 0 maintext dist/default/production\Mini_proyecto_2.X.production.o
 __Lcommon 0 0 ABS 0 common -
