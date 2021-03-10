@@ -30,84 +30,54 @@
 #include <xc.h>
 
 
-//----------------------------------------------------------------------------//
-//          Declaracion de variables                                          
-//----------------------------------------------------------------------------//
+//*****************************************************************************
+// Definición e importación de librerías
+//*****************************************************************************
+#include <stdint.h>
+#include <pic16f887.h>
+#include "I2C.h"
+#include <xc.h>
+//*****************************************************************************
+// Definición de variables
+//*****************************************************************************
+#define _XTAL_FREQ 8000000
 
-void I2C_Master_Init(const unsigned long c)
-{
-  SSPCON = 0b00101000;
-  SSPCON2 = 0;
-  SSPADD = (_XTAL_FREQ/(4*c))-1;
-  SSPSTAT = 0;
-  TRISC3 = 1;        //Setting as input as given in datasheet
-  TRISC4 = 1;        //Setting as input as given in datasheet
+//*****************************************************************************
+// Definición de funciones para que se puedan colocar después del main de lo 
+// contrario hay que colocarlos todas las funciones antes del main
+//*****************************************************************************
+void setup(void);
+
+//*****************************************************************************
+// Main
+//*****************************************************************************
+void main(void) {
+    setup();
+    while(1){
+        I2C_Master_Start();
+        I2C_Master_Write(0x50);
+        I2C_Master_Write(PORTB);
+        I2C_Master_Stop();
+        __delay_ms(200);
+       
+        I2C_Master_Start();
+        I2C_Master_Write(0x51);
+        PORTD = I2C_Master_Read(0);
+        I2C_Master_Stop();
+        __delay_ms(200);
+        PORTB++;   
+    }
+    return;
 }
-
-void I2C_Master_Wait()
-{
-  while ((SSPSTAT & 0x04) || (SSPCON2 & 0x1F));
-}
-
-void I2C_Master_Start()
-{
-  I2C_Master_Wait();
-  SEN = 1;
-}
-
-void I2C_Master_RepeatedStart()
-{
-  I2C_Master_Wait();
-  RSEN = 1;
-}
-
-void I2C_Master_Stop()
-{
-  I2C_Master_Wait();
-  PEN = 1;
-}
-
-void I2C_Master_Write(unsigned d)
-{
-  I2C_Master_Wait();
-  SSPBUF = d;
-}
-
-unsigned short I2C_Master_Read(unsigned short a)
-{
-  unsigned short temp;
-  I2C_Master_Wait();
-  RCEN = 1;
-  I2C_Master_Wait();
-  temp = SSPBUF;
-  I2C_Master_Wait();
-  ACKDT = (a)?0:1;
-  ACKEN = 1;
-  return temp;
-}
-
-//----------------------------------------------------------------------------//
-//                              Codigo principal                              
-//----------------------------------------------------------------------------//
-
-void main()
-{
-  nRBPU = 0;                    //Enable PORTB internal pull up resistor
-  TRISB = 0xFF;                 //PORTB as input
-  TRISD = 0x00;                 //PORTD as output
-  PORTD = 0x00;                 //All LEDs OFF
-  I2C_Master_Init(100000);      //Initialize I2C Master with 100KHz clock
-  while(1)
-  {
-    I2C_Master_Start();         //Start condition
-    I2C_Master_Write(0x30);     //7 bit address + Write
-    I2C_Master_Write(PORTB);    //Write data
-    I2C_Master_Stop();          //Stop condition
-    __delay_ms(200);
-    I2C_Master_Start();         //Start condition
-    I2C_Master_Write(0x31);     //7 bit address + Read
-    PORTD = I2C_Master_Read(0); //Read + Acknowledge
-    I2C_Master_Stop();          //Stop condition
-    __delay_ms(200);
-  }
+//*****************************************************************************
+// Función de Inicialización
+//*****************************************************************************
+void setup(void){
+    ANSEL = 0;
+    ANSELH = 0;
+    TRISB = 0;
+    TRISD = 0;
+    PORTB = 0;
+    PORTD = 0;
+    I2C_Master_Init(100000);        // Inicializar Comuncación I2C
 }
