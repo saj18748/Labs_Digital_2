@@ -1,4 +1,4 @@
-# 1 "Mini proyecto 2.c"
+# 1 "OSC.c"
 # 1 "<built-in>" 1
 # 1 "<built-in>" 3
 # 288 "<built-in>" 3
@@ -6,22 +6,9 @@
 # 1 "<built-in>" 2
 # 1 "C:/Users/Yefry Sajquiy/.mchp_packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\\pic\\include\\language_support.h" 1 3
 # 2 "<built-in>" 2
-# 1 "Mini proyecto 2.c" 2
-# 12 "Mini proyecto 2.c"
-#pragma config FOSC = INTRC_NOCLKOUT
-#pragma config WDTE = OFF
-#pragma config PWRTE = OFF
-#pragma config MCLRE = OFF
-#pragma config CP = OFF
-#pragma config CPD = OFF
-#pragma config BOREN = OFF
-#pragma config IESO = OFF
-#pragma config FCMEN = OFF
-#pragma config LVP = OFF
+# 1 "OSC.c" 2
+# 1 "./OSC.h" 1
 
-
-#pragma config BOR4V = BOR40V
-#pragma config WRT = OFF
 
 
 
@@ -2507,12 +2494,7 @@ extern __bank0 unsigned char __resetbits;
 extern __bank0 __bit __powerdown;
 extern __bank0 __bit __timeout;
 # 28 "C:/Users/Yefry Sajquiy/.mchp_packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\\pic\\include\\xc.h" 2 3
-# 30 "Mini proyecto 2.c" 2
-
-
-
-
-
+# 7 "./OSC.h" 2
 
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.20\\pic\\include\\c90\\stdint.h" 1 3
 # 13 "C:\\Program Files\\Microchip\\xc8\\v2.20\\pic\\include\\c90\\stdint.h" 3
@@ -2647,107 +2629,66 @@ typedef int16_t intptr_t;
 
 
 typedef uint16_t uintptr_t;
-# 36 "Mini proyecto 2.c" 2
-
-
-# 1 "./I2C.h" 1
-# 20 "./I2C.h"
-# 1 "C:\\Program Files\\Microchip\\xc8\\v2.20\\pic\\include\\c90\\stdint.h" 1 3
-# 20 "./I2C.h" 2
-# 29 "./I2C.h"
-void I2C_Master_Init(const unsigned long c);
-
-
-
-
-
-
-
-void I2C_Master_Wait(void);
-
-
-
-void I2C_Master_Start(void);
-
-
-
-void I2C_Master_RepeatedStart(void);
-
-
-
-void I2C_Master_Stop(void);
-
-
-
-
-
-void I2C_Master_Write(unsigned d);
-
-
-
-
-unsigned short I2C_Master_Read(unsigned short a);
-
-
-
-void I2C_Slave_Init(uint8_t address);
-# 38 "Mini proyecto 2.c" 2
-
-
-# 1 "./OSC.h" 1
-
-
-
-
-
-
-
-# 1 "C:\\Program Files\\Microchip\\xc8\\v2.20\\pic\\include\\c90\\stdint.h" 1 3
 # 8 "./OSC.h" 2
 
 
 void initOsc(uint8_t IRCF);
-# 40 "Mini proyecto 2.c" 2
+# 1 "OSC.c" 2
 
 
 
 
 
+void initOsc(uint8_t IRCF){
 
-
-void setup(void);
-
-
-
-
-
-void main(void) {
-    setup();
-    while(1){
-        I2C_Master_Start();
-        I2C_Master_Write(0x50);
-        I2C_Master_Write(PORTB);
-        I2C_Master_Stop();
-        _delay((unsigned long)((200)*(8000000/4000.0)));
-
-        I2C_Master_Start();
-        I2C_Master_Write(0x51);
-        PORTD = I2C_Master_Read(0);
-        I2C_Master_Stop();
-        _delay((unsigned long)((200)*(8000000/4000.0)));
-        PORTB++;
+    switch(IRCF){
+        case 0:
+            OSCCONbits.IRCF2 = 0;
+            OSCCONbits.IRCF1 = 0;
+            OSCCONbits.IRCF0 = 0;
+            break;
+        case 1:
+            OSCCONbits.IRCF2 = 0;
+            OSCCONbits.IRCF1 = 0;
+            OSCCONbits.IRCF0 = 1;
+            break;
+        case 2:
+            OSCCONbits.IRCF2 = 0;
+            OSCCONbits.IRCF1 = 1;
+            OSCCONbits.IRCF0 = 0;
+            break;
+        case 3:
+            OSCCONbits.IRCF2 = 0;
+            OSCCONbits.IRCF1 = 1;
+            OSCCONbits.IRCF0 = 1;
+            break;
+        case 4:
+            OSCCONbits.IRCF2 = 1;
+            OSCCONbits.IRCF1 = 0;
+            OSCCONbits.IRCF0 = 0;
+            break;
+        case 5:
+            OSCCONbits.IRCF2 = 1;
+            OSCCONbits.IRCF1 = 0;
+            OSCCONbits.IRCF0 = 1;
+            break;
+        case 6:
+            OSCCONbits.IRCF2 = 1;
+            OSCCONbits.IRCF1 = 1;
+            OSCCONbits.IRCF0 = 0;
+            break;
+        case 7:
+            OSCCONbits.IRCF2 = 1;
+            OSCCONbits.IRCF1 = 1;
+            OSCCONbits.IRCF0 = 1;
+            break;
+        default:
+            OSCCONbits.IRCF2 = 1;
+            OSCCONbits.IRCF1 = 1;
+            OSCCONbits.IRCF0 = 0;
+            break;
     }
-    return;
-}
 
+    OSCCONbits.SCS = 1;
 
-
-void setup(void){
-    ANSEL = 0;
-    ANSELH = 0;
-    TRISB = 0;
-    TRISD = 0;
-    PORTB = 0;
-    PORTD = 0;
-    I2C_Master_Init(100000);
 }

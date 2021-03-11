@@ -15,6 +15,8 @@
       <itemPath>Mini proyecto 2.c</itemPath>
       <itemPath>I2C.c</itemPath>
       <itemPath>I2C.h</itemPath>
+      <itemPath>OSC.c</itemPath>
+      <itemPath>OSC.h</itemPath>
     </logicalFolder>
     <logicalFolder name="ExternalFiles"
                    displayName="Important Files"

@@ -11,7 +11,7 @@
 # All addresses and the length are given in unqualified hexadecimal
 # in delta units.  Any other numeric values are decimal.
 %PSECTS
-$C:\Users\YEFRYS~1\AppData\Local\Temp\sdjk.o
+$C:\Users\YEFRYS~1\AppData\Local\Temp\sgts.o
 end_init CODE 0 0 0 3 2
 config CONFIG 4 2007 2007 2 2
 $dist/default/production\Mini_proyecto_2.X.production.o
@@ -73,11 +73,11 @@ STRING 800-1FFF 2
 # All other numeric values are in decimal.
 %LINETAB
 $dist/default/production\Mini_proyecto_2.X.production.o
-7FC cinit CODE >628:C:\Users\YEFRYS~1\AppData\Local\Temp\sdjk.s
-7FC cinit CODE >631:C:\Users\YEFRYS~1\AppData\Local\Temp\sdjk.s
-7FC cinit CODE >637:C:\Users\YEFRYS~1\AppData\Local\Temp\sdjk.s
-7FC cinit CODE >639:C:\Users\YEFRYS~1\AppData\Local\Temp\sdjk.s
-7FD cinit CODE >640:C:\Users\YEFRYS~1\AppData\Local\Temp\sdjk.s
+7FC cinit CODE >786:C:\Users\YEFRYS~1\AppData\Local\Temp\sgts.s
+7FC cinit CODE >789:C:\Users\YEFRYS~1\AppData\Local\Temp\sgts.s
+7FC cinit CODE >795:C:\Users\YEFRYS~1\AppData\Local\Temp\sgts.s
+7FC cinit CODE >797:C:\Users\YEFRYS~1\AppData\Local\Temp\sgts.s
+7FD cinit CODE >798:C:\Users\YEFRYS~1\AppData\Local\Temp\sgts.s
 69C text8 CODE >32:D:\UVG\Cuarto año\Primer Semestre\Electronica Digital 2\Labs MPLAB\Digital_2\Mini proyecto 2.X\I2C.c
 69C text8 CODE >34:D:\UVG\Cuarto año\Primer Semestre\Electronica Digital 2\Labs MPLAB\Digital_2\Mini proyecto 2.X\I2C.c
 6A8 text8 CODE >35:D:\UVG\Cuarto año\Primer Semestre\Electronica Digital 2\Labs MPLAB\Digital_2\Mini proyecto 2.X\I2C.c
@@ -131,28 +131,28 @@ $dist/default/production\Mini_proyecto_2.X.production.o
 726 text2 CODE >22:D:\UVG\Cuarto año\Primer Semestre\Electronica Digital 2\Labs MPLAB\Digital_2\Mini proyecto 2.X\I2C.c
 727 text2 CODE >23:D:\UVG\Cuarto año\Primer Semestre\Electronica Digital 2\Labs MPLAB\Digital_2\Mini proyecto 2.X\I2C.c
 728 text2 CODE >24:D:\UVG\Cuarto año\Primer Semestre\Electronica Digital 2\Labs MPLAB\Digital_2\Mini proyecto 2.X\I2C.c
+6A9 text1 CODE >74:D:\UVG\Cuarto año\Primer Semestre\Electronica Digital 2\Labs MPLAB\Digital_2\Mini proyecto 2.X\Mini proyecto 2.c
 6A9 text1 CODE >75:D:\UVG\Cuarto año\Primer Semestre\Electronica Digital 2\Labs MPLAB\Digital_2\Mini proyecto 2.X\Mini proyecto 2.c
-6A9 text1 CODE >76:D:\UVG\Cuarto año\Primer Semestre\Electronica Digital 2\Labs MPLAB\Digital_2\Mini proyecto 2.X\Mini proyecto 2.c
-6AC text1 CODE >77:D:\UVG\Cuarto año\Primer Semestre\Electronica Digital 2\Labs MPLAB\Digital_2\Mini proyecto 2.X\Mini proyecto 2.c
-6AD text1 CODE >78:D:\UVG\Cuarto año\Primer Semestre\Electronica Digital 2\Labs MPLAB\Digital_2\Mini proyecto 2.X\Mini proyecto 2.c
-6B0 text1 CODE >79:D:\UVG\Cuarto año\Primer Semestre\Electronica Digital 2\Labs MPLAB\Digital_2\Mini proyecto 2.X\Mini proyecto 2.c
-6B1 text1 CODE >80:D:\UVG\Cuarto año\Primer Semestre\Electronica Digital 2\Labs MPLAB\Digital_2\Mini proyecto 2.X\Mini proyecto 2.c
-6B4 text1 CODE >81:D:\UVG\Cuarto año\Primer Semestre\Electronica Digital 2\Labs MPLAB\Digital_2\Mini proyecto 2.X\Mini proyecto 2.c
-6B5 text1 CODE >82:D:\UVG\Cuarto año\Primer Semestre\Electronica Digital 2\Labs MPLAB\Digital_2\Mini proyecto 2.X\Mini proyecto 2.c
-6C2 text1 CODE >83:D:\UVG\Cuarto año\Primer Semestre\Electronica Digital 2\Labs MPLAB\Digital_2\Mini proyecto 2.X\Mini proyecto 2.c
+6AC text1 CODE >76:D:\UVG\Cuarto año\Primer Semestre\Electronica Digital 2\Labs MPLAB\Digital_2\Mini proyecto 2.X\Mini proyecto 2.c
+6AD text1 CODE >77:D:\UVG\Cuarto año\Primer Semestre\Electronica Digital 2\Labs MPLAB\Digital_2\Mini proyecto 2.X\Mini proyecto 2.c
+6B0 text1 CODE >78:D:\UVG\Cuarto año\Primer Semestre\Electronica Digital 2\Labs MPLAB\Digital_2\Mini proyecto 2.X\Mini proyecto 2.c
+6B1 text1 CODE >79:D:\UVG\Cuarto año\Primer Semestre\Electronica Digital 2\Labs MPLAB\Digital_2\Mini proyecto 2.X\Mini proyecto 2.c
+6B4 text1 CODE >80:D:\UVG\Cuarto año\Primer Semestre\Electronica Digital 2\Labs MPLAB\Digital_2\Mini proyecto 2.X\Mini proyecto 2.c
+6B5 text1 CODE >81:D:\UVG\Cuarto año\Primer Semestre\Electronica Digital 2\Labs MPLAB\Digital_2\Mini proyecto 2.X\Mini proyecto 2.c
+6C2 text1 CODE >82:D:\UVG\Cuarto año\Primer Semestre\Electronica Digital 2\Labs MPLAB\Digital_2\Mini proyecto 2.X\Mini proyecto 2.c
+78F maintext CODE >53:D:\UVG\Cuarto año\Primer Semestre\Electronica Digital 2\Labs MPLAB\Digital_2\Mini proyecto 2.X\Mini proyecto 2.c
 78F maintext CODE >54:D:\UVG\Cuarto año\Primer Semestre\Electronica Digital 2\Labs MPLAB\Digital_2\Mini proyecto 2.X\Mini proyecto 2.c
-78F maintext CODE >55:D:\UVG\Cuarto año\Primer Semestre\Electronica Digital 2\Labs MPLAB\Digital_2\Mini proyecto 2.X\Mini proyecto 2.c
-794 maintext CODE >57:D:\UVG\Cuarto año\Primer Semestre\Electronica Digital 2\Labs MPLAB\Digital_2\Mini proyecto 2.X\Mini proyecto 2.c
-799 maintext CODE >58:D:\UVG\Cuarto año\Primer Semestre\Electronica Digital 2\Labs MPLAB\Digital_2\Mini proyecto 2.X\Mini proyecto 2.c
-7A2 maintext CODE >59:D:\UVG\Cuarto año\Primer Semestre\Electronica Digital 2\Labs MPLAB\Digital_2\Mini proyecto 2.X\Mini proyecto 2.c
-7B0 maintext CODE >60:D:\UVG\Cuarto año\Primer Semestre\Electronica Digital 2\Labs MPLAB\Digital_2\Mini proyecto 2.X\Mini proyecto 2.c
-7B5 maintext CODE >61:D:\UVG\Cuarto año\Primer Semestre\Electronica Digital 2\Labs MPLAB\Digital_2\Mini proyecto 2.X\Mini proyecto 2.c
-7C4 maintext CODE >63:D:\UVG\Cuarto año\Primer Semestre\Electronica Digital 2\Labs MPLAB\Digital_2\Mini proyecto 2.X\Mini proyecto 2.c
-7C9 maintext CODE >64:D:\UVG\Cuarto año\Primer Semestre\Electronica Digital 2\Labs MPLAB\Digital_2\Mini proyecto 2.X\Mini proyecto 2.c
-7D2 maintext CODE >65:D:\UVG\Cuarto año\Primer Semestre\Electronica Digital 2\Labs MPLAB\Digital_2\Mini proyecto 2.X\Mini proyecto 2.c
-7DE maintext CODE >66:D:\UVG\Cuarto año\Primer Semestre\Electronica Digital 2\Labs MPLAB\Digital_2\Mini proyecto 2.X\Mini proyecto 2.c
-7E3 maintext CODE >67:D:\UVG\Cuarto año\Primer Semestre\Electronica Digital 2\Labs MPLAB\Digital_2\Mini proyecto 2.X\Mini proyecto 2.c
-7F2 maintext CODE >68:D:\UVG\Cuarto año\Primer Semestre\Electronica Digital 2\Labs MPLAB\Digital_2\Mini proyecto 2.X\Mini proyecto 2.c
+794 maintext CODE >56:D:\UVG\Cuarto año\Primer Semestre\Electronica Digital 2\Labs MPLAB\Digital_2\Mini proyecto 2.X\Mini proyecto 2.c
+799 maintext CODE >57:D:\UVG\Cuarto año\Primer Semestre\Electronica Digital 2\Labs MPLAB\Digital_2\Mini proyecto 2.X\Mini proyecto 2.c
+7A2 maintext CODE >58:D:\UVG\Cuarto año\Primer Semestre\Electronica Digital 2\Labs MPLAB\Digital_2\Mini proyecto 2.X\Mini proyecto 2.c
+7B0 maintext CODE >59:D:\UVG\Cuarto año\Primer Semestre\Electronica Digital 2\Labs MPLAB\Digital_2\Mini proyecto 2.X\Mini proyecto 2.c
+7B5 maintext CODE >60:D:\UVG\Cuarto año\Primer Semestre\Electronica Digital 2\Labs MPLAB\Digital_2\Mini proyecto 2.X\Mini proyecto 2.c
+7C4 maintext CODE >62:D:\UVG\Cuarto año\Primer Semestre\Electronica Digital 2\Labs MPLAB\Digital_2\Mini proyecto 2.X\Mini proyecto 2.c
+7C9 maintext CODE >63:D:\UVG\Cuarto año\Primer Semestre\Electronica Digital 2\Labs MPLAB\Digital_2\Mini proyecto 2.X\Mini proyecto 2.c
+7D2 maintext CODE >64:D:\UVG\Cuarto año\Primer Semestre\Electronica Digital 2\Labs MPLAB\Digital_2\Mini proyecto 2.X\Mini proyecto 2.c
+7DE maintext CODE >65:D:\UVG\Cuarto año\Primer Semestre\Electronica Digital 2\Labs MPLAB\Digital_2\Mini proyecto 2.X\Mini proyecto 2.c
+7E3 maintext CODE >66:D:\UVG\Cuarto año\Primer Semestre\Electronica Digital 2\Labs MPLAB\Digital_2\Mini proyecto 2.X\Mini proyecto 2.c
+7F2 maintext CODE >67:D:\UVG\Cuarto año\Primer Semestre\Electronica Digital 2\Labs MPLAB\Digital_2\Mini proyecto 2.X\Mini proyecto 2.c
 # %SYMTAB Section
 # An enumeration of all symbols in the program.
 # The beginning of the section is indicated by %SYMTAB.
@@ -175,20 +175,21 @@ I2C_Master_Init@c 20 0 BANK0 1 cstackBANK0 dist/default/production\Mini_proyecto
 __Heeprom_data 0 0 EEDATA 3 eeprom_data -
 __Hstrings 0 0 ABS 0 strings -
 _PEIE 5E 0 ABS 0 - dist/default/production\Mini_proyecto_2.X.production.o
-___sp 0 0 STACK 2 stack C:\Users\YEFRYS~1\AppData\Local\Temp\sdjk.o
+___sp 0 0 STACK 2 stack C:\Users\YEFRYS~1\AppData\Local\Temp\sgts.o
 _main F1E 0 CODE 0 maintext dist/default/production\Mini_proyecto_2.X.production.o
 btemp 7E 0 ABS 0 - dist/default/production\Mini_proyecto_2.X.production.o
-start 0 0 CODE 0 init C:\Users\YEFRYS~1\AppData\Local\Temp\sdjk.o
+start 0 0 CODE 0 init C:\Users\YEFRYS~1\AppData\Local\Temp\sgts.o
 __size_of_main 0 0 ABS 0 - dist/default/production\Mini_proyecto_2.X.production.o
 __size_of___lldiv 0 0 ABS 0 - dist/default/production\Mini_proyecto_2.X.production.o
 __Hpowerup 0 0 CODE 0 powerup -
 I2C_Master_Read@a 70 0 COMMON 1 cstackCOMMON dist/default/production\Mini_proyecto_2.X.production.o
-intlevel0 0 0 ENTRY 0 functab C:\Users\YEFRYS~1\AppData\Local\Temp\sdjk.o
-intlevel1 0 0 ENTRY 0 functab C:\Users\YEFRYS~1\AppData\Local\Temp\sdjk.o
-intlevel2 0 0 ENTRY 0 functab C:\Users\YEFRYS~1\AppData\Local\Temp\sdjk.o
-intlevel3 0 0 ENTRY 0 functab C:\Users\YEFRYS~1\AppData\Local\Temp\sdjk.o
-intlevel4 0 0 ENTRY 0 functab C:\Users\YEFRYS~1\AppData\Local\Temp\sdjk.o
-intlevel5 0 0 ENTRY 0 functab C:\Users\YEFRYS~1\AppData\Local\Temp\sdjk.o
+intlevel0 0 0 ENTRY 0 functab C:\Users\YEFRYS~1\AppData\Local\Temp\sgts.o
+intlevel1 0 0 ENTRY 0 functab C:\Users\YEFRYS~1\AppData\Local\Temp\sgts.o
+intlevel2 0 0 ENTRY 0 functab C:\Users\YEFRYS~1\AppData\Local\Temp\sgts.o
+intlevel3 0 0 ENTRY 0 functab C:\Users\YEFRYS~1\AppData\Local\Temp\sgts.o
+intlevel4 0 0 ENTRY 0 functab C:\Users\YEFRYS~1\AppData\Local\Temp\sgts.o
+intlevel5 0 0 ENTRY 0 functab C:\Users\YEFRYS~1\AppData\Local\Temp\sgts.o
+_OSCCONbits 8F 0 ABS 0 - dist/default/production\Mini_proyecto_2.X.production.o
 wtemp0 7E 0 ABS 0 - dist/default/production\Mini_proyecto_2.X.production.o
 __Hfunctab 0 0 ENTRY 0 functab -
 I2C_Master_Read@temp 74 0 COMMON 1 cstackCOMMON dist/default/production\Mini_proyecto_2.X.production.o
@@ -196,8 +197,8 @@ __Hclrtext 0 0 ABS 0 clrtext -
 _ANSELH 189 0 ABS 0 - dist/default/production\Mini_proyecto_2.X.production.o
 __Lmaintext 0 0 ABS 0 maintext -
 __end_of___lldiv F1E 0 CODE 0 text3 dist/default/production\Mini_proyecto_2.X.production.o
-___stackhi 0 0 ABS 0 - C:\Users\YEFRYS~1\AppData\Local\Temp\sdjk.o
-___stacklo 0 0 ABS 0 - C:\Users\YEFRYS~1\AppData\Local\Temp\sdjk.o
+___stackhi 0 0 ABS 0 - C:\Users\YEFRYS~1\AppData\Local\Temp\sgts.o
+___stacklo 0 0 ABS 0 - C:\Users\YEFRYS~1\AppData\Local\Temp\sgts.o
 __size_of_setup 0 0 ABS 0 - dist/default/production\Mini_proyecto_2.X.production.o
 ___lldiv@counter 7D 0 COMMON 1 cstackCOMMON dist/default/production\Mini_proyecto_2.X.production.o
 start_initialization FF8 0 CODE 0 cinit dist/default/production\Mini_proyecto_2.X.production.o
@@ -209,7 +210,7 @@ _SSPBUF 13 0 ABS 0 - dist/default/production\Mini_proyecto_2.X.production.o
 _SSPCON 14 0 ABS 0 - dist/default/production\Mini_proyecto_2.X.production.o
 _TRISC3 43B 0 ABS 0 - dist/default/production\Mini_proyecto_2.X.production.o
 _TRISC4 43C 0 ABS 0 - dist/default/production\Mini_proyecto_2.X.production.o
-___int_sp 0 0 STACK 2 stack C:\Users\YEFRYS~1\AppData\Local\Temp\sdjk.o
+___int_sp 0 0 STACK 2 stack C:\Users\YEFRYS~1\AppData\Local\Temp\sgts.o
 __Hbank0 0 0 ABS 0 bank0 -
 __Hbank1 0 0 ABS 0 bank1 -
 __Hbank2 0 0 ABS 0 bank2 -
@@ -253,7 +254,7 @@ _I2C_Master_Start D00 0 CODE 0 text6 dist/default/production\Mini_proyecto_2.X.p
 _I2C_Master_Write D24 0 CODE 0 text4 dist/default/production\Mini_proyecto_2.X.production.o
 __Lintentry 0 0 CODE 0 intentry -
 ___lldiv@divisor 70 0 COMMON 1 cstackCOMMON dist/default/production\Mini_proyecto_2.X.production.o
-reset_vec 0 0 CODE 0 reset_vec C:\Users\YEFRYS~1\AppData\Local\Temp\sdjk.o
+reset_vec 0 0 CODE 0 reset_vec C:\Users\YEFRYS~1\AppData\Local\Temp\sgts.o
 ___lldiv E52 0 CODE 0 text3 dist/default/production\Mini_proyecto_2.X.production.o
 __pmaintext F1E 0 CODE 0 maintext dist/default/production\Mini_proyecto_2.X.production.o
 __Lcommon 0 0 ABS 0 common -

@@ -5,7 +5,7 @@ Linker command line:
 -W-3 --edf=C:\Program Files\Microchip\xc8\v2.20\pic\dat\en_msgs.txt -cn \
   -h+dist/default/production\Mini_proyecto_2.X.production.sym \
   --cmf=dist/default/production\Mini_proyecto_2.X.production.cmf -z \
-  -Q16F887 -oC:\Users\YEFRYS~1\AppData\Local\Temp\sdjk.2 \
+  -Q16F887 -oC:\Users\YEFRYS~1\AppData\Local\Temp\sgts.2 \
   --defsym=__MPLAB_BUILD=1 \
   -Mdist/default/production/Mini_proyecto_2.X.production.map -E1 \
   -ver=XC8 Compiler --acfsm=1493 -ASTACK=0110h-016Fh -pstack=STACK \
@@ -19,7 +19,7 @@ Linker command line:
   -preset_vec=00h,intentry,init,end_init -ppowerup=CODE -pcinit=CODE \
   -pfunctab=ENTRY -AEEDATA=00h-0FFh/02100h -peeprom_data=EEDATA -DEEDATA=2 \
   -DCODE=2 -DSTRCODE=2 -DSTRING=2 -DCONST=2 -DENTRY=2 -k \
-  C:\Users\YEFRYS~1\AppData\Local\Temp\sdjk.o \
+  C:\Users\YEFRYS~1\AppData\Local\Temp\sgts.o \
   dist/default/production\Mini_proyecto_2.X.production.o 
 
 Object code version is 3.11
@@ -29,7 +29,7 @@ Machine type is 16F887
 
 
                 Name                               Link     Load   Length Selector   Space Scale
-C:\Users\YEFRYS~1\AppData\Local\Temp\sdjk.o
+C:\Users\YEFRYS~1\AppData\Local\Temp\sgts.o
                 end_init                              0        0        3        0       0
                 config                             2007     2007        2        0       4
 dist/default/production\Mini_proyecto_2.X.production.o
@@ -168,6 +168,7 @@ _I2C_Master_Start          text6        0680
 _I2C_Master_Stop           text5        0689
 _I2C_Master_Wait           text8        069C
 _I2C_Master_Write          text4        0692
+_OSCCONbits                (abs)        008F
 _PEIE                      (abs)        005E
 _PORTB                     (abs)        0006
 _PORTD                     (abs)        0008
@@ -315,7 +316,7 @@ FUNCTION INFORMATION:
 
  *************** function _main *****************
  Defined at:
-		line 54 in file "Mini proyecto 2.c"
+		line 53 in file "Mini proyecto 2.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -348,7 +349,7 @@ Total ram usage:        3 bytes
 
  *************** function _setup *****************
  Defined at:
-		line 75 in file "Mini proyecto 2.c"
+		line 74 in file "Mini proyecto 2.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
