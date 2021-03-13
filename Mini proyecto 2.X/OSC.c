@@ -1,8 +1,6 @@
 #include "OSC.h"
 
-/*
- INICIALIZACION DE OSCILADOR INTERNO: PARAMETRO FRESC DEL OSCILADOR INT: PAG 62
- */
+// Oscilador interno 
 void initOsc(uint8_t IRCF){
     
     switch(IRCF){

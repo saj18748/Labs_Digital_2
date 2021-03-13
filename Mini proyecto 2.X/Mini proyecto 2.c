@@ -37,7 +37,8 @@
 #include <pic16f887.h>
 #include "I2C.h"
 #include <xc.h>
-#include "OSC.h"
+#include "OSC.h"  //oscilador interno 
+#include "USART.h"
 //*****************************************************************************
 // Definición de variables
 //*****************************************************************************
@@ -55,7 +56,7 @@ void main(void) {
     while(1){
         I2C_Master_Start();
         I2C_Master_Write(0x50);
-        I2C_Master_Write(PORTB);
+        I2C_Master_Write(PORTB); // el resultado se escribe en el PORTB
         I2C_Master_Stop();
         __delay_ms(200);
        
@@ -68,6 +69,8 @@ void main(void) {
     }
     return;
 }
+
+
 //------------------------------------------------------------------------------
 //  CONFIGURACION DE LAS FUNCIONES
 //------------------------------------------------------------------------------

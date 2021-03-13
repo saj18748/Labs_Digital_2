@@ -248,154 +248,154 @@ Version 4.0 HI-TECH Software Intermediate Code
 "3546
 [; ;C:/Users/Yefry Sajquiy/.mchp_packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h: 3546: __asm("EECON2 equ 018Dh");
 [; <" EECON2 equ 018Dh ;# ">
-"6 OSC.c
-[; ;OSC.c: 6: void initOsc(uint8_t IRCF){
+"4 OSC.c
+[; ;OSC.c: 4: void initOsc(uint8_t IRCF){
 [v _initOsc `(v ~T0 @X0 1 ef1`uc ]
 {
 [e :U _initOsc ]
 [v _IRCF `uc ~T0 @X0 1 r1 ]
 [f ]
-"8
-[; ;OSC.c: 8:     switch(IRCF){
+"6
+[; ;OSC.c: 6:     switch(IRCF){
 [e $U 140  ]
 {
-"9
-[; ;OSC.c: 9:         case 0:
+"7
+[; ;OSC.c: 7:         case 0:
 [e :U 141 ]
+"8
+[; ;OSC.c: 8:             OSCCONbits.IRCF2 = 0;
+[e = . . _OSCCONbits 1 3 -> -> 0 `i `uc ]
+"9
+[; ;OSC.c: 9:             OSCCONbits.IRCF1 = 0;
+[e = . . _OSCCONbits 1 2 -> -> 0 `i `uc ]
 "10
-[; ;OSC.c: 10:             OSCCONbits.IRCF2 = 0;
-[e = . . _OSCCONbits 1 3 -> -> 0 `i `uc ]
+[; ;OSC.c: 10:             OSCCONbits.IRCF0 = 0;
+[e = . . _OSCCONbits 1 1 -> -> 0 `i `uc ]
 "11
-[; ;OSC.c: 11:             OSCCONbits.IRCF1 = 0;
-[e = . . _OSCCONbits 1 2 -> -> 0 `i `uc ]
+[; ;OSC.c: 11:             break;
+[e $U 139  ]
 "12
-[; ;OSC.c: 12:             OSCCONbits.IRCF0 = 0;
-[e = . . _OSCCONbits 1 1 -> -> 0 `i `uc ]
-"13
-[; ;OSC.c: 13:             break;
-[e $U 139  ]
-"14
-[; ;OSC.c: 14:         case 1:
+[; ;OSC.c: 12:         case 1:
 [e :U 142 ]
+"13
+[; ;OSC.c: 13:             OSCCONbits.IRCF2 = 0;
+[e = . . _OSCCONbits 1 3 -> -> 0 `i `uc ]
+"14
+[; ;OSC.c: 14:             OSCCONbits.IRCF1 = 0;
+[e = . . _OSCCONbits 1 2 -> -> 0 `i `uc ]
 "15
-[; ;OSC.c: 15:             OSCCONbits.IRCF2 = 0;
-[e = . . _OSCCONbits 1 3 -> -> 0 `i `uc ]
+[; ;OSC.c: 15:             OSCCONbits.IRCF0 = 1;
+[e = . . _OSCCONbits 1 1 -> -> 1 `i `uc ]
 "16
-[; ;OSC.c: 16:             OSCCONbits.IRCF1 = 0;
-[e = . . _OSCCONbits 1 2 -> -> 0 `i `uc ]
+[; ;OSC.c: 16:             break;
+[e $U 139  ]
 "17
-[; ;OSC.c: 17:             OSCCONbits.IRCF0 = 1;
-[e = . . _OSCCONbits 1 1 -> -> 1 `i `uc ]
-"18
-[; ;OSC.c: 18:             break;
-[e $U 139  ]
-"19
-[; ;OSC.c: 19:         case 2:
+[; ;OSC.c: 17:         case 2:
 [e :U 143 ]
+"18
+[; ;OSC.c: 18:             OSCCONbits.IRCF2 = 0;
+[e = . . _OSCCONbits 1 3 -> -> 0 `i `uc ]
+"19
+[; ;OSC.c: 19:             OSCCONbits.IRCF1 = 1;
+[e = . . _OSCCONbits 1 2 -> -> 1 `i `uc ]
 "20
-[; ;OSC.c: 20:             OSCCONbits.IRCF2 = 0;
-[e = . . _OSCCONbits 1 3 -> -> 0 `i `uc ]
+[; ;OSC.c: 20:             OSCCONbits.IRCF0 = 0;
+[e = . . _OSCCONbits 1 1 -> -> 0 `i `uc ]
 "21
-[; ;OSC.c: 21:             OSCCONbits.IRCF1 = 1;
-[e = . . _OSCCONbits 1 2 -> -> 1 `i `uc ]
+[; ;OSC.c: 21:             break;
+[e $U 139  ]
 "22
-[; ;OSC.c: 22:             OSCCONbits.IRCF0 = 0;
-[e = . . _OSCCONbits 1 1 -> -> 0 `i `uc ]
-"23
-[; ;OSC.c: 23:             break;
-[e $U 139  ]
-"24
-[; ;OSC.c: 24:         case 3:
+[; ;OSC.c: 22:         case 3:
 [e :U 144 ]
-"25
-[; ;OSC.c: 25:             OSCCONbits.IRCF2 = 0;
+"23
+[; ;OSC.c: 23:             OSCCONbits.IRCF2 = 0;
 [e = . . _OSCCONbits 1 3 -> -> 0 `i `uc ]
+"24
+[; ;OSC.c: 24:             OSCCONbits.IRCF1 = 1;
+[e = . . _OSCCONbits 1 2 -> -> 1 `i `uc ]
+"25
+[; ;OSC.c: 25:             OSCCONbits.IRCF0 = 1;
+[e = . . _OSCCONbits 1 1 -> -> 1 `i `uc ]
 "26
-[; ;OSC.c: 26:             OSCCONbits.IRCF1 = 1;
-[e = . . _OSCCONbits 1 2 -> -> 1 `i `uc ]
+[; ;OSC.c: 26:             break;
+[e $U 139  ]
 "27
-[; ;OSC.c: 27:             OSCCONbits.IRCF0 = 1;
-[e = . . _OSCCONbits 1 1 -> -> 1 `i `uc ]
-"28
-[; ;OSC.c: 28:             break;
-[e $U 139  ]
-"29
-[; ;OSC.c: 29:         case 4:
+[; ;OSC.c: 27:         case 4:
 [e :U 145 ]
+"28
+[; ;OSC.c: 28:             OSCCONbits.IRCF2 = 1;
+[e = . . _OSCCONbits 1 3 -> -> 1 `i `uc ]
+"29
+[; ;OSC.c: 29:             OSCCONbits.IRCF1 = 0;
+[e = . . _OSCCONbits 1 2 -> -> 0 `i `uc ]
 "30
-[; ;OSC.c: 30:             OSCCONbits.IRCF2 = 1;
-[e = . . _OSCCONbits 1 3 -> -> 1 `i `uc ]
+[; ;OSC.c: 30:             OSCCONbits.IRCF0 = 0;
+[e = . . _OSCCONbits 1 1 -> -> 0 `i `uc ]
 "31
-[; ;OSC.c: 31:             OSCCONbits.IRCF1 = 0;
-[e = . . _OSCCONbits 1 2 -> -> 0 `i `uc ]
+[; ;OSC.c: 31:             break;
+[e $U 139  ]
 "32
-[; ;OSC.c: 32:             OSCCONbits.IRCF0 = 0;
-[e = . . _OSCCONbits 1 1 -> -> 0 `i `uc ]
-"33
-[; ;OSC.c: 33:             break;
-[e $U 139  ]
-"34
-[; ;OSC.c: 34:         case 5:
+[; ;OSC.c: 32:         case 5:
 [e :U 146 ]
-"35
-[; ;OSC.c: 35:             OSCCONbits.IRCF2 = 1;
+"33
+[; ;OSC.c: 33:             OSCCONbits.IRCF2 = 1;
 [e = . . _OSCCONbits 1 3 -> -> 1 `i `uc ]
-"36
-[; ;OSC.c: 36:             OSCCONbits.IRCF1 = 0;
+"34
+[; ;OSC.c: 34:             OSCCONbits.IRCF1 = 0;
 [e = . . _OSCCONbits 1 2 -> -> 0 `i `uc ]
+"35
+[; ;OSC.c: 35:             OSCCONbits.IRCF0 = 1;
+[e = . . _OSCCONbits 1 1 -> -> 1 `i `uc ]
+"36
+[; ;OSC.c: 36:             break;
+[e $U 139  ]
 "37
-[; ;OSC.c: 37:             OSCCONbits.IRCF0 = 1;
-[e = . . _OSCCONbits 1 1 -> -> 1 `i `uc ]
-"38
-[; ;OSC.c: 38:             break;
-[e $U 139  ]
-"39
-[; ;OSC.c: 39:         case 6:
+[; ;OSC.c: 37:         case 6:
 [e :U 147 ]
+"38
+[; ;OSC.c: 38:             OSCCONbits.IRCF2 = 1;
+[e = . . _OSCCONbits 1 3 -> -> 1 `i `uc ]
+"39
+[; ;OSC.c: 39:             OSCCONbits.IRCF1 = 1;
+[e = . . _OSCCONbits 1 2 -> -> 1 `i `uc ]
 "40
-[; ;OSC.c: 40:             OSCCONbits.IRCF2 = 1;
-[e = . . _OSCCONbits 1 3 -> -> 1 `i `uc ]
+[; ;OSC.c: 40:             OSCCONbits.IRCF0 = 0;
+[e = . . _OSCCONbits 1 1 -> -> 0 `i `uc ]
 "41
-[; ;OSC.c: 41:             OSCCONbits.IRCF1 = 1;
-[e = . . _OSCCONbits 1 2 -> -> 1 `i `uc ]
+[; ;OSC.c: 41:             break;
+[e $U 139  ]
 "42
-[; ;OSC.c: 42:             OSCCONbits.IRCF0 = 0;
-[e = . . _OSCCONbits 1 1 -> -> 0 `i `uc ]
-"43
-[; ;OSC.c: 43:             break;
-[e $U 139  ]
-"44
-[; ;OSC.c: 44:         case 7:
+[; ;OSC.c: 42:         case 7:
 [e :U 148 ]
+"43
+[; ;OSC.c: 43:             OSCCONbits.IRCF2 = 1;
+[e = . . _OSCCONbits 1 3 -> -> 1 `i `uc ]
+"44
+[; ;OSC.c: 44:             OSCCONbits.IRCF1 = 1;
+[e = . . _OSCCONbits 1 2 -> -> 1 `i `uc ]
 "45
-[; ;OSC.c: 45:             OSCCONbits.IRCF2 = 1;
-[e = . . _OSCCONbits 1 3 -> -> 1 `i `uc ]
-"46
-[; ;OSC.c: 46:             OSCCONbits.IRCF1 = 1;
-[e = . . _OSCCONbits 1 2 -> -> 1 `i `uc ]
-"47
-[; ;OSC.c: 47:             OSCCONbits.IRCF0 = 1;
+[; ;OSC.c: 45:             OSCCONbits.IRCF0 = 1;
 [e = . . _OSCCONbits 1 1 -> -> 1 `i `uc ]
-"48
-[; ;OSC.c: 48:             break;
+"46
+[; ;OSC.c: 46:             break;
 [e $U 139  ]
-"49
-[; ;OSC.c: 49:         default:
+"47
+[; ;OSC.c: 47:         default:
 [e :U 149 ]
-"50
-[; ;OSC.c: 50:             OSCCONbits.IRCF2 = 1;
+"48
+[; ;OSC.c: 48:             OSCCONbits.IRCF2 = 1;
 [e = . . _OSCCONbits 1 3 -> -> 1 `i `uc ]
-"51
-[; ;OSC.c: 51:             OSCCONbits.IRCF1 = 1;
+"49
+[; ;OSC.c: 49:             OSCCONbits.IRCF1 = 1;
 [e = . . _OSCCONbits 1 2 -> -> 1 `i `uc ]
-"52
-[; ;OSC.c: 52:             OSCCONbits.IRCF0 = 0;
+"50
+[; ;OSC.c: 50:             OSCCONbits.IRCF0 = 0;
 [e = . . _OSCCONbits 1 1 -> -> 0 `i `uc ]
-"53
-[; ;OSC.c: 53:             break;
+"51
+[; ;OSC.c: 51:             break;
 [e $U 139  ]
-"54
-[; ;OSC.c: 54:     }
+"52
+[; ;OSC.c: 52:     }
 }
 [e $U 139  ]
 [e :U 140 ]
@@ -409,10 +409,10 @@ Version 4.0 HI-TECH Software Intermediate Code
  , $ -> 7 `i 148
  149 ]
 [e :U 139 ]
-"56
-[; ;OSC.c: 56:     OSCCONbits.SCS = 1;
+"54
+[; ;OSC.c: 54:     OSCCONbits.SCS = 1;
 [e = . . _OSCCONbits 0 0 -> -> 1 `i `uc ]
-"58
-[; ;OSC.c: 58: }
+"56
+[; ;OSC.c: 56: }
 [e :UE 138 ]
 }

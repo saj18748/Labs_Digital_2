@@ -13,7 +13,6 @@
 
 
 
-
 # 1 "C:/Users/Yefry Sajquiy/.mchp_packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\\pic\\include\\xc.h" 1 3
 # 18 "C:/Users/Yefry Sajquiy/.mchp_packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\\pic\\include\\xc.h" 3
 extern const char __xc8_OPTIM_SPEED;
@@ -2494,7 +2493,7 @@ extern __bank0 unsigned char __resetbits;
 extern __bank0 __bit __powerdown;
 extern __bank0 __bit __timeout;
 # 28 "C:/Users/Yefry Sajquiy/.mchp_packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\\pic\\include\\xc.h" 2 3
-# 7 "./OSC.h" 2
+# 6 "./OSC.h" 2
 
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.20\\pic\\include\\c90\\stdint.h" 1 3
 # 13 "C:\\Program Files\\Microchip\\xc8\\v2.20\\pic\\include\\c90\\stdint.h" 3
@@ -2629,13 +2628,11 @@ typedef int16_t intptr_t;
 
 
 typedef uint16_t uintptr_t;
-# 8 "./OSC.h" 2
+# 7 "./OSC.h" 2
 
 
 void initOsc(uint8_t IRCF);
 # 1 "OSC.c" 2
-
-
 
 
 
