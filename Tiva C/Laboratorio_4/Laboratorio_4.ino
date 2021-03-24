@@ -74,9 +74,8 @@ void setup() {
 
 // Inicio del programa princiapal
 void loop() {
+
   
- 
-  //ANTIREBOTE DEL BOTON DE INICIO
   if (digitalRead(PUSHS) == 0) {
     FLAG_1 = 1;
     delay(50);
@@ -117,9 +116,11 @@ void loop() {
 }
 
 void semaforo(void) {
-  //inicializacion
+  //inicio
+  
   i = 0;
   j = 0;
+  
   START = 1;
   for (int n = 0; n < 8; n++) {
     digitalWrite(PORTA[n], LOW);
