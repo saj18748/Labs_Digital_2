@@ -105,9 +105,11 @@ void loop() {
 
 
     if (digitalRead(B_1) == 0){
+      LCD_Sprite(155, 63, 32, 33, BLACK,3, 0,0, 0);
       LCD_Sprite(155, 22, 32, 33, dino2,3, anim,1, 0);
     }
     else {
+      
       // dinosaurio 1
      LCD_Sprite(155, 63, 32, 33, dino2,3, anim,1, 0);
       
