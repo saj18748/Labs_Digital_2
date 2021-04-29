@@ -41,10 +41,13 @@ int DPINS[] = {PB_0, PB_1, PB_2, PB_3, PB_4, PB_5, PB_6, PB_7};
 #define WHITE       0XFFFF
 
 //***************************************************************************************************************************************
-// Colores
+//  Configuracion de entradas y salidas de los pines
 //***************************************************************************************************************************************
-
+// entrada 
 const int B_1 = PA_2;
+const int B_2 = PA_3;
+
+
 //***************************************************************************************************************************************
 // Functions Prototypes
 //***************************************************************************************************************************************
@@ -64,12 +67,21 @@ void LCD_Sprite(int x, int y, int width, int height, unsigned char bitmap[],int 
 
 
 extern uint8_t fondo[];
+
 //***************************************************************************************************************************************
 // Inicialización
 //***************************************************************************************************************************************
 void setup() {
 
-  pinMode(B_1, INPUT_PULLUP); 
+  pinMode(B_1, INPUT);
+  pinMode(B_2, INPUT);
+
+  pinMode(PF_4, OUTPUT);
+  pinMode(PD_7, OUTPUT);
+  pinMode(PD_6, OUTPUT);
+  pinMode(PC_7, OUTPUT);
+  
+  int c = 0; 
   SysCtlClockSet(SYSCTL_SYSDIV_2_5|SYSCTL_USE_PLL|SYSCTL_OSC_MAIN|SYSCTL_XTAL_16MHZ);
   Serial.begin(9600);
   GPIOPadConfigSet(GPIO_PORTB_BASE, 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7, GPIO_STRENGTH_8MA, GPIO_PIN_TYPE_STD_WPU);
@@ -77,15 +89,40 @@ void setup() {
   LCD_Init();
   LCD_Clear(0x00);
   
+  FillRect(0, 0, 320, 240, BLUE);
+  String text1 = " SUPER DINO 21 ";
+  String text2 = " Presiona los  ";
+  String text3 = " dos botones ";
+  String text4 = " para jugar ";
+  String text5 = " INICIA EL DESAFIO ";
+  String text6 = " PREPARADOS? ";
+  
+  LCD_Print(text1, 40, 100, 2 , WHITE, BLUE);
+  delay(4000);
+  LCD_Clear(0x00);
   FillRect(0, 0, 320, 240, YELLOW);
-  String text1 = " Super DINO 21 ";
-  LCD_Print(text1, 25, 100, 2, BLACK, YELLOW);
-  delay(500);
+  LCD_Print(text2, 20, 80, 2, BLACK, YELLOW);
+  LCD_Print(text3, 60, 100, 2, BLACK, YELLOW);
+  LCD_Print(text4, 100, 120, 2, BLACK, YELLOW);
+
+  // 
+  while(c<1){
+    if(digitalRead(B_1) == LOW & digitalRead( B_2) == LOW){
+    c++;
+    }
+  } 
+  LCD_Clear(0x00);
+  FillRect(0, 0, 320, 240, RED);
+  LCD_Print(text5, 10, 100, 2, WHITE, RED);
+  LCD_Print(text6, 40, 120, 2, WHITE, RED);
+  delay(4000);
+    
   
   LCD_Bitmap(0, 0, 320, 240, fondo);
   
-  LCD_Bitmap(250, 10, 31, 5, corazones);
-  LCD_Bitmap(250, 130, 31, 5, corazones2);
+    
+ // LCD_Bitmap(250,  10, 31, 5, corazones);
+ // LCD_Bitmap(250, 130, 31, 5, corazones2);
     
    
   
@@ -94,40 +131,83 @@ void setup() {
 // Loop Infinito
 //***************************************************************************************************************************************
 void loop() {
-  
-    for(int x = 0; x <320-32; x++){
-    delay(15);
 
+ 
+    for(int x = 0; x <320; x++){
+    delay(1);
+
+    int activ_1 = 0;
+    int activ_2 = 0;
     int anim2 = (x/35)%2;
     int anim = (x/11)%8;
     int anim3 = (x/11)%4;
 
+    // cactus 1
+    LCD_Sprite(x, 71, 23, 26, cactus,1, 0,1, 0);
+    V_line( x - 1 , 71, 26, BLACK);
+
+    //Cactus 2
+    LCD_Sprite(x, 192, 27, 26, cactus2,1, 0,1, 0);
+    V_line( x -1, 192, 26, BLACK);
+
+    //dinosaurio 2
+    LCD_Sprite(155, 63, 32, 33, dino2,3, anim2,1, 0);
+    H_line(155,30,33, BLACK);
+
+    // dinosaurio 1
+    LCD_Sprite(155, 182, 32, 33, dino,3, anim,1,0);
+    H_line(155,182,33, BLACK);
 
 
-    if (digitalRead(B_1) == 0){
-      LCD_Sprite(155, 63, 32, 33, BLACK,3, 0,0, 0);
-      LCD_Sprite(155, 22, 32, 33, dino2,3, anim,1, 0);
+// Movimiento de dinosaurio 2
+    if (digitalRead(B_1) == LOW){
+     for( int y = 0 ; y<40; y++){
+      
+      LCD_Sprite(155, 63 - y, 32, 33, dino2,3,anim2,1, 0);
+      H_line(155,63 - y,33, BLACK);
+
+      activ_1 = 1;    
+     }
     }
-    else {
-      
-      // dinosaurio 1
-     LCD_Sprite(155, 63, 32, 33, dino2,3, anim,1, 0);
-      
-    }
-      
- // dinosaurio 2
-    //LCD_Sprite(155, 182, 32, 33, dino,3, anim,1,0);
 
-   LCD_Sprite(x, 71, 23, 26, cactus,1, 0,1, 0);
-   V_line( x -1 , 71, 26, BLACK);
-   
-   //LCD_Sprite(x, 192, 27, 26, cactus2,1, 0,1, 0);
-   //V_line( x -1, 192, 26, BLACK);
+    if (activ_1 == 1){
+      for( int v = 0 ; v<40; v++){
+      
+      LCD_Sprite(155, 23 + v, 32, 33, dino2,3,anim2,1, 0);
+      H_line(155,22 + v,32, BLACK);
+
+      activ_1 = 0;  
+    }
+    }
+
+// Movimiento de dinosaurio 1
+    if (digitalRead(B_2) == LOW){
+     for( int n = 0 ; n<40; n++){
+      
+      LCD_Sprite(155, 182 - n, 32, 33, dino,3,anim2,1, 0);
+      H_line(155,182 - n,33, BLACK);
+
+      activ_2 = 1;    
+     }
+    }
+
+    if (activ_2 == 1){
+      for( int b = 0 ; b<40; b++){
+      
+      LCD_Sprite(155, 142 + b, 32, 33, dino,3,anim2,1, 0);
+      H_line(155,141 + b,32, BLACK);
+
+      activ_2 = 0;  
+    }
+    }
+    
+      
   
-    //LCD_Sprite(x, 190, 16, 32, luigi,8, anim,1, 0);
-   // V_line( x -1, 190, 32, 0x421b);
+
+ 
   }
-  for(int x = 320-32; x >0; x--){
+  
+  /*for(int x = 320-32; x >0; x--){
     delay(5);
     int anim = (x/11)%8;
     int anim2 = (x/11)%2;
@@ -150,7 +230,7 @@ void loop() {
 
     //LCD_Sprite(x, 20, 16, 32, mario,8, anim,0, 0);
     //V_line( x + 16, 20, 32, 0x421b);
-  } 
+  } */
 
 }
 //***************************************************************************************************************************************
