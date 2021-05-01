@@ -1,5 +1,7 @@
 //***************************************************************************************************************************************
-/* Librería para el uso de la pantalla ILI9341 en modo 8 bits
+/* Universidad del Valle de Guatemala 
+ * Yefry Sajquiy y Diego Mazariegos
+ * Proyecto 3 - Digital 2
  * Basado en el código de martinayotte - https://www.stm32duino.com/viewtopic.php?t=637
  * Adaptación, migración y creación de nuevas funciones: Pablo Mazariegos y José Morales
  * Con ayuda de: José Guerra
@@ -33,7 +35,7 @@ int DPINS[] = {PB_0, PB_1, PB_2, PB_3, PB_4, PB_5, PB_6, PB_7};
 //***************************************************************************************************************************************
 // Colores
 //***************************************************************************************************************************************
-
+// se usa nomenclatura para que se mas facil definir los colores en la programacion 
 #define BLACK       0x0000
 #define BLUE        0x001F
 #define RED         0xF800
@@ -41,9 +43,10 @@ int DPINS[] = {PB_0, PB_1, PB_2, PB_3, PB_4, PB_5, PB_6, PB_7};
 #define WHITE       0XFFFF
 
 //***************************************************************************************************************************************
-//  Configuracion de entradas y salidas de los pines
+//  Configuracion de entradas
 //***************************************************************************************************************************************
-// entrada 
+// entradas de los push buttons
+
 const int B_1 = PA_2;
 const int B_2 = PA_3;
 
@@ -73,30 +76,40 @@ extern uint8_t fondo[];
 //***************************************************************************************************************************************
 void setup() {
 
+//Declaracion de los pines de entrada
   pinMode(B_1, INPUT);
   pinMode(B_2, INPUT);
 
+//Declaracion de los pines de salida para mandar una señal de activacion de audio
   pinMode(PF_4, OUTPUT);
   pinMode(PD_7, OUTPUT);
   pinMode(PD_6, OUTPUT);
   pinMode(PC_7, OUTPUT);
   
-  int c = 0; 
+  int c = 0;   // variable para una condicion
+  
   SysCtlClockSet(SYSCTL_SYSDIV_2_5|SYSCTL_USE_PLL|SYSCTL_OSC_MAIN|SYSCTL_XTAL_16MHZ);
   Serial.begin(9600);
   GPIOPadConfigSet(GPIO_PORTB_BASE, 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7, GPIO_STRENGTH_8MA, GPIO_PIN_TYPE_STD_WPU);
   Serial.println("Inicio");
   LCD_Init();
   LCD_Clear(0x00);
+
   
-  FillRect(0, 0, 320, 240, BLUE);
+  FillRect(0, 0, 320, 240, BLUE);  
+  
+  digitalWrite(PD_7, HIGH); // se manda una señal para la musica del intro
+  digitalWrite(PF_4, LOW);  // se apaga la seguanda señal de la musica del juego cuando se regrese al menu principal
+
+  // texto de entrada para el menu
   String text1 = " SUPER DINO 21 ";
   String text2 = " Presiona los  ";
   String text3 = " dos botones ";
   String text4 = " para jugar ";
   String text5 = " INICIA EL DESAFIO ";
   String text6 = " PREPARADOS? ";
-  
+
+  //se imprimen los textos en la pantalla
   LCD_Print(text1, 40, 100, 2 , WHITE, BLUE);
   delay(4000);
   LCD_Clear(0x00);
@@ -105,12 +118,16 @@ void setup() {
   LCD_Print(text3, 60, 100, 2, BLACK, YELLOW);
   LCD_Print(text4, 100, 120, 2, BLACK, YELLOW);
 
-  // 
+  //se utilza un while para una condicion, se deben de presionar los dos push buttons para empezar el juego
+  // si no, se estara en el mismo bucle hasta que se presionen 
+  
   while(c<1){
     if(digitalRead(B_1) == LOW & digitalRead( B_2) == LOW){
     c++;
     }
   } 
+
+  //se empiza con la segunda intro al juego
   LCD_Clear(0x00);
   FillRect(0, 0, 320, 240, RED);
   LCD_Print(text5, 10, 100, 2, WHITE, RED);
@@ -118,11 +135,11 @@ void setup() {
   delay(4000);
     
   
-  LCD_Bitmap(0, 0, 320, 240, fondo);
+  LCD_Bitmap(0, 0, 320, 240, fondo); // se imprime el fondo
   
     
- // LCD_Bitmap(250,  10, 31, 5, corazones);
- // LCD_Bitmap(250, 130, 31, 5, corazones2);
+ LCD_Bitmap(280,  10, 31, 5, corazones);//se imprimen los corazones, que son las vidas de los dinosaurios
+ LCD_Bitmap(280, 130, 31, 5, corazones2);
     
    
   
@@ -132,41 +149,45 @@ void setup() {
 //***************************************************************************************************************************************
 void loop() {
 
- 
+ digitalWrite(PF_4, HIGH); // se enciende la musica del juego pricipal
+ digitalWrite(PD_7, LOW);// se apaga la musica del intro
+
+ // se comineza en un for para la animacion de los personajes 
     for(int x = 0; x <320; x++){
     delay(1);
 
-    int activ_1 = 0;
+    int activ_1 = 0; // banderas de activacion de movimiento
     int activ_2 = 0;
-    int anim2 = (x/35)%2;
+    
+    int anim2 = (x/35)%2;// velocidad de animacion
     int anim = (x/11)%8;
     int anim3 = (x/11)%4;
 
     // cactus 1
-    LCD_Sprite(x, 71, 23, 26, cactus,1, 0,1, 0);
+    LCD_Sprite(x, 71, 23, 26, cactus,1, 0,1, 0); // se imprime el cactus 
     V_line( x - 1 , 71, 26, BLACK);
 
     //Cactus 2
-    LCD_Sprite(x, 192, 27, 26, cactus2,1, 0,1, 0);
+    LCD_Sprite(x, 192, 27, 26, cactus2,1, 0,1, 0); //se imprime el segundo cactus
     V_line( x -1, 192, 26, BLACK);
 
     //dinosaurio 2
-    LCD_Sprite(155, 63, 32, 33, dino2,3, anim2,1, 0);
+    LCD_Sprite(155, 63, 32, 33, dino2,3, anim2,1, 0); // se imprime el dinosaurio 2
     H_line(155,30,33, BLACK);
 
     // dinosaurio 1
-    LCD_Sprite(155, 182, 32, 33, dino,3, anim,1,0);
+    LCD_Sprite(155, 182, 32, 33, dino,3, anim,1,0);// se imprime el dinosaurio 3
     H_line(155,182,33, BLACK);
 
 
-// Movimiento de dinosaurio 2
-    if (digitalRead(B_1) == LOW){
-     for( int y = 0 ; y<40; y++){
+// Movimiento de dinosaurio 2 
+    if (digitalRead(B_1) == LOW){  //se activa con al presionar el push button1
+     for( int y = 0 ; y<40; y++){ // se comienza con el conteo para el movimiento
       
-      LCD_Sprite(155, 63 - y, 32, 33, dino2,3,anim2,1, 0);
+      LCD_Sprite(155, 63 - y, 32, 33, dino2,3,anim2,1, 0); // se realiza el movimiento
       H_line(155,63 - y,33, BLACK);
 
-      activ_1 = 1;    
+      activ_1 = 1;    // se activa la bandera para activar el moviento de caida 
      }
     }
 
@@ -176,15 +197,15 @@ void loop() {
       LCD_Sprite(155, 23 + v, 32, 33, dino2,3,anim2,1, 0);
       H_line(155,22 + v,32, BLACK);
 
-      activ_1 = 0;  
+      activ_1 = 0;   // se desactiva la bandera
     }
     }
 
 // Movimiento de dinosaurio 1
-    if (digitalRead(B_2) == LOW){
-     for( int n = 0 ; n<40; n++){
+    if (digitalRead(B_2) == LOW){ //se activa con al presionar el push button2
+     for( int n = 0 ; n<40; n++){ // se comienza con el conteo para el movimiento
       
-      LCD_Sprite(155, 182 - n, 32, 33, dino,3,anim2,1, 0);
+      LCD_Sprite(155, 182 - n, 32, 33, dino,3,anim2,1, 0); // se realiza el movimiento
       H_line(155,182 - n,33, BLACK);
 
       activ_2 = 1;    
@@ -197,40 +218,14 @@ void loop() {
       LCD_Sprite(155, 142 + b, 32, 33, dino,3,anim2,1, 0);
       H_line(155,141 + b,32, BLACK);
 
-      activ_2 = 0;  
+      activ_2 = 0;   // se desactiva la bandera
     }
     }
-    
-      
-  
 
- 
+        
+    
   }
   
-  /*for(int x = 320-32; x >0; x--){
-    delay(5);
-    int anim = (x/11)%8;
-    int anim2 = (x/11)%2;
-    
-    // cactus
-     //LCD_Sprite(x,190,23,26,cactus,1,0,1,0);
-     //V_line( x+ , 190, 26, BLACK);
-
-    
-   // LCD_Sprite(x,100,16,24,planta,2,anim2,0,0);
-   // V_line( x + 16, 100, 24, 0x421b);
-    
-    //LCD_Bitmap(x, 100, 32, 32, prueba);
-    
-    //LCD_Sprite(x, 140, 16, 16, enemy,2, anim2,0, 0);
-    //V_line( x + 16, 140, 16, 0x421b);
-    
-   // LCD_Sprite(x, 175, 16, 32, luigi,8, anim,0, 0);
-   // V_line( x + 16, 175, 32, BLACK);
-
-    //LCD_Sprite(x, 20, 16, 32, mario,8, anim,0, 0);
-    //V_line( x + 16, 20, 32, 0x421b);
-  } */
 
 }
 //***************************************************************************************************************************************
