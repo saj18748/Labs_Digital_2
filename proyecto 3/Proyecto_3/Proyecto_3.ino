@@ -218,7 +218,7 @@ void loop() {
       LCD_Sprite(155, 142 + b, 32, 33, dino,3,anim2,1, 0);
       H_line(155,141 + b,32, BLACK);
 
-      activ_2 = 0;   // se desactiva la bandera
+      activ_2 = 0;   // se desactiva la banderaE
     }
     }
 
