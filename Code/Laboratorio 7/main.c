@@ -1,3 +1,8 @@
+//Universidad del valle de Guatemala
+// Yefry Sajquiy - 18748
+// Laboraorio 7
+
+
 #include <stdint.h>
 #include <stdbool.h>
 #include "inc/tm4c123gh6pm.h"
@@ -11,11 +16,10 @@
 #include "driverlib/uart.h"
 #include "driverlib/pin_map.h"
 
+
+
 //*****************************************************************************
-//
-// The error routine that is called if the driver library encounters an error.
-//
-//*****************************************************************************
+
 #ifdef DEBUG
 void
 __error__(char *pcFilename, uint32_t ui32Line) {
@@ -23,7 +27,8 @@ __error__(char *pcFilename, uint32_t ui32Line) {
 }
 #endif
 
-//Variables Globales
+//Variables
+
 uint32_t LED = GPIO_PIN_1;
 unsigned char temporal = 'a';
 unsigned char temporal2 = 'f';
@@ -31,23 +36,26 @@ char time = 0;
 char FLAG = 0;
 
 //Prototipado
+// se declara las funciones de timer y uart externas
 extern void Timer0IntHandler(void);
 extern void UARTIntHandler(void);
 
 int main(void) {
-    // Utiliza el oscilador principal, con el cristal de 16MHz y el PLL y divido dentro de 5 para llegar a 40
+
+    // configuracion del reloj a 40 MHz
     SysCtlClockSet(SYSCTL_OSC_MAIN | SYSCTL_XTAL_16MHZ | SYSCTL_USE_PLL | SYSCTL_SYSDIV_5);
 
-    // Activa el puerto F
+    // Activacion  del puerto F
     SysCtlPeripheralEnable(SYSCTL_PERIPH_GPIOF);
     while(!SysCtlPeripheralReady(SYSCTL_PERIPH_GPIOF));
 
-    //Activa interrupciones generales
+    //Activacion de las interrupciones generales
     IntMasterEnable();
 
-    // Activa Timer0
+    // se actica el  Timer0
     SysCtlPeripheralEnable(SYSCTL_PERIPH_TIMER0);
     while(!SysCtlPeripheralReady(SYSCTL_PERIPH_TIMER0));
+
     TimerConfigure(TIMER0_BASE, TIMER_CFG_PERIODIC);
     TimerLoadSet(TIMER0_BASE, TIMER_A, SysCtlClockGet()/2 - 1);
     TimerIntEnable(TIMER0_BASE, TIMER_TIMA_TIMEOUT);
@@ -55,7 +63,7 @@ int main(void) {
     IntEnable(INT_TIMER0A);
     TimerEnable(TIMER0_BASE, TIMER_A);
 
-    // Activa UART
+    // se activa la comunicacion UART
     SysCtlPeripheralEnable(SYSCTL_PERIPH_GPIOA);
     while(!SysCtlPeripheralReady(SYSCTL_PERIPH_GPIOA));
     SysCtlPeripheralEnable(SYSCTL_PERIPH_UART0);
@@ -79,7 +87,8 @@ int main(void) {
 }
 
 void Timer0IntHandler(void) {
-    // Clear the timer interrupt
+
+    //limpia tiempo de interrupcion
     TimerIntClear(TIMER0_BASE, TIMER_TIMA_TIMEOUT);
     switch(time){
     case 0:
@@ -94,7 +103,7 @@ void Timer0IntHandler(void) {
 }
 
 void UARTIntHandler(void) {
-    // Clear the timer interrupt
+    /
     UARTIntClear(UART0_BASE, UART_INT_RX | UART_INT_RT);
     if (UARTCharsAvail(UART0_BASE)){
         temporal = UARTCharGet(UART0_BASE);
