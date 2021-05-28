@@ -1,188 +1,180 @@
-//************************************************************************************************
-// Librerías
-//************************************************************************************************
-#include <WiFi.h>
-#include <SPIFFS.h>
-#include <WebServer.h>
-//************************************************************************************************
-// Variables globales
-//************************************************************************************************
-// SSID & Password
+//Yefry Elias Sajquiy Vargas - 18748
+// Proyecto Final
+
+// Se incluyen las librerias
+
+#include <stdint.h>
+#include <stdbool.h>
+#include "inc/tm4c123gh6pm.h"
+#include "inc/hw_memmap.h"
+#include "inc/hw_types.h"
+#include "inc/hw_ints.h"
+#include "driverlib/sysctl.h"
+#include "driverlib/interrupt.h"
+#include "driverlib/gpio.h"
+#include "driverlib/timer.h"
+#include "driverlib/systick.h"
+#include "driverlib/uart.h"
+#include "driverlib/pin_map.h"
+
+//----------- Funciones-----------------------------------
+
+void UART1config(void);
+void display(uint8_t valor);
 
 
-WebServer server(80);  // Object of WebServer(HTTP port, 80 is defult)
+// Declaracion de variables ------------------------------
 
-uint8_t LED1pin = 2;
-bool LED1status = LOW;
+uint8_t Parqueo1;
+uint8_t Parqueo2;
+uint8_t Parqueo3;
+uint8_t Parqueo4;
+uint8_t Disp = 0;
+uint8_t suma = 0;
 
-//************************************************************************************************
-// Configuración
-//************************************************************************************************
-void setup() {
-  Serial.begin(115200);
-  if (!SPIFFS.begin()) {
-    Serial.println("An Error has occurred while mounting SPIFFS");
-    return;
-  }
-  Serial.println("Try Connecting to ");
-  Serial.println(ssid);
+//--------------- PROGRAMA PRINCIPAL -------------------------------------
+void main(void)
 
-  pinMode(LED1pin, OUTPUT);
+//----------------- CONFIGURACION DE SETUP -----------------------------------
 
-  // Connect to your wi-fi modem
-  WiFi.begin(ssid, password);
+{   //Configuracion de reloj a 40MHz
+    SysCtlClockSet(SYSCTL_SYSDIV_5|SYSCTL_USE_PLL|SYSCTL_XTAL_16MHZ|SYSCTL_OSC_MAIN);
+    //Se activan los puertos E, C y A
 
-  // Check wi-fi is connected to wi-fi network
-  while (WiFi.status() != WL_CONNECTED) {
-    delay(1000);
-    Serial.print(".");
-  }
-  Serial.println("");
-  Serial.println("WiFi connected successfully");
-  Serial.print("Got IP: ");
-  Serial.println(WiFi.localIP());  //Show ESP32 IP on serial
+    SysCtlPeripheralEnable(SYSCTL_PERIPH_GPIOE);
+    SysCtlPeripheralEnable(SYSCTL_PERIPH_GPIOC);
+    SysCtlPeripheralEnable(SYSCTL_PERIPH_GPIOA);
+    SysCtlPeripheralEnable(SYSCTL_PERIPH_GPIOB);
+    SysCtlPeripheralEnable(SYSCTL_PERIPH_GPIOD);
 
-  server.on("/", handle_OnConnect); // Directamente desde e.g. 192.168.0.8
-  server.on("/led1on", handle_led1on);
-  server.on("/led1off", handle_led1off);
-  server.onNotFound([]() {                  // If the client requests any URI
-    if (!HandleFileRead(server.uri()))      // send it if it exists
-      handleNotFound();             // otherwise, respond with a 404 (Not Found) error
-  });
-  //server.onNotFound(handle_NotFound);
+    //COnfiguracion de salida de los LEDs
+    GPIOPinTypeGPIOOutput(GPIO_PORTE_BASE, GPIO_PIN_4|GPIO_PIN_5);
+    GPIOPinTypeGPIOOutput(GPIO_PORTA_BASE, GPIO_PIN_2|GPIO_PIN_3|GPIO_PIN_4|GPIO_PIN_5|GPIO_PIN_6|GPIO_PIN_7);
+    GPIOPinTypeGPIOOutput(GPIO_PORTB_BASE, GPIO_PIN_0|GPIO_PIN_1|GPIO_PIN_2|GPIO_PIN_3|GPIO_PIN_4|GPIO_PIN_5|GPIO_PIN_6);
 
-  server.begin();
-  Serial.println("HTTP server started");
-  delay(100);
+    //Configuracion de entrada de los push
+    GPIOPinTypeGPIOInput(GPIO_PORTC_BASE, GPIO_PIN_6|GPIO_PIN_7);
+    GPIOPinTypeGPIOInput(GPIO_PORTE_BASE, GPIO_PIN_2|GPIO_PIN_3);
+    //IntMasterEnable();
+    UART1config();
+
+//------------------ LOOP ---------------------------------------------------------
+    while(1){
+        //Lectura de los push
+        Parqueo1 = GPIOPinRead(GPIO_PORTE_BASE, GPIO_PIN_2);
+        Parqueo2 = GPIOPinRead(GPIO_PORTE_BASE, GPIO_PIN_3);
+        Parqueo3 = GPIOPinRead(GPIO_PORTC_BASE, GPIO_PIN_6);
+        Parqueo4 = GPIOPinRead(GPIO_PORTC_BASE, GPIO_PIN_7);
+
+        //Se leen los datos de cada parqueo
+        //si esta en cero la luz verde se enciende y en 1 se encienden los azules
+        // PARQUEO 1
+        if (Parqueo1 == 0){ //Parqueo 1 esta ocupado
+            GPIOPinWrite(GPIO_PORTE_BASE, GPIO_PIN_4|GPIO_PIN_5, 16); //Se enciende led azul
+            Disp &= ~(1); //Clear del bit 0
+        }
+        //Parqueo 1 esta disponible
+        else{
+            GPIOPinWrite(GPIO_PORTE_BASE, GPIO_PIN_4|GPIO_PIN_5, 32); //Se enciende led verde
+            Disp |= 1;   //Set del bit 0
+        }
+
+        // PARQUEO 2
+        //Parqueo 2 esta ocupado
+        if (Parqueo2 == 0){
+            GPIOPinWrite(GPIO_PORTA_BASE, GPIO_PIN_2|GPIO_PIN_3, 4); //Se enciende led azul
+            Disp &= ~(2); //Clear del bit 1
+        }
+        //Parqueo 2 esta disponible
+        else{
+            GPIOPinWrite(GPIO_PORTA_BASE, GPIO_PIN_2|GPIO_PIN_3, 8); //Se enciende led verde
+            Disp |= 2;   //Set del bit 1
+        }
+
+        // PARQUEO 3
+        //Parqueo 3 esta ocupado
+        if (Parqueo3 == 0){
+            GPIOPinWrite(GPIO_PORTA_BASE, GPIO_PIN_4|GPIO_PIN_5, 16); //Se enciende led azul
+            Disp &= ~(4); //Clear del bit 2
+        }
+        //Parqueo 3 esta disponible
+        else{
+            GPIOPinWrite(GPIO_PORTA_BASE, GPIO_PIN_4|GPIO_PIN_5, 32); //Se enciende led verde
+            Disp |= 4;   //Set del bit 2
+        }
+
+        //  PARQUEO 4
+        //Parqueo 4 esta ocupado
+        if (Parqueo4 == 0){
+            GPIOPinWrite(GPIO_PORTA_BASE, GPIO_PIN_6|GPIO_PIN_7, 64); //Se enciende led azul
+            Disp &= ~(8); //Clear del bit 3
+        }
+        //Parqueo 4 esta disponible
+        else{
+            GPIOPinWrite(GPIO_PORTA_BASE, GPIO_PIN_6|GPIO_PIN_7, 128); //Se enciende led verde
+            Disp |= 8;   //Set del bit 3
+        }
+
+        //suma de cada boton que se pulsa, no importa cual se presione primero, contara desde uno
+        if (1 & Disp){
+                    suma+=1;
+                }
+        if (2 & Disp){
+                    suma+=1;
+                }
+        if (4 & Disp){
+                    suma+=1;
+                }
+        if (8 & Disp){
+                    suma+=1;
+                }
+
+        display(suma); //Se despliega en el display la cantidad total de parqueos disponibles
+        UARTCharPut(UART1_BASE, Disp); //Se envía el valor de Disp al ESP32
+        suma = 0;  //Se resetea el valor de suma para la proxima lectura de la disponibilidad
+
+    }
+
 }
-//************************************************************************************************
-// loop principal
-//************************************************************************************************
-void loop() {
-  server.handleClient();
-  if (LED1status)
-  {
-    digitalWrite(LED1pin, HIGH);
-  }
-  else
-  {
-    digitalWrite(LED1pin, LOW);
-  }
-}
-//************************************************************************************************
-// Handler de Inicio página
-//************************************************************************************************
-void handle_OnConnect() {
-  LED1status = LOW;
-  Serial.println("GPIO2 Status: OFF");
-  server.send(200, "text/html", SendHTML(LED1status));
-}
-//************************************************************************************************
-// Handler de led1on
-//************************************************************************************************
-void handle_led1on() {
-  LED1status = HIGH;
-  Serial.println("GPIO2 Status: ON");
-  server.send(200, "text/html", SendHTML(LED1status));
-}
-//************************************************************************************************
-// Handler de led1off
-//************************************************************************************************
-void handle_led1off() {
-  LED1status = LOW;
-  Serial.println("GPIO2 Status: OFF");
-  server.send(200, "text/html", SendHTML(LED1status));
-}
-//************************************************************************************************
-// Procesador de HTML
-//************************************************************************************************
-String SendHTML(uint8_t led1stat) {
-  String ptr = "<!DOCTYPE html> <html>\n";
-  ptr += "<head><meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0, user-scalable=no\">\n";
-  ptr += "<title>LED Control</title>\n";
-  ptr += "<style>html { font-family: Helvetica; display: inline-block; margin: 0px auto; text-align: center;}\n";
-  ptr += "body{margin-top: 50px;} h1 {color: #444444;margin: 50px auto 30px;} h3 {color: #444444;margin-bottom: 50px;}\n";
-  ptr += ".button {display: block;width: 80px;background-color: #3498db;border: none;color: white;padding: 13px 30px;text-decoration: none;font-size: 25px;margin: 0px auto 35px;cursor: pointer;border-radius: 4px;}\n";
-  ptr += ".button-on {background-color: #3498db;}\n";
-  ptr += ".button-on:active {background-color: #2980b9;}\n";
-  ptr += ".button-off {background-color: #34495e;}\n";
-  ptr += ".button-off:active {background-color: #2c3e50;}\n";
-  ptr += "p {font-size: 14px;color: #888;margin-bottom: 10px;}\n";
-  ptr += "</style>\n";
-  ptr += "</head>\n";
-  ptr += "<body>\n";
-  ptr += "<h1>ESP32 Web Server &#128664</h1>\n";
-  ptr += "<h3>Ejemplo de Web Server</h3>\n";
 
-  if (led1stat)
-  {
-    ptr += "<p>LED1 Status: ON</p><a class=\"button button-off\" href=\"/led1off\">OFF</a>\n";
-  }
-  else
-  {
-    ptr += "<p>LED1 Status: OFF</p><a class=\"button button-on\" href=\"/led1on\">ON</a>\n";
-  }
+//**********************************FUNCIONES*********************************************
 
-  ptr += "</body>\n";
-  ptr += "</html>\n";
-  return ptr;
-}
-//************************************************************************************************
-// Handler de not found
-//************************************************************************************************
-void handleNotFound() {
-  server.send(404, "text/plain", "Not found");
-}
-//************************************************************************************************
-// Obtener el tipo de contenido del archivo
-//************************************************************************************************
-String GetContentType(String filename)
-{
-  if (filename.endsWith(".htm")) return "text/html";
-  else if (filename.endsWith(".html")) return "text/html";
-  else if (filename.endsWith(".css")) return "text/css";
-  else if (filename.endsWith(".js")) return "application/javascript";
-  else if (filename.endsWith(".png")) return "image/png";
-  else if (filename.endsWith(".gif")) return "image/gif";
-  else if (filename.endsWith(".jpg")) return "image/jpeg";
-  else if (filename.endsWith(".ico")) return "image/x-icon";
-  else if (filename.endsWith(".xml")) return "text/xml";
-  else if (filename.endsWith(".pdf")) return "application/x-pdf";
-  else if (filename.endsWith(".zip")) return "application/x-zip";
-  else if (filename.endsWith(".gz")) return "application/x-gzip";
-  return "text/plain";
-}
-//************************************************************************************************
-// Enviar al servidor el archivo desde SPIFFS
-//************************************************************************************************
-void ServeFile(String path)
-{
-  File file = SPIFFS.open(path, "r");
-  size_t sent = server.streamFile(file, GetContentType(path));
-  file.close();
-}
-//************************************************************************************************
-// Enviar al servidor el archivo desde SPIFFS
-//************************************************************************************************
-void ServeFile(String path, String contentType)
-{
-  File file = SPIFFS.open(path, "r");
-  size_t sent = server.streamFile(file, contentType);
-  file.close();
-}
-//************************************************************************************************
-// Handler de not found
-//************************************************************************************************
-bool HandleFileRead(String path)
-{
-  if (path.endsWith("/")) path += "index.html";
-  Serial.println("handleFileRead: " + path);
 
-  if (SPIFFS.exists(path))
-  {
-    ServeFile(path);
-    return true;
-  }
-  Serial.println("\tFile Not Found");
-  return false;
+
+void UART1config(void){
+
+    //Aqui se configura el UART1
+
+    SysCtlPeripheralEnable(SYSCTL_PERIPH_UART1);//Se Activa clock para UART1
+    SysCtlPeripheralEnable(SYSCTL_PERIPH_GPIOC);//Se activa clock para puerto C de la tiva
+    GPIOPinConfigure(GPIO_PC4_U1RX);
+    GPIOPinConfigure(GPIO_PC5_U1TX);
+    GPIOPinTypeUART(GPIO_PORTC_BASE, GPIO_PIN_4|GPIO_PIN_5); //Se activan los pines 6 y 7 del puerto D
+    UARTConfigSetExpClk(UART1_BASE,SysCtlClockGet(), 115200, UART_CONFIG_WLEN_8 | UART_CONFIG_STOP_ONE | UART_CONFIG_PAR_NONE);
+    UARTEnable(UART1_BASE);
+   // UARTIntEnable(UART2_BASE, UART_INT_RT | UART_INT_RX); //Se activa interrupcion cada vez que se reciba un dato
+   // UARTIntRegister(UART2_BASE, UARTIntHandler); //Se le coloca el nombre a la funcion del handler
+}
+
+
+void display(uint8_t valor){
+    //Dependiendo del valor del parametro se encienden ciertos leds del display para mostrar visualmente el numero correspondiente
+    switch(valor){
+        case 0:
+            GPIOPinWrite(GPIO_PORTB_BASE, GPIO_PIN_0|GPIO_PIN_1|GPIO_PIN_2|GPIO_PIN_3|GPIO_PIN_4|GPIO_PIN_5|GPIO_PIN_6, 95); //Se encienden los pines para mostrar el 0
+            break;
+        case 1:
+                    GPIOPinWrite(GPIO_PORTB_BASE, GPIO_PIN_0|GPIO_PIN_1|GPIO_PIN_2|GPIO_PIN_3|GPIO_PIN_4|GPIO_PIN_5|GPIO_PIN_6, 80); //Se encienden los pines para mostrar el 1
+                    break;
+        case 2:
+                    GPIOPinWrite(GPIO_PORTB_BASE, GPIO_PIN_0|GPIO_PIN_1|GPIO_PIN_2|GPIO_PIN_3|GPIO_PIN_4|GPIO_PIN_5|GPIO_PIN_6, 62); //Se encienden los pines para mostrar el 2
+                    break;
+        case 3:
+                    GPIOPinWrite(GPIO_PORTB_BASE, GPIO_PIN_0|GPIO_PIN_1|GPIO_PIN_2|GPIO_PIN_3|GPIO_PIN_4|GPIO_PIN_5|GPIO_PIN_6, 122); //Se encienden los pines para mostrar el 3
+                    break;
+        case 4:
+                    GPIOPinWrite(GPIO_PORTB_BASE, GPIO_PIN_0|GPIO_PIN_1|GPIO_PIN_2|GPIO_PIN_3|GPIO_PIN_4|GPIO_PIN_5|GPIO_PIN_6, 113); //Se encienden los pines para mostrar el 4
+                    break;
+    }
+
 }
